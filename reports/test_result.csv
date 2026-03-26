@@ -66,3 +66,8 @@ test_unregister_D5,tests_TC/HomePage/homepage_login.py::test_unregister_D5,call,
 test_register_D5,tests_TC/HomePage/homepage_login.py::test_register_D5,call,PASSED,35.19,R5CXA0VCY1N,2026-03-26 08:17:21
 test_unregister_D5,tests_TC/HomePage/homepage_login.py::test_unregister_D5,call,FAILED,32.6,R5CXA0VCY1N,2026-03-26 08:18:02
 test_unregister_D5,tests_TC/HomePage/homepage_login.py::test_unregister_D5,call,FAILED,44.21,R5CXA0VCY1N,2026-03-26 08:22:51
+test_mobigames_register,tests_TC/HomePage/homepage_login.py::test_mobigames_register,call,FAILED,46.39,R5CXA0VCY1N,2026-03-26 10:03:18
+test_mobigames_register,tests_TC/HomePage/homepage_login.py::test_mobigames_register,call,PASSED,27.68,R5CXA0VCY1N,2026-03-26 10:05:54
+test_mobigames_unregister,tests_TC/HomePage/homepage_login.py::test_mobigames_unregister,call,FAILED,32.33,R5CXA0VCY1N,2026-03-26 10:07:16
+test_unregister_my_pakage,tests_TC/HomePage/homepage_login.py::test_unregister_my_pakage,call,FAILED,32.22,R5CXA0VCY1N,2026-03-26 11:10:31
+test_unregister_my_pakage,tests_TC/HomePage/homepage_login.py::test_unregister_my_pakage,call,FAILED,41.37,R5CXA0VCY1N,2026-03-26 11:11:39

@@ -15,9 +15,21 @@ class HomePage(BasePage):
     NOTIFICATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivNotification")
     DETAIL_D5 = (AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvPackName" and @text="D5"]')
     REGISTER_BUTTON = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRegister")
-    CANCEL_BUTTON = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCancelPackage")
+    BUTTON_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCancelPackage")
     BUTTON_CONTINUTE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
     BACKGROUND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBack")
+    BUTTON_SEE_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSeeAll")
+    #---Dịch vụ mobigames
+    MOBIGAMES_DETAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivThumb")
+    MOBIGAMES_REGISTER1 = (AppiumBy.XPATH, '(//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvRegister"])[1]')
+    MOBIGAMES_REGISTER2 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
+    MOBIGAME_UNREGISTER = (AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvRegister" and @text="Hủy"]')
+    #---Gói cước của bạn
+    BUTTON_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvExtendPackage")
+    BUTTON_CANCEL_EXTEND = (AppiumBy.ID,"vms.com.vn.mymobifone:id/tvCancelExtendPackage")
+    DETAIL_MY_PAKAGE = (AppiumBy.XPATH, '//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlPB4"]')
+    BUTTON_CONFIRM_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmExtend")
+    BUTTON_CONFIRM_CANCEL_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmCancelExtend")
     # ===== Locator trong thông tin sử dụng =========
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
@@ -83,9 +95,24 @@ class HomePage(BasePage):
     def search_package(self, keyword):
         self.click(self.SEARCH_BOX)
         self.send_keys(self.SEARCH_INPUT, keyword)
+    #Click Mobigame
+    #----Register
+    def click_mobigames_detail(self):
+        self.click(self.MOBIGAMES_DETAIL)
+    def click_mobigames_register1(self):
+        self.click(self.MOBIGAMES_REGISTER1)
+    def click_mobigames_register2(self):
+        self.click(self.MOBIGAMES_REGISTER2)
+    #----Unregister
+    def click_mobigames_unregister(self):
+        self.click(self.MOBIGAME_UNREGISTER)
+    
     #Click button Back
     def click_button_back(self):
         self.click(self.BUTTON_BACK)
+    #Click button Xem tất cả
+    def click_button_see_all(self):
+        self.click(self.BUTTON_SEE_ALL)
     #Click icon avata
     def click_avata(self):
         self.click(self.AVATA)    
@@ -126,12 +153,22 @@ class HomePage(BasePage):
     def click_register_d5(self):
         self.click(self.REGISTER_BUTTON)
     #Click button Huỷ đăng ký
-    def click_cancel_button(self):
-        self.click(self.CANCEL_BUTTON)
+    def click_button_cancel(self):
+        self.click(self.BUTTON_CANCEL)
     #Click button continute
     def click_button_continute(self):
         self.click(self.BUTTON_CONTINUTE)
-        
+    #-----Gói cước của bạn-------
+    def click_button_extend(self):
+        self.click(self.BUTTON_EXTEND)
+    def click_button_cancel_extend(self):
+        self.click(self.BUTTON_CANCEL_EXTEND)
+    def click_detail_my_pakage(self):
+        self.click(self.DETAIL_MY_PAKAGE)    
+    def click_button_confirm_cancel_extend(self):
+        self.click(self.BUTTON_CONFIRM_CANCEL_EXTEND)
+    def click_button_confirm_extend(self):
+        self.click(self.BUTTON_CONFIRM_EXTEND)
     #Check popup Huỷ gói cước thành công
     def is_check_popup_unregister(self, timeout=10):
         try:

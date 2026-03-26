@@ -321,3 +321,41 @@ NoSuchElementError: An element could not be located on the page using the given 
     at processTicksAndRejections (internal/process/task_queues.js:97:5)
     at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
     at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-26 10:03:18,875 | ERROR | [test_mobigames_register] ❌ FAILED (46.39s)
+2026-03-26 10:03:18,877 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-26 10:03:18,877 | ERROR | 📍 Line: 122
+2026-03-26 10:03:18,877 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-26 10:05:54,117 | INFO | [test_mobigames_register] ✅ PASSED (27.68s)
+2026-03-26 10:07:16,110 | ERROR | [test_mobigames_unregister] ❌ FAILED (32.33s)
+2026-03-26 10:07:16,111 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-26 10:07:16,111 | ERROR | 📍 Line: 122
+2026-03-26 10:07:16,111 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-26 11:10:31,284 | ERROR | [test_unregister_my_pakage] ❌ FAILED (32.22s)
+2026-03-26 11:10:31,285 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-26 11:10:31,285 | ERROR | 📍 Line: 122
+2026-03-26 11:10:31,285 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-03-26 11:11:39,598 | ERROR | [test_unregister_my_pakage] ❌ FAILED (41.37s)
+2026-03-26 11:11:39,598 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-26 11:11:39,598 | ERROR | 📍 Line: 122
+2026-03-26 11:11:39,598 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
