@@ -19,6 +19,8 @@ class HomePage(BasePage):
     BUTTON_CONTINUTE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
     BACKGROUND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBack")
     BUTTON_SEE_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSeeAll")
+    RECHARGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRecharge")
+    
     #---Dịch vụ mobigames
     MOBIGAMES_DETAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivThumb")
     MOBIGAMES_REGISTER1 = (AppiumBy.XPATH, '(//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvRegister"])[1]')
@@ -30,6 +32,13 @@ class HomePage(BasePage):
     DETAIL_MY_PAKAGE = (AppiumBy.XPATH, '//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlPB4"]')
     BUTTON_CONFIRM_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmExtend")
     BUTTON_CONFIRM_CANCEL_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmCancelExtend")
+    #-- Thông tin sử dụng/tiện ích nổi bật
+    CVQT = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[1]')
+    KNDL1 = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[4]')
+    VTC83 = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[5]')
+    KHS = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[6]')
+    BUTTON_BACK_LEFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivLeftIcon")
+    
     # ===== Locator trong thông tin sử dụng =========
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
@@ -138,6 +147,9 @@ class HomePage(BasePage):
     def search_package(self, keyword):
         self.click(self.SEARCH_BOX)
         self.send_keys(self.SEARCH_INPUT, keyword)
+    # Hàm click mua gói
+    def click_recharge(self):
+        self.click(self.RECHARGE)
     #Click Mobigame
     #----Register
     def click_mobigames_detail(self):
@@ -222,6 +234,17 @@ class HomePage(BasePage):
     def et_time(self, keword):
         self.click(self.ET_TIME)
         self.send_keys(self.ET_TIME, keword)
+    #Thông tin sử dụng/Tiện ích nổi bật
+    def click_kndl1(self):
+        self.click(self.KNDL1)
+    def click_cvqt(self):
+        self.click(self.CVQT)    
+    def click_vtc83(self):
+        self.click(self.VTC83)
+    def click_khs(self):
+        self.click(self.KHS)
+    def click_button_back_left(self):
+        self.click(self.BUTTON_BACK_LEFT)
     #Check popup Huỷ gói cước thành công
     def is_check_popup_unregister(self, timeout=10):
         try:

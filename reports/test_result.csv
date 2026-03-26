@@ -42,3 +42,10 @@ test_extend_pakage,tests_TC/HomePage/homepage_login.py::test_extend_pakage,call,
 test_unextend_pakage,tests_TC/HomePage/homepage_login.py::test_unextend_pakage,call,FAILED,28.19,R5CXA0VCY1N,2026-03-26 17:03:50
 test_reschedule,tests_TC/HomePage/homepage_login.py::test_reschedule,call,FAILED,54.99,R5CXA0VCY1N,2026-03-26 17:04:53
 test_cancel_shedule,tests_TC/HomePage/homepage_login.py::test_cancel_shedule,call,FAILED,48.83,R5CXA0VCY1N,2026-03-26 17:05:50
+test_reschedule,tests_TC/HomePage/homepage_login.py::test_reschedule,call,FAILED,36.15,R5CXA0VCY1N,2026-03-26 18:23:59
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,32.29,R5CXA0VCY1N,2026-03-26 18:50:28
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,19.87,R5CXA0VCY1N,2026-03-26 18:53:21
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,38.31,R5CXA0VCY1N,2026-03-26 18:54:59
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,29.28,R5CXA0VCY1N,2026-03-26 18:56:14
+test_buy_pakage,tests_TC/HomePage/homepage_login.py::test_buy_pakage,call,PASSED,8.64,R5CXA0VCY1N,2026-03-26 21:49:38
+test_recharge,tests_TC/HomePage/homepage_login.py::test_recharge,call,PASSED,8.7,R5CXA0VCY1N,2026-03-26 21:49:55

@@ -112,6 +112,23 @@ def test_click_card_kndl(driver):
     homepage.click_card_kndl()
     homepage.wait_for_result("Kết nối dài lâu")
     assert homepage.is_result_displayed("Kết nối dài lâu")
+#TC13_1 Click các icon tiện ích
+@pytest.mark.tc13_2
+def test_click_utilities(driver):
+    homepage = HomePage(driver)
+    homepage.click_infomation()
+    homepage.scroll_to_element("Kích hoạt sim")
+    homepage.click_cvqt()
+    homepage.click_button_back_left()
+    homepage.click_kndl1()
+    homepage.click_button_back()
+    homepage.click_vtc83()
+    homepage.wait_for_result("Thông tin chung")
+    homepage.click_button_back()
+    homepage.click_khs()
+    homepage.wait_for_result("Kích hoạt sim")
+    assert homepage.is_result_displayed("Kích hoạt sim")
+
 #===ĐĂNG KÝ/HUỶ GÓI CƯỚC/DỊCH VỤ===========
 #TC14 - Đăng ký gói cước thành công
 @pytest.mark.tc14
@@ -227,3 +244,19 @@ def test_cancel_shedule(driver):
     homepage.input_otp("888888")
     homepage.wait_for_result("Huỷ lịch hẹn thành công")
     assert homepage.is_result_displayed("Huỷ lịch hẹn thành công")
+    
+#TC23 - Click Mua gói
+@pytest.mark.tc23
+def test_buy_pakage(driver):
+    homepage = HomePage(driver)
+    homepage.click_button_buy_pakage()
+    homepage.wait_for_result("Tất cả gói cước")
+    assert homepage.is_result_displayed("Tất cả gói cước")
+
+#TC24 - Click Thanh toán
+@pytest.mark.tc24
+def test_recharge(driver):
+    homepage = HomePage(driver)
+    homepage.click_recharge()
+    homepage.wait_for_result("Thanh toán")
+    assert homepage.is_result_displayed("Thanh toán")
