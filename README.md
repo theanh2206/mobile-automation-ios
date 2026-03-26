@@ -1,2 +1,2 @@
-# mobile-automation-ios
-ios-automation-appium
+# mobile-automation-appium
+Automation test mobile app using Appium + Pytest
