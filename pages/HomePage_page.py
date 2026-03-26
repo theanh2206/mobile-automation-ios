@@ -40,6 +40,11 @@ class HomePage(BasePage):
     BUTTON_BUY_PAKAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBuyPackage")
     BUTTON_REGISTER_KNDL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvRegKNDL")
     KNDL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivCardLoyalty")
+    # Hẹn roaming
+    BUTTON_RESHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnDoiLichHen")
+    BUTTON_CANCEL_SCHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnHuyRoaming")
+    BUTTON_SUBMIT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnSubmit")
+    ET_TIME = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etTime")
 #      ===== ACTION =====
     # Hàm scroll tới phần tử cụ thể
     def scroll_to_element(self, text, max_scroll=6):
@@ -72,6 +77,44 @@ class HomePage(BasePage):
             time.sleep(1)  # cho UI load
 
         raise Exception(f"❌ Không tìm thấy: {text}")
+    #--Hàm scroll 
+    def scroll_to_element1(self, text, max_scroll=6):
+        size = self.driver.get_window_size()
+
+        for i in range(max_scroll):
+            print(f"🔍 Lần {i+1}: tìm '{text}'")
+
+            try:
+                element = WebDriverWait(self.driver, 2).until(
+                    EC.presence_of_element_located(
+                    (AppiumBy.ANDROID_UIAUTOMATOR,
+                     f'new UiSelector().textContains("{text}")')
+                    )
+                )
+                print(f"✅ Tìm thấy '{text}'")
+                return element
+            except:
+                pass
+            WebDriverWait(self.driver, 5).until(
+                    EC.presence_of_element_located((AppiumBy.CLASS_NAME, "android.widget.ScrollView"))
+                                                )
+        # 👉 Scroll
+            self.driver.execute_script(
+                "mobile: scrollGesture",
+                    {
+                    "left": int(size["width"] * 0.2),
+                    "top": int(size["height"] * 0.5),
+                    "width": int(size["width"] * 0.6),
+                    "height": int(size["height"] * 0.3),
+                    "direction": "up",
+                    "percent": 0.6
+                    }
+                    )       
+            time.sleep(1)
+
+        raise Exception(f"❌ Không tìm thấy: {text}")
+    
+    
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
@@ -169,6 +212,16 @@ class HomePage(BasePage):
         self.click(self.BUTTON_CONFIRM_CANCEL_EXTEND)
     def click_button_confirm_extend(self):
         self.click(self.BUTTON_CONFIRM_EXTEND)
+    #---Hẹn roaming ------
+    def click_button_reschedule(self):
+        self.click(self.BUTTON_RESHEDULE)
+    def click_button_cancel_schedule(self):
+        self.click(self.BUTTON_CANCEL_SCHEDULE)
+    def click_button_submit(self):
+        self.click(self.BUTTON_SUBMIT)
+    def et_time(self, keword):
+        self.click(self.ET_TIME)
+        self.send_keys(self.ET_TIME, keword)
     #Check popup Huỷ gói cước thành công
     def is_check_popup_unregister(self, timeout=10):
         try:

@@ -184,6 +184,7 @@ def test_extend_pakage(driver):
     homepage.click_infomation()
     homepage.scroll_to_element("Gói cước của bạn")
     homepage.click_detail_my_pakage()
+    homepage.click_button_extend()
     homepage.click_button_confirm_extend()
     homepage.input_otp("888888")
     homepage.wait_for_result("Gia hạn gói cước thành công")
@@ -195,7 +196,34 @@ def test_unextend_pakage(driver):
     homepage.click_infomation()
     homepage.scroll_to_element("Gói cước của bạn")
     homepage.click_detail_my_pakage()
+    homepage.click_button_cancel_extend()
     homepage.click_button_confirm_cancel_extend()
     homepage.input_otp("888888")
     homepage.wait_for_result("Huỷ gia hạn gói cước thành công")
     assert homepage.is_result_displayed("Huỷ gia hạn gói cước thành công")
+    
+#== Hẹn roaming ======
+#TC21 - Đổi lịch hẹn roaming
+@pytest.mark.tc21
+def test_reschedule(driver):
+    homepage = HomePage(driver)
+    homepage.click_infomation()
+    homepage.scroll_to_element1("Đổi lịch hẹn")
+    homepage.click_button_reschedule()
+    homepage.et_time("22062026")
+    homepage.click_button_submit()
+    homepage.input_otp("888888")
+    homepage.wait_for_result("Đổi lịch hẹn thành công")
+    assert homepage.is_result_displayed("Đổi lịch hẹn thành công")
+
+#TC22 - Huỷ lịch hẹn roaming
+@pytest.mark.tc22
+def test_cancel_shedule(driver):
+    homepage = HomePage(driver)
+    homepage.click_infomation()
+    homepage.scroll_to_element1("Đổi lịch hẹn")
+    homepage.click_button_cancel_schedule()
+    homepage.click_button_submit()
+    homepage.input_otp("888888")
+    homepage.wait_for_result("Huỷ lịch hẹn thành công")
+    assert homepage.is_result_displayed("Huỷ lịch hẹn thành công")
