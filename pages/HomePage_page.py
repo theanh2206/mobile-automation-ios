@@ -41,6 +41,9 @@ class HomePage(BasePage):
     BUTTON_BACK_LEFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivLeftIcon")
     #--Tiện ích của bạn
     
+    #--Tất cả tiện ích
+    VIEW_ALL_UTILS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvViewAllUtils")
+    
     
     BTN_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btCancel")
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
@@ -180,6 +183,9 @@ class HomePage(BasePage):
     # Hàm click mua gói
     def click_recharge(self):
         self.click(self.RECHARGE)
+    #Click butto tất cả tiện ích
+    def click_view_all_utils(self):
+        self.click(self.VIEW_ALL_UTILS)
     #Click Mobigame
     #----Register
     def click_mobigames_detail(self):

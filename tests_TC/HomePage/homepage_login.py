@@ -289,6 +289,45 @@ def test_click_utilities(driver):
     homepage.click_btn_cancel()
     homepage.wait_for_text("Tiện ích của bạn")
     assert homepage.is_result_displayed("Tiện ích của bạn")
+#TC27 - Click tiện ích ở màn Tất cả tiện ích
+@pytest.mark.tc27
+def test_click_utilities(driver):
+    homepage = HomePage(driver)
+    homepage.click_view_all_utils()
+    homepage.click_icon(5)
+    homepage.click_btn_cancel()
+    homepage.click_icon(6)
+    homepage.press_back()
+    homepage.click_icon(7)
+    homepage.press_back()
+    homepage.click_icon(9)
+    homepage.press_back()
+    homepage.click_icon(10)
+    homepage.click_btn_cancel()
+    homepage.click_icon(11)
+    homepage.press_back()
+    homepage.click_icon(12)
+    homepage.press_back()
+    homepage.wait_for_text("Tất cả tiện ích")
+    assert homepage.is_result_displayed("Tất cả tiện ích")
 
-
-    
+@pytest.mark.tc28
+def test_click_utilities(driver):
+    homepage = HomePage(driver)
+    homepage.click_view_all_utils()
+    homepage.scroll_to_element("Reset nạp thẻ")
+    homepage.wait_for_text("Reset nạp thẻ")
+    homepage.click_icon(5)
+    homepage.press_back()
+    homepage.click_icon(6)
+    homepage.press_back()
+    homepage.click_icon(7)
+    homepage.press_back()
+    homepage.click_icon(9)
+    homepage.click_btn_cancel()
+    homepage.click_icon(10)
+    homepage.press_back()
+    homepage.click_icon(11)
+    homepage.click_btn_cancel()
+    homepage.wait_for_text("Hỗ trợ khách hàng")
+    assert homepage.is_result_displayed("Tất cả tiện ích")

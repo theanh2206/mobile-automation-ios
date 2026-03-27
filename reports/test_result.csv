@@ -6,3 +6,14 @@ test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,c
 test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,36.64,R83X20ACPQV,2026-03-27 14:47:33
 test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,19.14,R83X20ACPQV,2026-03-27 14:48:43
 test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,28.54,R83X20ACPQV,2026-03-27 15:53:42
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,52.73,R83X20ACPQV,2026-03-27 16:05:38
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,23.85,R83X20ACPQV,2026-03-27 16:19:02
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,8.2,R83X20ACPQV,2026-03-27 16:26:31
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,15.03,R83X20ACPQV,2026-03-27 16:27:43
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,11.93,R83X20ACPQV,2026-03-27 16:28:17
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,41.76,R83X20ACPQV,2026-03-27 16:38:55
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,28.5,R83X20ACPQV,2026-03-27 16:39:42
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,43.97,R83X20ACPQV,2026-03-27 16:40:52
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,FAILED,41.31,R83X20ACPQV,2026-03-27 16:42:12
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,30.35,R83X20ACPQV,2026-03-27 16:43:10
+test_click_utilities,tests_TC/HomePage/homepage_login.py::test_click_utilities,call,PASSED,29.11,R83X20ACPQV,2026-03-27 16:45:49
