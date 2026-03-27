@@ -258,3 +258,145 @@ NoSuchElementError: An element could not be located on the page using the given 
 2026-03-26 18:56:14,007 | INFO | [test_click_utilities] ✅ PASSED (29.28s)
 2026-03-26 21:49:38,361 | INFO | [test_buy_pakage] ✅ PASSED (8.64s)
 2026-03-26 21:49:55,191 | INFO | [test_recharge] ✅ PASSED (8.7s)
+2026-03-27 09:19:59,990 | ERROR | [test_change_number] ❌ FAILED (49.55s)
+2026-03-27 09:19:59,991 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 09:19:59,991 | ERROR | 📍 Line: 122
+2026-03-27 09:19:59,992 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 09:39:51,741 | ERROR | [test_change_number] ❌ FAILED (31.41s)
+2026-03-27 09:39:51,741 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/appium/webdriver/errorhandler.py
+2026-03-27 09:39:51,741 | ERROR | 📍 Line: 125
+2026-03-27 09:39:51,742 | ERROR | 📍 Error: selenium.common.exceptions.UnknownMethodException: Message: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+Stacktrace:
+UnknownCommandError: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+    at AndroidUiautomator2Driver.executeMobile (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-uiautomator2-driver/lib/commands/general.js:175:11)
+    at AndroidUiautomator2Driver.execute (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/execute.js:11:23)
+    at commandExecutor (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:335:9)
+    at /Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:146:12
+    at AsyncLock._promiseTry (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:280:31)
+    at exec (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:145:9)
+    at AsyncLock.acquire (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:162:3)
+    at AndroidUiautomator2Driver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:348:39)
+    at AppiumDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/lib/appium.js:563:36)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:297:21)
+2026-03-27 09:45:22,612 | ERROR | [test_change_number] ❌ FAILED (32.4s)
+2026-03-27 09:45:22,613 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 09:45:22,613 | ERROR | 📍 Line: 122
+2026-03-27 09:45:22,613 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-03-27 09:45:44,366 | ERROR | [test_change_number] ❌ FAILED (6.98s)
+2026-03-27 09:45:44,367 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/appium/webdriver/errorhandler.py
+2026-03-27 09:45:44,367 | ERROR | 📍 Line: 125
+2026-03-27 09:45:44,367 | ERROR | 📍 Error: selenium.common.exceptions.UnknownMethodException: Message: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+Stacktrace:
+UnknownCommandError: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+    at AndroidUiautomator2Driver.executeMobile (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-uiautomator2-driver/lib/commands/general.js:175:11)
+    at AndroidUiautomator2Driver.execute (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/execute.js:11:23)
+    at commandExecutor (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:335:9)
+    at /Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:146:12
+    at AsyncLock._promiseTry (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:280:31)
+    at exec (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:145:9)
+    at AsyncLock.acquire (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:162:3)
+    at AndroidUiautomator2Driver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:348:39)
+    at AppiumDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/lib/appium.js:563:36)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:297:21)
+2026-03-27 09:48:01,256 | ERROR | [test_change_number] ❌ FAILED (7.16s)
+2026-03-27 09:48:01,256 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/appium/webdriver/errorhandler.py
+2026-03-27 09:48:01,257 | ERROR | 📍 Line: 125
+2026-03-27 09:48:01,257 | ERROR | 📍 Error: selenium.common.exceptions.UnknownMethodException: Message: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+Stacktrace:
+UnknownCommandError: Unknown mobile command "clickGesture". Only shell,execEmuConsoleCommand,dragGesture,flingGesture,doubleClickGesture,longClickGesture,pinchCloseGesture,pinchOpenGesture,swipeGesture,scrollGesture,scrollBackTo,scroll,viewportScreenshot,viewportRect,deepLink,startLogsBroadcast,stopLogsBroadcast,acceptAlert,dismissAlert,batteryInfo,deviceInfo,getDeviceTime,changePermissions,getPermissions,performEditorAction,startScreenStreaming,stopScreenStreaming,getNotifications,listSms,type,sensorSet,deleteFile,clearApp,startActivity,startService,stopService,broadcast,getContexts,installMultipleApks,unlock commands are supported.
+    at AndroidUiautomator2Driver.executeMobile (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-uiautomator2-driver/lib/commands/general.js:175:11)
+    at AndroidUiautomator2Driver.execute (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/execute.js:11:23)
+    at commandExecutor (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:335:9)
+    at /Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:146:12
+    at AsyncLock._promiseTry (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:280:31)
+    at exec (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:145:9)
+    at AsyncLock.acquire (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:162:3)
+    at AndroidUiautomator2Driver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:348:39)
+    at AppiumDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/lib/appium.js:563:36)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:297:21)
+2026-03-27 09:50:44,254 | ERROR | [test_change_number] ❌ FAILED (7.27s)
+2026-03-27 09:50:44,254 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-27 09:50:44,255 | ERROR | 📍 Line: 266
+2026-03-27 09:50:44,255 | ERROR | 📍 Error: AttributeError: 'HomePage' object has no attribute 'tab_outside'. Did you mean: 'tap_outside'?
+2026-03-27 09:54:07,128 | ERROR | [test_change_number] ❌ FAILED (28.03s)
+2026-03-27 09:54:07,131 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 09:54:07,131 | ERROR | 📍 Line: 122
+2026-03-27 09:54:07,131 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 09:55:22,654 | INFO | [test_change_number] ✅ PASSED (33.17s)
+2026-03-27 10:02:52,782 | ERROR | [test_recharge] ❌ FAILED (33.25s)
+2026-03-27 10:02:52,782 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 10:02:52,782 | ERROR | 📍 Line: 122
+2026-03-27 10:02:52,783 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 11:05:10,743 | INFO | [test_change_number] ✅ PASSED (46.41s)
+2026-03-27 11:05:48,025 | INFO | [test_search_package_DDDDDDDDD] ✅ PASSED (11.8s)
+2026-03-27 14:26:58,694 | ERROR | [test_click_utilities] ❌ FAILED (0.0s)
+2026-03-27 14:26:58,695 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/expected_conditions.py
+2026-03-27 14:26:58,695 | ERROR | 📍 Line: 92
+2026-03-27 14:26:58,695 | ERROR | 📍 Error: AttributeError: 'HomePage' object has no attribute 'find_element'
+2026-03-27 14:29:44,657 | ERROR | [test_click_utilities] ❌ FAILED (0.77s)
+2026-03-27 14:29:44,657 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/appium/webdriver/errorhandler.py
+2026-03-27 14:29:44,658 | ERROR | 📍 Line: 125
+2026-03-27 14:29:44,658 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 14:33:30,867 | INFO | [test_click_utilities] ✅ PASSED (9.82s)
+2026-03-27 14:44:50,126 | ERROR | [test_click_utilities] ❌ FAILED (16.61s)
+2026-03-27 14:44:50,128 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/HomePage/homepage_login.py
+2026-03-27 14:44:50,128 | ERROR | 📍 Line: 289
+2026-03-27 14:44:50,128 | ERROR | 📍 Error: AssertionError: assert False
+ +  where False = is_result_displayed('Đây là dịch vụ hợp tác')
+ +    where is_result_displayed = <pages.HomePage_page.HomePage object at 0x108fcd010>.is_result_displayed
+2026-03-27 14:46:06,159 | ERROR | [test_click_utilities] ❌ FAILED (37.36s)
+2026-03-27 14:46:06,160 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 14:46:06,160 | ERROR | 📍 Line: 122
+2026-03-27 14:46:06,160 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 14:47:33,219 | ERROR | [test_click_utilities] ❌ FAILED (36.64s)
+2026-03-27 14:47:33,219 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-27 14:47:33,219 | ERROR | 📍 Line: 122
+2026-03-27 14:47:33,219 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-27 14:48:43,265 | INFO | [test_click_utilities] ✅ PASSED (19.14s)
+2026-03-27 15:53:42,563 | INFO | [test_click_utilities] ✅ PASSED (28.54s)

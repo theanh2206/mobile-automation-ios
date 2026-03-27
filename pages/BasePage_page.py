@@ -44,7 +44,16 @@ class BasePage:
 
     def find_all(self, locator):
         return self.driver.find_elements(*locator)
+    
+    def tap_outside(self):
+        size = self.driver.get_window_size()
 
+        x = int(size["width"] * 0.85)
+        y = int(size["height"] * 0.3)
+
+        self.driver.tap([(x, y)])
+    def press_back(self):
+        self.driver.back()
     # ===== WAIT =====
     def wait_for_element(self, locator):
         return self.wait.until(EC.presence_of_element_located(locator))
@@ -60,3 +69,5 @@ class BasePage:
     def is_text_displayed(self, text):
         locator = self.get_text_locator(text)
         return len(self.find_all(locator)) > 0
+    
+    

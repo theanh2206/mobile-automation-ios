@@ -260,3 +260,35 @@ def test_recharge(driver):
     homepage.click_recharge()
     homepage.wait_for_result("Thanh toán")
     assert homepage.is_result_displayed("Thanh toán")
+    
+#TC25 - Đổi số điện thoại con
+@pytest.mark.tc25 
+def test_change_number(driver):
+    homepage = HomePage(driver)
+    homepage.click_menu()
+    homepage.add_phone("0931791607")
+    homepage.click_button_accept()
+    homepage.input_otp("888888")
+    homepage.close_menu()
+    homepage.click_change_number()
+    homepage.click_new_number()
+    homepage.wait_for_result("0931791607")
+    assert homepage.is_result_displayed("0931791607")
+
+#TC26 - Click tiện ích ở ngoài màn trang chủ
+@pytest.mark.tc26 
+def test_click_utilities(driver):
+    homepage = HomePage(driver)
+    homepage.click_icon(1)
+    homepage.press_back()
+    homepage.click_icon(2)
+    homepage.click_btn_cancel()
+    homepage.click_icon(3)
+    homepage.click_btn_cancel()
+    homepage.click_icon(4)
+    homepage.click_btn_cancel()
+    homepage.wait_for_text("Tiện ích của bạn")
+    assert homepage.is_result_displayed("Tiện ích của bạn")
+
+
+    

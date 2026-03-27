@@ -2,6 +2,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from pages.BasePage_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
 import time
 
 
@@ -38,8 +39,10 @@ class HomePage(BasePage):
     VTC83 = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[5]')
     KHS = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[6]')
     BUTTON_BACK_LEFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivLeftIcon")
+    #--Tiện ích của bạn
     
-    # ===== Locator trong thông tin sử dụng =========
+    
+    BTN_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btCancel")
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
     INFOR_LOOKUP = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineCheckCharges"]/android.widget.ImageView')
@@ -54,6 +57,12 @@ class HomePage(BasePage):
     BUTTON_CANCEL_SCHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnHuyRoaming")
     BUTTON_SUBMIT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnSubmit")
     ET_TIME = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etTime")
+    #Đổi số điện thoại con
+    CHANGE_NUMBER = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/llChangeNumber"]/android.widget.ImageView')
+    NEW_NUMBER = (AppiumBy.XPATH, '(//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlView"])[2]')
+    ADD_PHONE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlAddPhone")
+    INPUT_PHONE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etPhoneNumber")
+    BUTTON_ACCEPT =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btAccept")
 #      ===== ACTION =====
     # Hàm scroll tới phần tử cụ thể
     def scroll_to_element(self, text, max_scroll=6):
@@ -86,7 +95,7 @@ class HomePage(BasePage):
             time.sleep(1)  # cho UI load
 
         raise Exception(f"❌ Không tìm thấy: {text}")
-    #--Hàm scroll 
+    #--Hàm scroll dọc
     def scroll_to_element1(self, text, max_scroll=6):
         size = self.driver.get_window_size()
 
@@ -122,6 +131,27 @@ class HomePage(BasePage):
             time.sleep(1)
 
         raise Exception(f"❌ Không tìm thấy: {text}")
+    #--------------Hàm scroll ngang
+    def scroll_horizontal_utils(self, direction="left", times=1):
+        carousel = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((
+            By.XPATH,
+            '//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvUtils"]'
+            ))
+        )
+
+        for _ in range(times):
+            loc = carousel.location
+            size = carousel.size
+
+            self.driver.execute_script("mobile: swipeGesture", {
+                "left": loc["x"],
+                "top": loc["y"],
+                "width": size["width"],
+                "height": size["height"],
+                "direction": direction,
+                "percent": 0.8
+            })
     
     
     #----------Hàm nhập OTP-----------
@@ -245,6 +275,29 @@ class HomePage(BasePage):
         self.click(self.KHS)
     def click_button_back_left(self):
         self.click(self.BUTTON_BACK_LEFT)
+        
+    # Tiện ích của bạn
+    def click_icon(self, index):
+        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
+        self.click(locator)
+    def click_btn_cancel(self):
+        self.click(self.BTN_CANCEL)
+        
+    # Đổi số điện thoại con
+    def click_change_number(self):
+        self.click(self.CHANGE_NUMBER)
+    def click_new_number(self):
+        self.click(self.NEW_NUMBER)
+    def add_phone(self, keyword):
+        self.click(self.ADD_PHONE)
+        self.send_keys(self.INPUT_PHONE, keyword)
+    def click_button_accept(self):
+        self.click(self.BUTTON_ACCEPT)
+    #Close menu
+    def close_menu(self):
+        self.tap_outside()
+    def press_back(self):
+        return super().press_back()
     #Check popup Huỷ gói cước thành công
     def is_check_popup_unregister(self, timeout=10):
         try:
