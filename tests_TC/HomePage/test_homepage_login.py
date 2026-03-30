@@ -18,7 +18,7 @@ def test_search_package_DDDDDDDDD(driver):
     assert homepage.is_result_displayed("Lịch sử tìm kiếm")
 #TC03 - Tìm kiếm gói dịch vụ có trong DB
 @pytest.mark.tc03
-def test_search_package_D5(driver):
+def test_search_package_DV(driver):
     homepage = HomePage(driver)
     homepage.search_package("Game Data")
     homepage.wait_for_result("Game Data")
@@ -289,7 +289,7 @@ def test_click_utilities(driver):
     homepage.click_btn_cancel()
     homepage.wait_for_text("Tiện ích của bạn")
     assert homepage.is_result_displayed("Tiện ích của bạn")
-#TC27 - Click tiện ích ở màn Tất cả tiện ích
+#TC27, TC28 - Click tiện ích ở màn Tất cả tiện ích
 @pytest.mark.tc27
 def test_click_utilities(driver):
     homepage = HomePage(driver)
@@ -331,3 +331,44 @@ def test_click_utilities(driver):
     homepage.click_btn_cancel()
     homepage.wait_for_text("Hỗ trợ khách hàng")
     assert homepage.is_result_displayed("Tất cả tiện ích")
+    
+#Kết nối dài lâu
+#TC29 - Click thẻ KNDL
+@pytest.mark.tc29
+def test_click_card_kndl(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.click_card_kndl()
+    homepage.wait_for_result("Kết nối dài lâu")
+    assert homepage.is_result_displayed("Kết nối dài lâu")
+#TC30 - Click dịch vụ nổi bật
+@pytest.mark.tc30
+def test_click_services(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.click_avata_contact(1)
+    homepage.wait_for_result("Chi tiết dịch vụ")
+    assert homepage.is_result_displayed("Chi tiết dịch vụ")    
+@pytest.mark.tc30_1
+def test_click_services1(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.click_avata_contact(2)
+    homepage.wait_for_result("Chi tiết dịch vụ")
+    assert homepage.is_result_displayed("Chi tiết dịch vụ")
+@pytest.mark.tc30_2
+def test_click_services2(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.click_avata_contact(3)
+    homepage.wait_for_result("Chi tiết dịch vụ")
+    assert homepage.is_result_displayed("Chi tiết dịch vụ")   
+@pytest.mark.tc30_3
+def test_click_services3(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.click_avata_contact(4)
+    homepage.wait_for_result("Chi tiết dịch vụ")
+    assert homepage.is_result_displayed("Chi tiết dịch vụ")
+    
+    

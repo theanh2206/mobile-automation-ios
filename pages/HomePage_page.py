@@ -288,6 +288,10 @@ class HomePage(BasePage):
         self.click(locator)
     def click_btn_cancel(self):
         self.click(self.BTN_CANCEL)
+    #Click dịch vụ nổi bật
+    def click_avata_contact(self, index):
+        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatarContact"])[{index}]')
+        self.click(locator)
         
     # Đổi số điện thoại con
     def click_change_number(self):
