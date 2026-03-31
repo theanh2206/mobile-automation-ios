@@ -566,3 +566,94 @@ NoSuchElementError: An element could not be located on the page using the given 
 2026-03-30 11:15:28,029 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
 2026-03-30 11:22:32,739 | INFO | [test_search_package_D5] ✅ PASSED (11.9s)
 2026-03-30 11:22:58,256 | INFO | [test_search_package_DDDDDDDDD] ✅ PASSED (11.11s)
+2026-03-30 15:28:00,600 | ERROR | [test_click_services] ❌ FAILED (17.34s)
+2026-03-30 15:28:00,601 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:28:00,601 | ERROR | 📍 Line: 100
+2026-03-30 15:28:00,601 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:28:27,029 | ERROR | [test_click_services1] ❌ FAILED (17.28s)
+2026-03-30 15:28:27,030 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:28:27,030 | ERROR | 📍 Line: 100
+2026-03-30 15:28:27,030 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:28:50,067 | ERROR | [test_click_services2] ❌ FAILED (15.6s)
+2026-03-30 15:28:50,067 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:28:50,067 | ERROR | 📍 Line: 100
+2026-03-30 15:28:50,068 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:29:16,034 | ERROR | [test_click_services3] ❌ FAILED (18.37s)
+2026-03-30 15:29:16,034 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:29:16,034 | ERROR | 📍 Line: 100
+2026-03-30 15:29:16,034 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:31:01,086 | ERROR | [test_click_services] ❌ FAILED (16.54s)
+2026-03-30 15:31:01,086 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:31:01,087 | ERROR | 📍 Line: 100
+2026-03-30 15:31:01,087 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:33:13,010 | ERROR | [test_click_services3] ❌ FAILED (34.16s)
+2026-03-30 15:33:13,011 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-30 15:33:13,012 | ERROR | 📍 Line: 122
+2026-03-30 15:33:13,012 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-30 15:34:08,686 | ERROR | [test_click_services2] ❌ FAILED (18.27s)
+2026-03-30 15:34:08,686 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:34:08,686 | ERROR | 📍 Line: 100
+2026-03-30 15:34:08,686 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:34:45,109 | ERROR | [test_click_services1] ❌ FAILED (15.62s)
+2026-03-30 15:34:45,109 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:34:45,109 | ERROR | 📍 Line: 100
+2026-03-30 15:34:45,109 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:37:12,297 | ERROR | [test_click_services] ❌ FAILED (17.53s)
+2026-03-30 15:37:12,297 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:37:12,297 | ERROR | 📍 Line: 100
+2026-03-30 15:37:12,297 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:38:26,486 | ERROR | [test_click_services] ❌ FAILED (17.3s)
+2026-03-30 15:38:26,487 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/HomePage_page.py
+2026-03-30 15:38:26,487 | ERROR | 📍 Line: 100
+2026-03-30 15:38:26,487 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy: Thẻ kết nối dài lâu
+2026-03-30 15:41:47,282 | ERROR | [test_click_services] ❌ FAILED (33.0s)
+2026-03-30 15:41:47,283 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-30 15:41:47,283 | ERROR | 📍 Line: 122
+2026-03-30 15:41:47,283 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-30 15:42:41,855 | INFO | [test_click_services] ✅ PASSED (24.43s)
+2026-03-30 15:43:44,150 | ERROR | [test_click_services] ❌ FAILED (31.07s)
+2026-03-30 15:43:44,151 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-30 15:43:44,151 | ERROR | 📍 Line: 122
+2026-03-30 15:43:44,151 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-30 15:44:23,285 | ERROR | [test_click_services1] ❌ FAILED (30.97s)
+2026-03-30 15:44:23,285 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-03-30 15:44:23,285 | ERROR | 📍 Line: 122
+2026-03-30 15:44:23,286 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-03-30 15:45:18,719 | INFO | [test_click_services] ✅ PASSED (16.63s)
+2026-03-30 15:45:42,434 | INFO | [test_click_services1] ✅ PASSED (16.74s)
+2026-03-30 15:46:06,255 | INFO | [test_click_services2] ✅ PASSED (16.39s)
+2026-03-30 15:46:30,128 | INFO | [test_click_services3] ✅ PASSED (16.62s)
+2026-03-31 08:55:56,658 | INFO | [test_click_customer_support] ✅ PASSED (19.27s)
+2026-03-31 09:01:55,398 | INFO | [test_click_customer_support] ✅ PASSED (20.94s)
+2026-03-31 09:02:27,706 | INFO | [test_click_customer_support2] ✅ PASSED (24.34s)
+2026-03-31 09:02:56,040 | INFO | [test_click_customer_support3] ✅ PASSED (20.31s)
+2026-03-31 09:03:29,016 | INFO | [test_click_customer_support4] ✅ PASSED (24.78s)
+2026-03-31 09:06:04,981 | INFO | [test_click_notification] ✅ PASSED (8.18s)

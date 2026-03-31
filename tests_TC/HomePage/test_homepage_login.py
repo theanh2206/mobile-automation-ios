@@ -345,30 +345,58 @@ def test_click_card_kndl(driver):
 @pytest.mark.tc30
 def test_click_services(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.scroll_to_element("Dịch vụ nổi bật")
     homepage.click_avata_contact(1)
     homepage.wait_for_result("Chi tiết dịch vụ")
     assert homepage.is_result_displayed("Chi tiết dịch vụ")    
 @pytest.mark.tc30_1
 def test_click_services1(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.scroll_to_element("Dịch vụ nổi bật")
     homepage.click_avata_contact(2)
     homepage.wait_for_result("Chi tiết dịch vụ")
     assert homepage.is_result_displayed("Chi tiết dịch vụ")
 @pytest.mark.tc30_2
 def test_click_services2(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.scroll_to_element("Dịch vụ nổi bật")
     homepage.click_avata_contact(3)
     homepage.wait_for_result("Chi tiết dịch vụ")
     assert homepage.is_result_displayed("Chi tiết dịch vụ")   
 @pytest.mark.tc30_3
 def test_click_services3(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.scroll_to_element("Dịch vụ nổi bật")
     homepage.click_avata_contact(4)
     homepage.wait_for_result("Chi tiết dịch vụ")
     assert homepage.is_result_displayed("Chi tiết dịch vụ")
     
-    
+#Hỗ trợ khách hàng
+@pytest.mark.tc31
+def test_click_customer_support(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.click_icon(1)
+    homepage.wait_for_result("Chọn chu kỳ gói")
+    assert homepage.is_result_displayed("Chọn chu kỳ gói")
+@pytest.mark.tc31_2
+def test_click_customer_support2(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.click_icon(2)
+    homepage.wait_for_result("Kích hoạt sim")
+    assert homepage.is_result_displayed("Kích hoạt sim")
+@pytest.mark.tc31_3
+def test_click_customer_support3(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.click_icon(3)
+    homepage.wait_for_result("Kích hoạt sim")
+    assert homepage.is_result_displayed("Kích hoạt sim")
+@pytest.mark.tc31_4
+def test_click_customer_support4(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.click_icon(4)
+    homepage.wait_for_result("Xác thực thuê bao")
+    assert homepage.is_result_displayed("Xác thực thuê bao")

@@ -91,7 +91,8 @@ class HomePage(BasePage):
                 "width": int(size["width"] * 0.8),
                 "height": int(size["height"] * 0.6),
                 "direction": "down",
-                "percent": 0.7
+                "percent": 0.7,
+                "speed": 500
                 }
             )
 
@@ -128,7 +129,8 @@ class HomePage(BasePage):
                     "width": int(size["width"] * 0.6),
                     "height": int(size["height"] * 0.3),
                     "direction": "up",
-                    "percent": 0.6
+                    "percent": 0.6,
+                    "speed": 600
                     }
                     )       
             time.sleep(1)
