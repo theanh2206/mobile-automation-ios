@@ -162,6 +162,7 @@ def test_mobigames_register(driver):
     homepage.wait_for_result("MobiGames")
     homepage.click_button_see_all()
     homepage.click_mobigames_detail()
+    homepage.press_back()
     homepage.click_mobigames_register1()
     homepage.click_mobigames_register2()
     homepage.input_otp("888888")
@@ -400,3 +401,44 @@ def test_click_customer_support4(driver):
     homepage.click_icon(4)
     homepage.wait_for_result("Xác thực thuê bao")
     assert homepage.is_result_displayed("Xác thực thuê bao")
+    
+#TC32 - Click vào từng banner
+@pytest.mark.tc32
+def test_click_banner(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.click_banner()
+    homepage.wait_for_result("Thông tin chung")
+    assert homepage.is_result_displayed("Thông tin chung")
+@pytest.mark.tc32_1   
+def test_click_banner1(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.swipe_banner(1)
+    homepage.click_banner()
+    homepage.wait_for_result("Thông báo")
+    assert homepage.is_result_displayed("Thông báo")
+@pytest.mark.tc32_2   
+def test_click_banner2(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.swipe_banner(2)
+    homepage.click_banner()
+    homepage.wait_for_result("Thông báo")
+    assert homepage.is_result_displayed("Thông báo")
+@pytest.mark.tc32_3   
+def test_click_banner3(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.swipe_banner(3)
+    homepage.click_banner()
+    homepage.wait_for_result("khuyenmai")
+    assert homepage.is_result_displayed("khuyenmai")
+@pytest.mark.tc32_4   
+def test_click_banner4(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element("Hỗ trợ khách hàng")
+    homepage.swipe_banner(4)
+    homepage.click_banner()
+    homepage.wait_for_result("Gói Data ngày D5")
+    assert homepage.is_result_displayed("Gói Data ngày D5")

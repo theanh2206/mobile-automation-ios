@@ -1,71 +1,20 @@
 from appium.webdriver.common.appiumby import AppiumBy
 from pages.BasePage_page import BasePage
+from pages.LocatorPage_page import LocatorPage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from selenium.webdriver.common.actions.pointer_input import PointerInput
+from selenium.webdriver.common.actions import interaction
+from selenium.common.exceptions import NoSuchElementException
 import time
 
 
 class HomePage(BasePage):
+    locators = LocatorPage()
 
-    # ===== LOCATORS =====
-    SEARCH_BOX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch4x")
-    SEARCH_INPUT = (AppiumBy.CLASS_NAME, "android.widget.EditText")
-    AVATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivAvatar")
-    MENU = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivMenu")
-    NOTIFICATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivNotification")
-    DETAIL_D5 = (AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvPackName" and @text="D5"]')
-    REGISTER_BUTTON = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRegister")
-    BUTTON_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCancelPackage")
-    BUTTON_CONTINUTE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
-    BACKGROUND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBack")
-    BUTTON_SEE_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSeeAll")
-    RECHARGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRecharge")
-    
-    #---Dịch vụ mobigames
-    MOBIGAMES_DETAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivThumb")
-    MOBIGAMES_REGISTER1 = (AppiumBy.XPATH, '(//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvRegister"])[1]')
-    MOBIGAMES_REGISTER2 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
-    MOBIGAME_UNREGISTER = (AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvRegister" and @text="Hủy"]')
-    #---Gói cước của bạn
-    BUTTON_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvExtendPackage")
-    BUTTON_CANCEL_EXTEND = (AppiumBy.ID,"vms.com.vn.mymobifone:id/tvCancelExtendPackage")
-    DETAIL_MY_PAKAGE = (AppiumBy.XPATH, '//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlPB4"]')
-    BUTTON_CONFIRM_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmExtend")
-    BUTTON_CONFIRM_CANCEL_EXTEND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvConfirmCancelExtend")
-    #-- Thông tin sử dụng/tiện ích nổi bật
-    CVQT = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[1]')
-    KNDL1 = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[4]')
-    VTC83 = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[5]')
-    KHS = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[6]')
-    BUTTON_BACK_LEFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivLeftIcon")
-    #--Tiện ích của bạn
-    
-    #--Tất cả tiện ích
-    VIEW_ALL_UTILS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvViewAllUtils")
-    
-    
-    BTN_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btCancel")
-    INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
-    INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
-    INFOR_LOOKUP = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineCheckCharges"]/android.widget.ImageView')
-    BUTTON_BACK = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivBack")
-    DEPOSITE_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryTopup"]/android.widget.ImageView')
-    SUBCRIBER_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryPackage"]/android.widget.ImageView')
-    BUTTON_BUY_PAKAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBuyPackage")
-    BUTTON_REGISTER_KNDL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvRegKNDL")
-    KNDL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivCardLoyalty")
-    # Hẹn roaming
-    BUTTON_RESHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnDoiLichHen")
-    BUTTON_CANCEL_SCHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnHuyRoaming")
-    BUTTON_SUBMIT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnSubmit")
-    ET_TIME = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etTime")
-    #Đổi số điện thoại con
-    CHANGE_NUMBER = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/llChangeNumber"]/android.widget.ImageView')
-    NEW_NUMBER = (AppiumBy.XPATH, '(//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlView"])[2]')
-    ADD_PHONE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlAddPhone")
-    INPUT_PHONE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etPhoneNumber")
-    BUTTON_ACCEPT =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btAccept")
+    # ===== LOCATORS ===== 
 #      ===== ACTION =====
     # Hàm scroll tới phần tử cụ thể
     def scroll_to_element(self, text, max_scroll=6):
@@ -157,7 +106,24 @@ class HomePage(BasePage):
                 "direction": direction,
                 "percent": 0.8
             })
-    
+    #Swipe banner ngang
+    def swipe_banner(self, times=1, duration=1200, delay=0.5):
+        try:
+            banner = self.driver.find_element(
+            By.ID, "vms.com.vn.mymobifone:id/rlSliderBannerHome"
+        )
+        except NoSuchElementException:
+            raise Exception("❌ Không tìm thấy banner để swipe")
+        location = banner.location
+        size = banner.size
+    # 👉 Tối ưu khoảng cách swipe (gần full width)
+        start_x = int(location['x'] + size['width'] * 0.95)
+        end_x = int(location['x'] + size['width'] * 0.05)
+        y = int(location['y'] + size['height'] / 2)
+        for i in range(times):
+            print(f"👉 Swipe lần {i+1}")
+            self.driver.swipe(start_x, y, end_x, y, duration)
+            time.sleep(delay)
     
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
@@ -180,109 +146,112 @@ class HomePage(BasePage):
     )
     # Hàm tìm kiếm gói cước
     def search_package(self, keyword):
-        self.click(self.SEARCH_BOX)
-        self.send_keys(self.SEARCH_INPUT, keyword)
+        self.click(self.locators.SEARCH_BOX)
+        self.send_keys(self.locators.SEARCH_INPUT, keyword)
     # Hàm click mua gói
     def click_recharge(self):
-        self.click(self.RECHARGE)
+        self.click(self.locators.RECHARGE)
     #Click butto tất cả tiện ích
     def click_view_all_utils(self):
-        self.click(self.VIEW_ALL_UTILS)
+        self.click(self.locators.VIEW_ALL_UTILS)
     #Click Mobigame
     #----Register
     def click_mobigames_detail(self):
-        self.click(self.MOBIGAMES_DETAIL)
+        self.click(self.locators.MOBIGAMES_DETAIL)
     def click_mobigames_register1(self):
-        self.click(self.MOBIGAMES_REGISTER1)
+        self.click(self.locators.MOBIGAMES_REGISTER1)
     def click_mobigames_register2(self):
-        self.click(self.MOBIGAMES_REGISTER2)
+        self.click(self.locators.MOBIGAMES_REGISTER2)
     #----Unregister
     def click_mobigames_unregister(self):
-        self.click(self.MOBIGAME_UNREGISTER)
+        self.click(self.locators.MOBIGAME_UNREGISTER)
     
     #Click button Back
     def click_button_back(self):
-        self.click(self.BUTTON_BACK)
+        self.click(self.locators.BUTTON_BACK)
     #Click button Xem tất cả
     def click_button_see_all(self):
-        self.click(self.BUTTON_SEE_ALL)
+        self.click(self.locators.BUTTON_SEE_ALL)
     #Click icon avata
     def click_avata(self):
-        self.click(self.AVATA)    
+        self.click(self.locators.AVATA)    
     #Click icon Thông báo
     def click_notification(self):
-        self.click(self.NOTIFICATION)
+        self.click(self.locators.NOTIFICATION)
+    #Click banner
+    def click_banner(self):
+        self.click(self.locators.BANNER)
     #Click vào menu
     def click_menu(self):
-        self.click(self.MENU)    
+        self.click(self.locators.MENU)    
     #Click thông tin sử dung   
     def click_infomation(self):
-        self.click(self.INFORMATION)
+        self.click(self.locators.INFORMATION)
     #Click thông tin thuê bao    
     def click_infor_subcriber(self): 
-        self.click(self.INFOR_SUBCRIBER)
+        self.click(self.locators.INFOR_SUBCRIBER)
     #Click Tra cứu thông tin cước
     def click_infor_lookup(self):
-        self.click(self.INFOR_LOOKUP)
+        self.click(self.locators.INFOR_LOOKUP)
     #CLick icon Lịch sử nạp tiền
     def click_deposite_history(self):
-        self.click(self.DEPOSITE_HISTORY)
+        self.click(self.locators.DEPOSITE_HISTORY)
     #CLick icon lịch sử gói cước
     def click_subcriber_history(self):
-        self.click(self.SUBCRIBER_HISTORY)
+        self.click(self.locators.SUBCRIBER_HISTORY)
     #Click button Mua thêm trong thông tin sử dụng
     def click_button_buy_pakage(self):
-        self.click(self.BUTTON_BUY_PAKAGE)
+        self.click(self.locators.BUTTON_BUY_PAKAGE)
     #Click button Đăng ký thẻ KNDL
     def click_button_register_KNDL(self):
-        self.click(self.BUTTON_REGISTER_KNDL)
+        self.click(self.locators.BUTTON_REGISTER_KNDL)
     #Click card KNDL (SĐT đã đăng ký KNDL)
     def click_card_kndl(self):
-        self.click(self.KNDL)
+        self.click(self.locators.KNDL)
     #Click thẻ gói cước D5
     def click_card_D5(self):
-        self.click(self.DETAIL_D5)
+        self.click(self.locators.DETAIL_D5)
     #Click button đăng ký D5
     def click_register_d5(self):
-        self.click(self.REGISTER_BUTTON)
+        self.click(self.locators.REGISTER_BUTTON)
     #Click button Huỷ đăng ký
     def click_button_cancel(self):
-        self.click(self.BUTTON_CANCEL)
+        self.click(self.locators.BUTTON_CANCEL)
     #Click button continute
     def click_button_continute(self):
-        self.click(self.BUTTON_CONTINUTE)
+        self.click(self.locators.BUTTON_CONTINUTE)
     #-----Gói cước của bạn-------
     def click_button_extend(self):
-        self.click(self.BUTTON_EXTEND)
+        self.click(self.locators.BUTTON_EXTEND)
     def click_button_cancel_extend(self):
-        self.click(self.BUTTON_CANCEL_EXTEND)
+        self.click(self.locators.BUTTON_CANCEL_EXTEND)
     def click_detail_my_pakage(self):
-        self.click(self.DETAIL_MY_PAKAGE)    
+        self.click(self.locators.DETAIL_MY_PAKAGE)    
     def click_button_confirm_cancel_extend(self):
-        self.click(self.BUTTON_CONFIRM_CANCEL_EXTEND)
+        self.click(self.locators.BUTTON_CONFIRM_CANCEL_EXTEND)
     def click_button_confirm_extend(self):
-        self.click(self.BUTTON_CONFIRM_EXTEND)
+        self.click(self.locators.BUTTON_CONFIRM_EXTEND)
     #---Hẹn roaming ------
     def click_button_reschedule(self):
-        self.click(self.BUTTON_RESHEDULE)
+        self.click(self.locators.BUTTON_RESHEDULE)
     def click_button_cancel_schedule(self):
-        self.click(self.BUTTON_CANCEL_SCHEDULE)
+        self.click(self.locators.BUTTON_CANCEL_SCHEDULE)
     def click_button_submit(self):
-        self.click(self.BUTTON_SUBMIT)
+        self.click(self.locators.BUTTON_SUBMIT)
     def et_time(self, keword):
-        self.click(self.ET_TIME)
-        self.send_keys(self.ET_TIME, keword)
+        self.click(self.locators.ET_TIME)
+        self.send_keys(self.locators.ET_TIME, keword)
     #Thông tin sử dụng/Tiện ích nổi bật
     def click_kndl1(self):
-        self.click(self.KNDL1)
+        self.click(self.locators.KNDL1)
     def click_cvqt(self):
-        self.click(self.CVQT)    
+        self.click(self.locators.CVQT)    
     def click_vtc83(self):
-        self.click(self.VTC83)
+        self.click(self.locators.VTC83)
     def click_khs(self):
-        self.click(self.KHS)
+        self.click(self.locators.KHS)
     def click_button_back_left(self):
-        self.click(self.BUTTON_BACK_LEFT)
+        self.click(self.locators.BUTTON_BACK_LEFT)
         
     # Tiện ích của bạn
     def click_icon(self, index):
@@ -297,14 +266,14 @@ class HomePage(BasePage):
         
     # Đổi số điện thoại con
     def click_change_number(self):
-        self.click(self.CHANGE_NUMBER)
+        self.click(self.locators.CHANGE_NUMBER)
     def click_new_number(self):
-        self.click(self.NEW_NUMBER)
+        self.click(self.locators.NEW_NUMBER)
     def add_phone(self, keyword):
-        self.click(self.ADD_PHONE)
-        self.send_keys(self.INPUT_PHONE, keyword)
+        self.click(self.locators.ADD_PHONE)
+        self.send_keys(self.locators.INPUT_PHONE, keyword)
     def click_button_accept(self):
-        self.click(self.BUTTON_ACCEPT)
+        self.click(self.locators.BUTTON_ACCEPT)
     #Close menu
     def close_menu(self):
         self.tap_outside()
