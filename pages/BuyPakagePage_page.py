@@ -44,6 +44,8 @@ class BuyPakagePage(BasePage):
         self.click(self.locators.BUTTON_CREATE_PAKAGE)
     def click_payment_confirm(self):
         self.click(self.locators.PAYMENT_CONFIRM)
+    def click_button_accept(self):
+        self.click(self.locators.BUTTON_ACCEPT)
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
