@@ -36,11 +36,9 @@ class LocatorPage:
     KHS = (AppiumBy.XPATH, '(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[6]')
     BUTTON_BACK_LEFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivLeftIcon")
     #--Tiện ích của bạn
-    
+
     #--Tất cả tiện ích
     VIEW_ALL_UTILS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvViewAllUtils")
-    
-    
     BTN_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btCancel")
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")

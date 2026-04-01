@@ -87,7 +87,6 @@ def pytest_runtest_makereport(item, call):
 
     if report.when != "call" and not report.skipped:
         return
-
     message = ""
     if report.failed:
         message = str(report.longrepr)

@@ -41,7 +41,6 @@ class CSVReporter:
 
             if not file_exists:
                 writer.writeheader()
-
             writer.writerows(self.results)
 
         # QUAN TRỌNG: clear sau khi ghi
