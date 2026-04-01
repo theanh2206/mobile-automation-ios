@@ -13,9 +13,6 @@ import time
 
 class HomePage(BasePage):
     locators = LocatorPage()
-
-    # ===== LOCATORS ===== 
-#      ===== ACTION =====
     # Hàm scroll tới phần tử cụ thể
     def scroll_to_element(self, text, max_scroll=6):
         size = self.driver.get_window_size()

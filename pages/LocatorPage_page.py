@@ -4,7 +4,7 @@ from pages.BasePage_page import BasePage
 
 
 class LocatorPage:
-    # ===== LOCATORS =====
+    BUY_PAKAGE = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[2]')
     SEARCH_BOX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch4x")
     SEARCH_INPUT = (AppiumBy.CLASS_NAME, "android.widget.EditText")
     AVATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivAvatar")
@@ -62,3 +62,10 @@ class LocatorPage:
     BUTTON_ACCEPT =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btAccept")
     # Banner
     BANNER = (AppiumBy.XPATH, '//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivBannerService"]')
+    
+    #Tạo gói cước cá nhân
+    PERSONAL_FLEX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlPersonalFlex")
+    TIME_FLEX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlTimeFlex")
+    ICON_CVQT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlCvqt")
+    BUTTON_CREATE_PAKAGE =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btCreatePackage")
+    PAYMENT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvPaymentConfirm")
