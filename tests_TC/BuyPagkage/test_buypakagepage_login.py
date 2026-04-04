@@ -84,6 +84,20 @@ def test_create_pakage_PIN(driver):
     buypakage.click_button_accept()
     buypakage.wait_for_result("Đăng ký gói cước thành công")
     assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+#3. Huỷ gói cước cá nhân
+@pytest.mark.tc47_2
+def test_cancel_pakage_PIN(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_personal_flex()
+    buypakage.click_button_create_pakage()
+    buypakage.click_button_cancel()
+    buypakage.click_button_continute()
+    buypakage.input_otp("888888")
+    buypakage.click_button_accept()
+    buypakage.wait_for_result("Huỷ gói cước thành công")
+    assert buypakage.is_result_displayed("Huỷ gói cước thành công")
+
 #TC48. Tạo gói cước linh hoạt thời gian
 #1. Đăng ký bằng OTP
 @pytest.mark.tc48
@@ -108,6 +122,18 @@ def test_create_pakage_flex_PIN(driver):
     buypakage.click_button_accept()
     buypakage.wait_for_result("Đăng ký gói cước thành công")
     assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+#3. Huỷ gói cước linh hoạt
+@pytest.mark.tc48_2
+def test_cancel_pakage_flex(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_time_flex()
+    buypakage.click_register_button2()
+    buypakage.click_button_cancel()
+    buypakage.click_button_continute()
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Huỷ gói cước thành công")
+    assert buypakage.is_result_displayed("Huỷ gói cước thành công")
     
 #TC49. Tìm kiếm gói bằng gói cước/quốc gia
 @pytest.mark.tc49
