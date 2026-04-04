@@ -46,6 +46,59 @@ class BuyPakagePage(BasePage):
         self.click(self.locators.PAYMENT_CONFIRM)
     def click_button_accept(self):
         self.click(self.locators.BUTTON_ACCEPT)
+    def click_register_button2(self):
+        self.click(self.locators.REGISTER_BUTTON2)
+        
+    # Chuyển vùng quốc tế
+    #1. Click kiểm tra trước chuyến đi
+    def click_check_trip(self):
+        self.click(self.locators.CHECK_TRIP)
+    #2. Search gói cước/ quốc gia
+    def click_search_by_key(self, keyword):
+        self.click(self.locators.SEARCH_BY_KEY)
+        self.send_keys(self.locators.SEARCH_BY_KEY, keyword)
+    def click_search_country(self):
+        self.click(self.locators.SEARCH_COUNTRY)
+    def send_key_country(self, keyword):
+        self.send_keys(self.locators.SEARCH_COUNTRY1, keyword)
+    #3. Click button áp dụng
+    def click_button_apply(self):
+        self.click(self.locators.BUTTON_APPLY)
+    #4. Click tên quốc gia trong tìm kiếm quốc gia
+    def click_country(self, keyword):
+        for _ in range(5):
+            elements = self.driver.find_elements(
+            AppiumBy.ANDROID_UIAUTOMATOR,
+            f'new UiSelector().textContains("{keyword}")'
+        )
+            if elements:
+                elements[0].click()
+            return
+        
+        # swipe lên
+        self.driver.swipe(500, 1500, 500, 500, 800)
+
+        raise Exception(f"Không tìm thấy country: {keyword}")
+    #5. Click các quốc gia phổ biến
+    def click_popular_country(self, index):
+        elements = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_elements(
+                AppiumBy.XPATH,
+            '//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvCountryPackages"]//android.widget.LinearLayout'
+        )
+    )
+
+        if index > len(elements):
+            raise Exception(f"Chỉ có {len(elements)} item, không có item {index}")
+
+        elements[index - 1].click()
+    #6. Click gói cước tạo data roaming linh hoạt
+    def click_pakage_roaming(self):
+        self.click(self.locators.PAKAGE_ROAMING)
+    #7. Click tạo gói cước data roaming 
+    def click_create_pakage_roaming(self):
+        self.click(self.locators.CREATE_PAKAGE_ROAMING)
+    
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(

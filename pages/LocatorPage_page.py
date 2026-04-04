@@ -69,3 +69,13 @@ class LocatorPage:
     ICON_CVQT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlCvqt")
     BUTTON_CREATE_PAKAGE =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btCreatePackage")
     PAYMENT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvPaymentConfirm")
+    REGISTER_BUTTON2 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btRegister")
+    
+    #Chuyển vùng quốc tế
+    SEARCH_COUNTRY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSearchCountry")
+    SEARCH_BY_KEY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearchByKey")
+    SEARCH_COUNTRY1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
+    BUTTON_APPLY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvApply")
+    CHECK_TRIP = (AppiumBy.XPATH, '//android.widget.TextView[@text="Kiểm tra trước chuyến đi"]')
+    PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvMsgPackageRoamFlexCreate")
+    CREATE_PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCreatePackageRoamFlex")
