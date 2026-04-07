@@ -1,0 +1,109 @@
+2026-04-05 15:13:44,970 | INFO | [test_click_guide_by_text] ✅ PASSED (16.48s)
+2026-04-05 15:18:19,178 | INFO | [test_click_guide_by_text] ✅ PASSED (25.88s)
+2026-04-05 15:38:40,422 | INFO | [test_click_question_by_text] ✅ PASSED (22.56s)
+2026-04-06 10:00:38,571 | ERROR | [test_register_pakage] ❌ FAILED (35.31s)
+2026-04-06 10:00:38,571 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-06 10:00:38,572 | ERROR | 📍 Line: 122
+2026-04-06 10:00:38,572 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-04-06 10:02:06,339 | ERROR | [test_register_pakage] ❌ FAILED (32.9s)
+2026-04-06 10:02:06,340 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-06 10:02:06,340 | ERROR | 📍 Line: 122
+2026-04-06 10:02:06,340 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-06 10:05:52,870 | ERROR | [test_register_pakage] ❌ FAILED (32.69s)
+2026-04-06 10:05:52,871 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-06 10:05:52,871 | ERROR | 📍 Line: 122
+2026-04-06 10:05:52,871 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-06 10:37:26,002 | ERROR | [test_register_pakage] ❌ FAILED (33.49s)
+2026-04-06 10:37:26,003 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-06 10:37:26,003 | ERROR | 📍 Line: 122
+2026-04-06 10:37:26,004 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-06 10:41:51,793 | ERROR | [test_register_pakage] ❌ FAILED (44.55s)
+2026-04-06 10:41:51,794 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-06 10:41:51,794 | ERROR | 📍 Line: 122
+2026-04-06 10:41:51,794 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-06 15:42:44,229 | ERROR | [test_click_list_categories] ❌ FAILED (13.28s)
+2026-04-06 15:42:44,229 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/BuyPakagePage_page.py
+2026-04-06 15:42:44,230 | ERROR | 📍 Line: 252
+2026-04-06 15:42:44,230 | ERROR | 📍 Error: AttributeError: 'BuyPakagePage' object has no attribute 'swipe_categories'
+2026-04-06 15:45:25,867 | INFO | [test_click_list_categories] ✅ PASSED (11.38s)
+2026-04-06 15:47:39,869 | INFO | [test_click_list_categories] ✅ PASSED (10.08s)
+2026-04-07 10:38:32,014 | ERROR | [test_click_list_categories] ❌ FAILED (12.56s)
+2026-04-07 10:38:32,015 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/BuyPakagePage_page.py
+2026-04-07 10:38:32,015 | ERROR | 📍 Line: 287
+2026-04-07 10:38:32,015 | ERROR | 📍 Error: Exception: Không tìm thấy category: Gói HOT
+2026-04-07 10:40:58,408 | ERROR | [test_click_list_categories] ❌ FAILED (27.99s)
+2026-04-07 10:40:58,409 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-07 10:40:58,409 | ERROR | 📍 Line: 122
+2026-04-07 10:40:58,409 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-07 10:41:27,442 | ERROR | [test_click_list_categories] ❌ FAILED (12.58s)
+2026-04-07 10:41:27,442 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/BuyPakagePage_page.py
+2026-04-07 10:41:27,442 | ERROR | 📍 Line: 287
+2026-04-07 10:41:27,442 | ERROR | 📍 Error: Exception: Không tìm thấy category: Gói HOT
+2026-04-07 11:02:05,662 | ERROR | [test_click_list_categories] ❌ FAILED (7.04s)
+2026-04-07 11:02:05,662 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/BuyPagkage/test_buypakagepage_login.py
+2026-04-07 11:02:05,663 | ERROR | 📍 Line: 323
+2026-04-07 11:02:05,663 | ERROR | 📍 Error: TypeError: BuyPakagePage.swipe_categories() takes 1 positional argument but 2 were given
+2026-04-07 11:02:33,397 | ERROR | [test_click_list_categories] ❌ FAILED (8.84s)
+2026-04-07 11:02:33,397 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/BuyPagkage/test_buypakagepage_login.py
+2026-04-07 11:02:33,397 | ERROR | 📍 Line: 323
+2026-04-07 11:02:33,398 | ERROR | 📍 Error: TypeError: BuyPakagePage.swipe_categories() takes 1 positional argument but 2 were given
+2026-04-07 11:04:20,057 | INFO | [test_click_list_categories] ✅ PASSED (11.48s)
+2026-04-07 11:07:17,841 | INFO | [test_click_list_categories] ✅ PASSED (14.65s)
+2026-04-07 11:08:22,244 | INFO | [test_click_list_categories] ✅ PASSED (15.53s)
+2026-04-07 14:17:58,385 | INFO | [test_click_radio_button_cycle] ✅ PASSED (12.54s)
+2026-04-07 14:18:30,611 | INFO | [test_click_radio_button_cycle] ✅ PASSED (11.99s)
+2026-04-07 14:19:33,249 | INFO | [test_click_radio_button_cycle] ✅ PASSED (17.87s)
+2026-04-07 14:20:34,937 | INFO | [test_click_radio_button_cycle] ✅ PASSED (12.16s)
+2026-04-07 14:46:34,775 | INFO | [test_click_radio_button_cycle] ✅ PASSED (13.07s)
+2026-04-07 14:49:41,362 | INFO | [test_click_sort_data] ✅ PASSED (27.41s)
+2026-04-07 14:50:22,648 | ERROR | [test_click_sort_data] ❌ FAILED (17.28s)
+2026-04-07 14:50:22,649 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/BuyPagkage/test_buypakagepage_login.py
+2026-04-07 14:50:22,649 | ERROR | 📍 Line: 364
+2026-04-07 14:50:22,649 | ERROR | 📍 Error: AssertionError: assert False
+ +  where False = is_result_displayed('135.000đ')
+ +    where is_result_displayed = <pages.BuyPakagePage_page.BuyPakagePage object at 0x10622d400>.is_result_displayed
+2026-04-07 14:51:23,401 | ERROR | [test_click_sort_data] ❌ FAILED (32.56s)
+2026-04-07 14:51:23,401 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-07 14:51:23,401 | ERROR | 📍 Line: 122
+2026-04-07 14:51:23,401 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-07 14:51:56,515 | INFO | [test_click_sort_data] ✅ PASSED (13.01s)

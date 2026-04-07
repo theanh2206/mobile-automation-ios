@@ -33,6 +33,8 @@ class BuyPakagePage(BasePage):
     #Click button continute
     def click_button_continute(self):
         self.click(self.locators.BUTTON_CONTINUTE)
+    def click_button_continute1(self):
+        self.click(self.locators.BUTTON_CONTINUTE1)
     #Click icon tạo gói cước cá nhân
     def click_personal_flex(self):
         self.click(self.locators.PERSONAL_FLEX)
@@ -98,6 +100,14 @@ class BuyPakagePage(BasePage):
     #7. Click tạo gói cước data roaming 
     def click_create_pakage_roaming(self):
         self.click(self.locators.CREATE_PAKAGE_ROAMING)
+    # Click hướng dẫn sử dụng
+    def click_guide_by_text(self, text):
+        xpath = f'//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvQuestion" and @text="{text}"]'
+    
+        element = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_element(AppiumBy.XPATH, xpath)
+            )
+        element.click()
     
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
@@ -229,7 +239,41 @@ class BuyPakagePage(BasePage):
             print(f"👉 Swipe lần {i+1}")
             self.driver.swipe(start_x, y, end_x, y, duration)
             time.sleep(delay)
+    #Swipe danh mục các nhóm gói
+    def swipe_categories(self):
+        element = self.driver.find_element(
+            AppiumBy.ID,"vms.com.vn.mymobifone:id/rvListCategories")
+
+        location = element.location
+        size = element.size
+        start_x = int(location['x'] + size['width'] * 0.9)
+        end_x = int(location['x'] + size['width'] * 0.1)
+        y = int(location['y'] + size['height'] / 2)
+
+        self.driver.swipe(start_x, y, end_x, y, 500)
         
+    #Click categories
+    def click_category_by_index(self, index):
+        try:
+            xpath = f'(//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineRoot"])[{index}]'
+        
+            element = self.driver.find_element(AppiumBy.XPATH, xpath)
+            element.click()
+        except Exception as e:
+            raise Exception(f"Không tìm thấy category tại vị trí: {index}") from e
+        
+    #Kiểm tra click chọn từng chu kỳ 
+    def click_radio_button_all(self):
+        self.click(self.locators.RADIO_BUTTON_ALL)
+    def click_radio_button_days(self):
+        self.click(self.locators.RADIO_BUTTON_DAYS)
+    def click_radio_button_months(self):
+        self.click(self.locators.RADIO_BUTTON_MONTHS)
+    def click_sort_price(self):
+        self.click(self.locators.SORT_PRICE)
+    def click_sort_data(self):
+        self.click(self.locators.SORT_DATA)
+   
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)

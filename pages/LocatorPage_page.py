@@ -14,6 +14,7 @@ class LocatorPage:
     REGISTER_BUTTON = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRegister")
     BUTTON_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCancelPackage")
     BUTTON_CONTINUTE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
+    BUTTON_CONTINUTE1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvContinue")
     BACKGROUND = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBack")
     BUTTON_SEE_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSeeAll")
     RECHARGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRecharge")
@@ -79,3 +80,13 @@ class LocatorPage:
     CHECK_TRIP = (AppiumBy.XPATH, '//android.widget.TextView[@text="Kiểm tra trước chuyến đi"]')
     PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvMsgPackageRoamFlexCreate")
     CREATE_PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCreatePackageRoamFlex")
+    
+    #Chọn chu kỳ gói cước
+    RADIO_BUTTON_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rbAll")
+    RADIO_BUTTON_DAYS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rbDays")
+    RADIO_BUTTON_MONTHS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rbMonths")
+    
+    #Bộ lọc theo giá, dung lượng
+    SORT_PRICE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSortingPrice")
+    SORT_DATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSortingData")
+     
