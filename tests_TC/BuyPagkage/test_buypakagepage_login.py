@@ -341,7 +341,7 @@ def test_click_radio_button_cycle(driver):
     
 
 #TC60. Lọc gói cước theo giá
-@pytest.mark.tc59
+@pytest.mark.tc60
 def test_click_sort_price(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
@@ -351,8 +351,8 @@ def test_click_sort_price(driver):
     buypakage.click_sort_price()
     buypakage.wait_for_result("TK159")
     assert buypakage.is_result_displayed("TK159")
-#TC60. Lọc gói cước dung lượng
-@pytest.mark.tc60
+#TC61. Lọc gói cước dung lượng
+@pytest.mark.tc61
 def test_click_sort_data(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
@@ -362,3 +362,125 @@ def test_click_sort_data(driver):
     buypakage.click_sort_data()
     buypakage.wait_for_result("5.000đ")
     assert buypakage.is_result_displayed("5.000đ")
+
+#Màn hình tất cả gói cước
+#TC62. Tìm kiếm gói cước tồn tại 
+@pytest.mark.tc62
+def test_search_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.search_package1("D5")
+    buypakage.wait_for_result("D5")
+    assert buypakage.is_result_displayed("D5")
+#TC63. Tìm kiếm gói cước không tồn tại 
+@pytest.mark.tc63
+def test_search_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.search_package1("Thế Anh")
+    buypakage.wait_for_result("Không tìm thấy gói cước phù hợp với kết quả tìm kiếm")
+    assert buypakage.is_result_displayed("Không tìm thấy gói cước phù hợp với kết quả tìm kiếm")
+#TC64. Đăng ký gói cước bằng OTP
+@pytest.mark.tc64
+def test_register_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.search_package1("D5")
+    buypakage.click_register_d5()   
+    buypakage.hide_keyboard()
+    buypakage.click_button_continute1()
+    buypakage.click_payment_confirm()
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Đăng ký gói cước thành công")
+    assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+
+#TC65 Huỷ gói cước bằng OTP
+@pytest.mark.tc65
+def test_register_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.search_package1("D5") 
+    buypakage.click_button_cancel()
+    buypakage.hide_keyboard()
+    buypakage.click_button_continute1()
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Đăng ký gói cước thành công")
+    assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+
+#TC66 Hẹn roaming 
+@pytest.mark.tc66
+def test_book_roaming(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.click_button_detail()
+    buypakage.click_schedule_roaming()
+    buypakage.et_time("22062026")
+    buypakage.click_button_submit()
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Đặt lịch hẹn thành công")
+    assert buypakage.is_result_displayed("Đặt lịch hẹn thành công")
+
+#TC67. Hẹn roaming 
+@pytest.mark.tc67
+def test_book_roaming(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.click_button_detail()
+    buypakage.click_contact_consulting()
+    buypakage.send_phone_number("0931791607") 
+    buypakage.select_day_contact(30)
+    buypakage.select_time_contact()
+    buypakage.hide_keyboard()
+    buypakage.click_button_book()
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Đặt lịch liên hệ tư vấn thành công")
+    assert buypakage.is_result_displayed("Đặt lịch liên hệ tư vấn thành công")
+    
+#TC68. Tặng gói cước 
+@pytest.mark.tc68
+def test_gift_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.click_button_detail()
+    buypakage.gift_pakage("0931791607")
+    buypakage.input_otp("888888")
+    buypakage.wait_for_result("Tặng gói cước thành công")
+    assert buypakage.is_result_displayed("Tặng gói cước thành công")
+    
+#TC69. Chia sẻ gói cước
+@pytest.mark.tc69
+def test_share_pakage(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    buypakage.click_view_all_pakage()
+    buypakage.click_button_detail()
+    buypakage.share_pakage()
+    buypakage.wait_for_result("https://apitest.mobifone.vn/8b85zq1FE5")
+    assert buypakage.is_result_displayed("https://apitest.mobifone.vn/8b85zq1FE5")
+
+#TC70. Click vào từng tiện ích
+@pytest.mark.tc70
+def test_click_utilities(driver):
+    buypakage = BuyPakagePage(driver)
+    buypakage.click_buy_pakage()
+    # buypakage.scroll_to_element("TNEX Finance")
+    buypakage.click_icon(8)
+    buypakage.click_btn_cancel()
+    buypakage.click_icon(9)
+    buypakage.click_btn_cancel()
+    buypakage.click_icon(10)
+    buypakage.click_icon(11)
+    buypakage.press_back()
+    buypakage.click_icon(12)
+    buypakage.press_back()
+    buypakage.click_icon(13)
+    buypakage.click_icon(14)
+    buypakage.wait_for_text("Xác thực thuê bao")
+    assert buypakage.is_result_displayed("Xác thực thuê bao")

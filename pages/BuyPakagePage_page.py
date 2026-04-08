@@ -18,6 +18,9 @@ class BuyPakagePage(BasePage):
     def search_package(self, keyword):
         self.click(self.locators.SEARCH_BOX)
         self.send_keys(self.locators.SEARCH_INPUT, keyword)
+    def search_package1(self, keyword):
+        self.click(self.locators.SEARCH_BOX1)
+        self.send_keys(self.locators.SEARCH_INPUT, keyword)
     #Click thẻ gói cước D5
     def click_card_D5(self):
         self.click(self.locators.DETAIL_D5)
@@ -100,6 +103,55 @@ class BuyPakagePage(BasePage):
     #7. Click tạo gói cước data roaming 
     def click_create_pakage_roaming(self):
         self.click(self.locators.CREATE_PAKAGE_ROAMING)
+    #Liên hệ tư vấn
+    def click_contact_consulting(self):
+        self.click(self.locators.BUTTON_CONTACT_CONSULTING)
+    def send_phone_number(self, keyword):
+        self.click(self.locators.PHONE_NUMBER)
+        self.send_keys(self.locators.PHONE_NUMBER, keyword)
+    def select_day_contact(self, index):
+        self.click(self.locators.DAY_CONTACT)
+        self.wait_for_result("Xác nhận")
+        try:
+            xpath = f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvDays"]/android.widget.RelativeLayout[{index}]'
+        
+            element = self.driver.find_element(AppiumBy.XPATH, xpath)
+            element.click()
+        except Exception as e:
+            raise Exception(f"Không tìm thấy ngày tại vị trí: {index}") from e
+        self.click(self.locators.BUTTON_SUBMIT)
+    def select_time_contact(self):
+        self.click(self.locators.TIME_CONTACT)
+        self.click(self.locators.SELECT_TIME)
+    def click_button_book(self):
+        self.click(self.locators.BOOK)
+    # Tặng/chia sẻ gói cước
+    def gift_pakage(self, keyword):
+        self.click(self.locators.GIFT)
+        self.send_keys(self.locators.PHONE_RECIEVE, keyword)
+        self.hide_keyboard()
+        self.click(self.locators.GIFT_CONFIRM)
+    def share_pakage(self):
+        self.click(self.locators.ICON_SHARE)
+        self.click(self.locators.BUTTON_SHARE)
+    # Tiện ích của bạn
+    def click_icon(self, index):
+        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
+        self.click(locator)
+    #CLick button chi tiết gói cước
+    def click_detail_pakage(self):
+        self.click(self.locators.DETAIL_D5)
+    #CLick button hẹn roaming
+    def click_schedule_roaming(self):
+        self.click(self.locators.BUTTON_SCHEDULE_ROAMING)
+    def click_button_submit(self):
+        self.click(self.locators.BUTTON_SUBMIT)
+    def et_time(self, keword):
+        self.click(self.locators.ET_TIME)
+        self.send_keys(self.locators.ET_TIME, keword)
+    #Click button detail pakage
+    def click_button_detail(self):
+        self.click(self.locators.BUTTON_DETAIL)
     # Click hướng dẫn sử dụng
     def click_guide_by_text(self, text):
         xpath = f'//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvQuestion" and @text="{text}"]'
@@ -108,7 +160,9 @@ class BuyPakagePage(BasePage):
             lambda d: d.find_element(AppiumBy.XPATH, xpath)
             )
         element.click()
-    
+        
+    def click_btn_cancel(self):
+        self.click(self.locators.BTN_CANCEL) 
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
@@ -273,6 +327,22 @@ class BuyPakagePage(BasePage):
         self.click(self.locators.SORT_PRICE)
     def click_sort_data(self):
         self.click(self.locators.SORT_DATA)
+    #Màn tất cả gói cước
+    #Click tất cả gói cước
+    def click_view_all_pakage(self):
+        self.click(self.locators.VIEW_ALL_PAKAGE)
+    #Ẩn bàn phím
+    def hide_keyboard(self):
+        try:
+            self.driver.hide_keyboard()
+        except:
+            try:
+                self.driver.back()
+            except:
+                try:
+                    self.driver.tap([(100, 100)])
+                except:
+                    pass
    
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):

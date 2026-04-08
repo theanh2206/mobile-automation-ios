@@ -1,11 +1,11 @@
 from appium.webdriver.common.appiumby import AppiumBy
-from pages.BasePage_page import BasePage
 
 
 
 class LocatorPage:
     BUY_PAKAGE = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[2]')
     SEARCH_BOX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch4x")
+    SEARCH_BOX1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
     SEARCH_INPUT = (AppiumBy.CLASS_NAME, "android.widget.EditText")
     AVATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivAvatar")
     MENU = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivMenu")
@@ -55,6 +55,14 @@ class LocatorPage:
     BUTTON_CANCEL_SCHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnHuyRoaming")
     BUTTON_SUBMIT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnSubmit")
     ET_TIME = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etTime")
+    BUTTON_SCHEDULE_ROAMING =(AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRoamingV2")
+    #Liên hệ tư vấn
+    BUTTON_CONTACT_CONSULTING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvContactConsultingV2")
+    PHONE_NUMBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvPhoneNumber")
+    DAY_CONTACT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/relaSelectDay")
+    TIME_CONTACT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/relaShowSelectTime")
+    SELECT_TIME = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvTime15To17")
+    BOOK = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSchedule")
     #Đổi số điện thoại con
     CHANGE_NUMBER = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/llChangeNumber"]/android.widget.ImageView')
     NEW_NUMBER = (AppiumBy.XPATH, '(//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlView"])[2]')
@@ -89,4 +97,14 @@ class LocatorPage:
     #Bộ lọc theo giá, dung lượng
     SORT_PRICE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSortingPrice")
     SORT_DATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSortingData")
-     
+    
+    #Màn tất cả gói cước
+    VIEW_ALL_PAKAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llViewAll")
+    BUTTON_DETAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvDetail")
+    
+    #Chia sẻ/tặng gói cước
+    GIFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivGift")
+    PHONE_RECIEVE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etPhone")
+    GIFT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btConfirm")
+    ICON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivShare")
+    BUTTON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvShare")

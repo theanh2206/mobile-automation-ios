@@ -255,7 +255,7 @@ class HomePage(BasePage):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
         self.click(locator)
     def click_btn_cancel(self):
-        self.click(self.BTN_CANCEL)
+        self.click(self.locators.BTN_CANCEL)
     #Click dịch vụ nổi bật
     def click_avata_contact(self, index):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatarContact"])[{index}]')
