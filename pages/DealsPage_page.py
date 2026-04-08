@@ -52,16 +52,33 @@ class DealsPage(BasePage):
                 except:
                     pass
     #Mẹo tích điểm
-    #Click icon Ưu đãi
     def click_save_point(self):
         self.click(self.locators.SAVE_POINT)
     def click_list_save_point(self, index):
         locator = (By.XPATH, f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rcvTipsMyPoint"]/android.widget.RelativeLayout[{index}]/android.widget.FrameLayout/android.widget.LinearLayout')
         self.click(locator)
+    #Lịch sử điểm 
+    def click_point_history(self):
+        self.click(self.locators.POINT_HISTORY)
+    def click_list_point_history(self, index):
+        locator = (By.XPATH, f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvListHistoryModel"]/android.widget.LinearLayout[{index}]')
+        self.click(locator)
+    def click_by_text(self, text):
+        try:
+            xpath = f'//android.widget.TextView[contains(@text,"{text}")]'
+        
+            element = WebDriverWait(self.driver, 10).until(
+                lambda d: d.find_element(AppiumBy.XPATH, xpath)
+            )
+            element.click()
+        except Exception as e:
+            raise Exception(f"Không tìm thấy element chứa text: {text}") from e
     
-    
-    
-    
+    def click_close(self):
+        self.click(self.locators.CLOSE)
+    #Lịch sử đơn hàng
+    def click_cart_history(self):
+        self.click(self.locators.CART_HISTORY)
     
     
     

@@ -1,2 +1,11 @@
 test_save_point,tests_TC/Deals/test_deals_login.py::test_save_point,call,FAILED,40.39,R83X20ACPQV,2026-04-08 15:49:03
 test_save_point,tests_TC/Deals/test_deals_login.py::test_save_point,call,FAILED,33.58,R83X20ACPQV,2026-04-08 15:50:22
+test_save_point,tests_TC/Deals/test_deals_login.py::test_save_point,call,FAILED,31.07,R83X20ACPQV,2026-04-08 15:51:48
+test_search_package_D5,tests_TC/Deals/test_deals_login.py::test_search_package_D5,call,PASSED,15.84,R83X20ACPQV,2026-04-08 15:52:30
+test_save_point,tests_TC/Deals/test_deals_login.py::test_save_point,call,FAILED,31.54,R83X20ACPQV,2026-04-08 15:53:38
+test_save_point,tests_TC/Deals/test_deals_login.py::test_save_point,call,PASSED,25.16,R83X20ACPQV,2026-04-08 15:54:54
+test_point_history,tests_TC/Deals/test_deals_login.py::test_point_history,call,FAILED,10.14,R83X20ACPQV,2026-04-08 16:13:21
+test_point_history,tests_TC/Deals/test_deals_login.py::test_point_history,call,FAILED,21.81,R83X20ACPQV,2026-04-08 16:14:37
+test_point_history,tests_TC/Deals/test_deals_login.py::test_point_history,call,PASSED,22.05,R83X20ACPQV,2026-04-08 16:19:57
+test_point_history,tests_TC/Deals/test_deals_login.py::test_point_history,call,FAILED,23.58,R83X20ACPQV,2026-04-08 16:26:50
+test_point_history,tests_TC/Deals/test_deals_login.py::test_point_history,call,PASSED,13.85,R83X20ACPQV,2026-04-08 16:27:40

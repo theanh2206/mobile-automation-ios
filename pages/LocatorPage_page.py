@@ -112,3 +112,8 @@ class LocatorPage:
     
     #Mẹo tích điểm 
     SAVE_POINT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvTipsSavePoint")
+    
+    #Lịch sử điểm
+    POINT_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryPoint")
+    CART_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryCart")
+    CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivClose")
