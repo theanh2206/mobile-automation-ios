@@ -6,6 +6,7 @@ class LocatorPage:
     BUY_PAKAGE = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[2]')
     SEARCH_BOX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch4x")
     SEARCH_BOX1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
+    SEARCH_DEALS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSearchDeal")
     SEARCH_INPUT = (AppiumBy.CLASS_NAME, "android.widget.EditText")
     AVATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivAvatar")
     MENU = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivMenu")
@@ -108,3 +109,6 @@ class LocatorPage:
     GIFT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btConfirm")
     ICON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivShare")
     BUTTON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvShare")
+    
+    #Mẹo tích điểm 
+    SAVE_POINT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvTipsSavePoint")
