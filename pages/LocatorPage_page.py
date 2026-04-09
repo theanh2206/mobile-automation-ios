@@ -117,3 +117,8 @@ class LocatorPage:
     POINT_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryPoint")
     CART_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryCart")
     CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivClose")
+    BUTTON_CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btClose")
+    #Đổi ưu đãi
+    BUTTON_EXCHANGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvExchange")
+    DEALS_LIST_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvDealListAll")
+    DEALS_LIST_ALL_OTHER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvDealListAllOther")

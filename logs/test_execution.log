@@ -1,0 +1,48 @@
+2026-04-09 09:45:06,915 | INFO | [test_save_point] ✅ PASSED (13.43s)
+2026-04-09 09:47:28,943 | INFO | [test_save_point] ✅ PASSED (16.7s)
+2026-04-09 09:50:58,852 | ERROR | [test_sell_point] ❌ FAILED (29.85s)
+2026-04-09 09:50:58,855 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 09:50:58,857 | ERROR | 📍 Line: 122
+2026-04-09 09:50:58,858 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 09:51:31,267 | ERROR | [test_sell_point] ❌ FAILED (17.5s)
+2026-04-09 09:51:31,267 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/Deals/test_deals_login.py
+2026-04-09 09:51:31,267 | ERROR | 📍 Line: 88
+2026-04-09 09:51:31,267 | ERROR | 📍 Error: AssertionError: assert False
+ +  where False = is_result_displayed('Ưu đãi MyPoint')
+ +    where is_result_displayed = <pages.DealsPage_page.DealsPage object at 0x10a1b5400>.is_result_displayed
+2026-04-09 09:52:59,380 | INFO | [test_sell_point] ✅ PASSED (23.13s)
+2026-04-09 09:53:30,448 | INFO | [test_sell_point] ✅ PASSED (17.38s)
+2026-04-09 10:18:17,208 | INFO | [test_] ✅ PASSED (27.15s)
+2026-04-09 10:58:15,547 | INFO | [test_click_deals_point] ✅ PASSED (23.86s)
+2026-04-09 11:00:50,864 | INFO | [test_click_deals_point] ✅ PASSED (39.66s)
+2026-04-09 11:11:06,407 | ERROR | [test_click_deals_point] ❌ FAILED (20.23s)
+2026-04-09 11:11:06,407 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 11:11:06,408 | ERROR | 📍 Line: 122
+2026-04-09 11:11:06,408 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 11:11:37,987 | ERROR | [test_click_deals_point] ❌ FAILED (20.14s)
+2026-04-09 11:11:37,987 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 11:11:37,987 | ERROR | 📍 Line: 122
+2026-04-09 11:11:37,987 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 11:13:27,988 | INFO | [test_click_deals_point] ✅ PASSED (38.41s)
+2026-04-09 11:24:42,264 | INFO | [test_click_deals_point] ✅ PASSED (25.87s)
+2026-04-09 13:39:56,369 | INFO | [test_click_deals_point] ✅ PASSED (37.89s)
+2026-04-09 13:51:59,475 | INFO | [test_click_deals_point_in] ✅ PASSED (37.91s)
+2026-04-09 13:52:42,155 | INFO | [test_click_deals_point_other_in] ✅ PASSED (36.26s)

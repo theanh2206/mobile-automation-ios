@@ -51,6 +51,25 @@ class DealsPage(BasePage):
                     self.driver.tap([(100, 100)])
                 except:
                     pass
+    #----------Hàm nhập OTP-----------
+    def input_otp(self, otp_code):
+        otp_inputs = self.wait.until(
+            EC.presence_of_all_elements_located(
+                (AppiumBy.XPATH, '//android.widget.EditText[@text="_"]')
+        )
+    )
+
+        otp_inputs[0].click()
+        time.sleep(0.5)
+
+        for digit in otp_code:
+            self.driver.press_keycode(7 + int(digit))
+
+        self.wait.until(
+            EC.presence_of_element_located(
+                (AppiumBy.XPATH, "/hierarchy/android.widget.FrameLayout")
+        )
+    )
     #Mẹo tích điểm
     def click_save_point(self):
         self.click(self.locators.SAVE_POINT)
@@ -76,13 +95,73 @@ class DealsPage(BasePage):
     
     def click_close(self):
         self.click(self.locators.CLOSE)
+    def click_button_close(self):
+        self.click(self.locators.BUTTON_CLOSE)    
+    def click_save_point(self, index):
+        locator = (By.ID, f'vms.com.vn.mymobifone:id/lnSavePoint_{index}')
+        self.click(locator)
+    def click_sell_point(self, index):
+        locator = (By.ID, f'vms.com.vn.mymobifone:id/lnSellPoint_{index}')
+        self.click(locator)
     #Lịch sử đơn hàng
     def click_cart_history(self):
         self.click(self.locators.CART_HISTORY)
     
-    
-    
-    
+    #Click button Xem tất cả
+    def click_button_see_all(self):
+        self.click(self.locators.BUTTON_SEE_ALL)
+    # Hàm scroll tới phần tử cụ thể
+    def scroll_to_element(self, text, max_scroll=6):
+        size = self.driver.get_window_size()
+
+        for i in range(max_scroll):
+            print(f"🔍 Lần {i+1}: tìm '{text}'")
+
+            elements = self.driver.find_elements(
+                AppiumBy.ANDROID_UIAUTOMATOR,
+                f'new UiSelector().textContains("{text}")'
+                )
+
+            if elements:
+                return elements[0]
+
+           # scroll mỗi vòng
+            self.driver.execute_script(
+                "mobile: scrollGesture",
+                {
+                "left": int(size["width"] * 0.1),
+                "top": int(size["height"] * 0.3),
+                "width": int(size["width"] * 0.8),
+                "height": int(size["height"] * 0.6),
+                "direction": "down",
+                "percent": 0.7,
+                "speed": 500
+                }
+            )
+
+            time.sleep(1)  # cho UI load
+
+        raise Exception(f"❌ Không tìm thấy: {text}")
+    #CLick Icon trong Ưu đãi MyPoint
+    def click_icon_mypoint_deals(self, index):
+        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatar"])[{index}]')
+        self.click(locator)
+    def click_button_exchange(self):
+        self.click(self.locators.BUTTON_EXCHANGE)
+    #Ưu đãi tích điểm
+    def click_reward_point(self, index):
+        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
+        self.click(locator)
+    #CLick button Tất cả - Ưu đãi tích điểm
+    def click_deals_list_all(self):
+        self.click(self.locators.DEALS_LIST_ALL)
+    #Click button Tất cả - Ưu đãi khác
+    def click_deals_list_all_other(self):
+        self.click(self.locators.DEALS_LIST_ALL_OTHER)
+        
+        
+        
+        
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)
