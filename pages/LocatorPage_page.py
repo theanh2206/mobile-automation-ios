@@ -122,3 +122,12 @@ class LocatorPage:
     BUTTON_EXCHANGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvExchange")
     DEALS_LIST_ALL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvDealListAll")
     DEALS_LIST_ALL_OTHER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvDealListAllOther")
+    
+    #Kết nối dài lâu
+    ADD_PAKAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btAdd")
+    EXCHANGE_POINT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvExchanage")
+    BUY_NOW = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBuyNow")
+    KNDL_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnConfirm")
+    BUTTON_SEE_MORE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlSeeMore")
+    BUTTON_REFESH = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivUpdateRefresh")
+    INPUT_MAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etEmail")

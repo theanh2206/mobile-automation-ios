@@ -2,7 +2,6 @@ from pages.BasePage_page import BasePage
 from pages.LocatorPage_page import LocatorPage
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.appiumby import AppiumBy
-from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 import time
