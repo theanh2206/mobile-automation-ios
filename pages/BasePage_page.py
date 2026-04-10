@@ -54,6 +54,17 @@ class BasePage:
         self.driver.tap([(x, y)])
     def press_back(self):
         self.driver.back()
+    def hide_keyboard(self):
+        try:
+            self.driver.hide_keyboard()
+        except:
+            try:
+                self.driver.back()
+            except:
+                try:
+                    self.driver.tap([(100, 100)])
+                except:
+                    pass
     # ===== WAIT =====
     def wait_for_element(self, locator):
         return self.wait.until(EC.presence_of_element_located(locator))

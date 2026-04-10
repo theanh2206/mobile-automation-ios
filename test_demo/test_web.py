@@ -19,33 +19,50 @@ driver = webdriver.Chrome(
 try:
     wait = WebDriverWait(driver, 20)
     # 1. Mở website
-    driver.get("https://accounts.viblo.asia/")
+    driver.get("http://160.25.81.212:5173/")
     
     # 2. Truyền username
     username_input = wait.until(
-        EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Tên người dùng hoặc email']"))
+        EC.presence_of_element_located((By.XPATH, "//label[contains(text(),'Tài khoản')]"))
     )
     time.sleep(2)
-    username_input.send_keys("0383915355")
+    username_input.send_keys("admin")
 
     # 3. Truyền password
     password_input = wait.until(
-        EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Mật khẩu']"))
+        EC.presence_of_element_located((By.XPATH, "//input[@type='password']"))
     )
     time.sleep(2)
-    password_input.send_keys("Vutheanh2002@")
+    password_input.send_keys("host")
 
     # 4. Click button đăng nhập
     btn_login = wait.until(
-        EC.element_to_be_clickable((By.XPATH, "//button[@type='button']//span[contains(text(),'Đăng nhập')]"))
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Đăng nhập')]"))
     )
     btn_login.click()
+    
+    elements = wait.until(lambda d: d.find_elements(
+    By.XPATH,
+    "//button[contains(text(),'Đăng xuất')]"
+    ))
+    
+    time.sleep(5)
+    #5. Tiếp nhận khách
+    text = "Tiếp nhận khách"
+
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, f'//*[text()="{text}"]'))
+    ).click()
+    
+    
+    
+    
     
     # 5. Bắt key đăng nhập thành công
     
     elements = wait.until(lambda d: d.find_elements(
     By.XPATH,
-    "//h1[contains(text(),'Chào mừng')]"
+    "//button[contains(text(),'Đăng xuất')]"
     ))
 
     if len(elements) > 0:

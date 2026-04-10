@@ -1,48 +1,96 @@
-2026-04-09 09:45:06,915 | INFO | [test_save_point] ✅ PASSED (13.43s)
-2026-04-09 09:47:28,943 | INFO | [test_save_point] ✅ PASSED (16.7s)
-2026-04-09 09:50:58,852 | ERROR | [test_sell_point] ❌ FAILED (29.85s)
-2026-04-09 09:50:58,855 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
-2026-04-09 09:50:58,857 | ERROR | 📍 Line: 122
-2026-04-09 09:50:58,858 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+2026-04-09 15:03:51,595 | INFO | [test_search_package_D5] ✅ PASSED (14.86s)
+2026-04-09 15:11:54,120 | INFO | [test_search_package_DDDDDDDDD] ✅ PASSED (11.91s)
+2026-04-09 15:12:13,735 | INFO | [test_search_package_DV] ✅ PASSED (12.64s)
+2026-04-09 15:27:13,996 | ERROR | [test_scroll_banner] ❌ FAILED (9.35s)
+2026-04-09 15:27:13,996 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/ServicesPage_page.py
+2026-04-09 15:27:13,996 | ERROR | 📍 Line: 47
+2026-04-09 15:27:13,996 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy banner để swipe
+2026-04-09 15:28:13,925 | ERROR | [test_scroll_banner] ❌ FAILED (9.19s)
+2026-04-09 15:28:13,926 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/ServicesPage_page.py
+2026-04-09 15:28:13,926 | ERROR | 📍 Line: 47
+2026-04-09 15:28:13,926 | ERROR | 📍 Error: Exception: ❌ Không tìm thấy banner để swipe
+2026-04-09 15:31:47,693 | INFO | [test_scroll_banner] ✅ PASSED (20.16s)
+2026-04-09 15:44:55,315 | INFO | [test_scroll_banner] ✅ PASSED (23.05s)
+2026-04-09 15:50:15,124 | INFO | [test_scroll_services] ✅ PASSED (16.96s)
+2026-04-09 16:17:03,928 | ERROR | [test_register_services] ❌ FAILED (60.67s)
+2026-04-09 16:17:03,929 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:17:03,929 | ERROR | 📍 Line: 122
+2026-04-09 16:17:03,929 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 NoSuchElementError: An element could not be located on the page using the given search parameters.
     at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
     at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
     at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
-2026-04-09 09:51:31,267 | ERROR | [test_sell_point] ❌ FAILED (17.5s)
-2026-04-09 09:51:31,267 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/Deals/test_deals_login.py
-2026-04-09 09:51:31,267 | ERROR | 📍 Line: 88
-2026-04-09 09:51:31,267 | ERROR | 📍 Error: AssertionError: assert False
- +  where False = is_result_displayed('Ưu đãi MyPoint')
- +    where is_result_displayed = <pages.DealsPage_page.DealsPage object at 0x10a1b5400>.is_result_displayed
-2026-04-09 09:52:59,380 | INFO | [test_sell_point] ✅ PASSED (23.13s)
-2026-04-09 09:53:30,448 | INFO | [test_sell_point] ✅ PASSED (17.38s)
-2026-04-09 10:18:17,208 | INFO | [test_] ✅ PASSED (27.15s)
-2026-04-09 10:58:15,547 | INFO | [test_click_deals_point] ✅ PASSED (23.86s)
-2026-04-09 11:00:50,864 | INFO | [test_click_deals_point] ✅ PASSED (39.66s)
-2026-04-09 11:11:06,407 | ERROR | [test_click_deals_point] ❌ FAILED (20.23s)
-2026-04-09 11:11:06,407 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
-2026-04-09 11:11:06,408 | ERROR | 📍 Line: 122
-2026-04-09 11:11:06,408 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+2026-04-09 16:19:19,332 | ERROR | [test_register_services] ❌ FAILED (38.64s)
+2026-04-09 16:19:19,332 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:19:19,332 | ERROR | 📍 Line: 122
+2026-04-09 16:19:19,332 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 NoSuchElementError: An element could not be located on the page using the given search parameters.
     at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
     at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
     at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
-2026-04-09 11:11:37,987 | ERROR | [test_click_deals_point] ❌ FAILED (20.14s)
-2026-04-09 11:11:37,987 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
-2026-04-09 11:11:37,987 | ERROR | 📍 Line: 122
-2026-04-09 11:11:37,987 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+2026-04-09 16:20:30,731 | ERROR | [test_register_services] ❌ FAILED (39.85s)
+2026-04-09 16:20:30,732 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:20:30,732 | ERROR | 📍 Line: 122
+2026-04-09 16:20:30,732 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 NoSuchElementError: An element could not be located on the page using the given search parameters.
     at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
     at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
     at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
-2026-04-09 11:13:27,988 | INFO | [test_click_deals_point] ✅ PASSED (38.41s)
-2026-04-09 11:24:42,264 | INFO | [test_click_deals_point] ✅ PASSED (25.87s)
-2026-04-09 13:39:56,369 | INFO | [test_click_deals_point] ✅ PASSED (37.89s)
-2026-04-09 13:51:59,475 | INFO | [test_click_deals_point_in] ✅ PASSED (37.91s)
-2026-04-09 13:52:42,155 | INFO | [test_click_deals_point_other_in] ✅ PASSED (36.26s)
+2026-04-09 16:23:11,228 | ERROR | [test_register_services] ❌ FAILED (24.72s)
+2026-04-09 16:23:11,229 | ERROR | 📍 File: /Users/user/Documents/Automation Test/tests_TC/Services/test_servicespage_login.py
+2026-04-09 16:23:11,229 | ERROR | 📍 Line: 68
+2026-04-09 16:23:11,229 | ERROR | 📍 Error: AssertionError: assert False
+ +  where False = is_result_displayed('Chi tiết dịch vụ')
+ +    where is_result_displayed = <pages.ServicesPage_page.ServicesPage object at 0x1080cd400>.is_result_displayed
+2026-04-09 16:24:22,906 | ERROR | [test_register_services] ❌ FAILED (35.16s)
+2026-04-09 16:24:22,907 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:24:22,907 | ERROR | 📍 Line: 122
+2026-04-09 16:24:22,907 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 16:25:59,536 | ERROR | [test_register_services] ❌ FAILED (57.94s)
+2026-04-09 16:25:59,536 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:25:59,536 | ERROR | 📍 Line: 122
+2026-04-09 16:25:59,536 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 16:49:36,592 | ERROR | [test_register_services] ❌ FAILED (45.63s)
+2026-04-09 16:49:36,593 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:49:36,593 | ERROR | 📍 Line: 122
+2026-04-09 16:49:36,593 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-09 16:50:33,845 | ERROR | [test_unregister_services] ❌ FAILED (22.24s)
+2026-04-09 16:50:33,845 | ERROR | 📍 File: /Users/user/Documents/Automation Test/pages/ServicesPage_page.py
+2026-04-09 16:50:33,845 | ERROR | 📍 Line: 122
+2026-04-09 16:50:33,845 | ERROR | 📍 Error: Exception: Không tìm thấy element chứa text: Hủy
+2026-04-09 16:52:42,169 | ERROR | [test_unregister_services] ❌ FAILED (44.33s)
+2026-04-09 16:52:42,169 | ERROR | 📍 File: /Users/user/Documents/Automation Test/venv/lib/python3.13/site-packages/selenium/webdriver/support/wait.py
+2026-04-09 16:52:42,169 | ERROR | 📍 Line: 122
+2026-04-09 16:52:42,169 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:33:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/commands/find.js:53:10)
+2026-04-10 09:15:03,722 | INFO | [test_click_services] ✅ PASSED (30.47s)
+2026-04-10 09:17:04,614 | INFO | [test_click_services] ✅ PASSED (30.05s)
