@@ -46,6 +46,7 @@ class LocatorPage:
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
     INFOR_LOOKUP = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineCheckCharges"]/android.widget.ImageView')
     BUTTON_BACK = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivBack")
+    BUTTON_UP = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivUp")
     DEPOSITE_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryTopup"]/android.widget.ImageView')
     SUBCRIBER_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryPackage"]/android.widget.ImageView')
     BUTTON_BUY_PAKAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvBuyPackage")
@@ -131,3 +132,12 @@ class LocatorPage:
     BUTTON_SEE_MORE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlSeeMore")
     BUTTON_REFESH = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivUpdateRefresh")
     INPUT_MAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etEmail")
+    
+    #Hồ sơ cá nhân
+    BUTTON_DETAIL1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvDetails")
+    BUTTON_DELETE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btDelete")
+    SELECT_DATE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvMonthYear")
+    BUTTON_OK = (AppiumBy.ID, "android:id/button1")
+    BUTTON_FILLTER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btFilter")
+    ICON_BIN =(AppiumBy.ID, "vms.com.vn.mymobifone:id/ivBin")
+    BUTTON_UPDATE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btUpdate")
