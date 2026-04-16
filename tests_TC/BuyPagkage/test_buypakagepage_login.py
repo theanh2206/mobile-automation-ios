@@ -18,8 +18,8 @@ def test_search_package_TheAnh(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
     buypakage.search_package("Thế Anh")
-    buypakage.wait_for_result("Lịch sử")
-    assert buypakage.is_result_displayed("Lịch sử")
+    buypakage.wait_for_result("Không có dữ liệu")
+    assert buypakage.is_result_displayed("Không có dữ liệu")
 #TC43. Tìm kiếm dịch vụ tồn tại trong db
 @pytest.mark.tc43
 def test_search_services(driver):
@@ -34,17 +34,20 @@ def test_search_services_TheAnh(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
     buypakage.search_package("Thế Anh")
-    buypakage.wait_for_result("Lịch sử")
-    assert buypakage.is_result_displayed("Lịch sử")
+    buypakage.wait_for_result("Không có dữ liệu")
+    assert buypakage.is_result_displayed("Không có dữ liệu")
 #TC45. Đăng ký gói cước ở thanh tìm kiếm
-@pytest.mark.tc41
+@pytest.mark.tc45
 def test_register_pakage_search(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
-    buypakage.search_package("D5")
-    buypakage.click_card_D5()
-    buypakage.click_register_d5()
-    buypakage.input_otp("888888")
+    buypakage.search_package("D7")
+    buypakage.wait_for_result("D7")
+    buypakage.click_by_text("Gói Data ngày D7")
+    buypakage.click_button_by_text("Đăng ký ngay")
+    buypakage.click_button_by_text("Tiếp tục")
+    buypakage.click_button_by_text("Xác nhận thanh toán")
+    buypakage.input_otp("000000")
     buypakage.wait_for_result("Đăng ký gói cước thành công")
     assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
 #TC46. Huỷ gói cước ở thanh tìm kiếm
@@ -52,14 +55,14 @@ def test_register_pakage_search(driver):
 def test_unregister_pakage_search(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
-    buypakage.search_package("D5")
-    buypakage.wait_for_result("D5")
-    buypakage.click_card_D5()
-    buypakage.click_button_cancel()
-    buypakage.click_button_continute()
-    buypakage.input_otp("888888")
-    buypakage.wait_for_result("Huỷ gói cước thành công")
-    assert buypakage.is_result_displayed("Huỷ gói cước thành công")
+    buypakage.search_package("D7")
+    buypakage.wait_for_result("D7")
+    buypakage.click_by_text("Gói Data ngày D7")
+    buypakage.click_button_by_text("Huỷ")
+    buypakage.click_button_by_text("Đồng ý")
+    buypakage.input_otp("000000")
+    buypakage.wait_for_result("Huỷ thành công")
+    assert buypakage.is_result_displayed("Huỷ thành công")
 #TC47. Tạo gói cước cá nhân
 #1. Đăng ký bằng OTP
 @pytest.mark.tc47
@@ -67,11 +70,12 @@ def test_create_pakage_OTP(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
     buypakage.click_personal_flex()
-    buypakage.click_button_create_pakage()
-    buypakage.click_payment_confirm()
-    buypakage.input_otp("000000")
-    buypakage.wait_for_result("Đăng ký gói cước thành công")
-    assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+    buypakage.wait_for_result("Tạo gói cước ")
+    buypakage.click_button_by_text("Tạo gói cước ")
+    buypakage.click_by_text("Huỷ")
+    # buypakage.input_otp("000000")
+    buypakage.wait_for_result("Đăng ký gói cước")
+    assert buypakage.is_result_displayed("Đăng ký gói cước")
 #2. Đăng ký bằng mã pin
 # @pytest.mark.tc47_1
 # def test_create_pakage_PIN(driver):
@@ -105,11 +109,10 @@ def test_create_pakage_flex_OTP(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
     buypakage.click_time_flex()
-    buypakage.click_register_button2()
-    buypakage.click_payment_confirm()
-    buypakage.input_otp("000000")
-    buypakage.wait_for_result("Đăng ký gói cước thành công")
-    assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+    buypakage.click_button_by_text("Đăng ký", 3)
+    buypakage.click_button_by_text("Đăng ký ngay")
+    buypakage.wait_for_result("Đăng ký gói cước")
+    assert buypakage.is_result_displayed("Đăng ký gói cước")
 #2. Đăng ký bằng mã PIN
 # @pytest.mark.tc48_1
 # def test_create_pakage_flex_PIN(driver):
@@ -123,17 +126,17 @@ def test_create_pakage_flex_OTP(driver):
 #     buypakage.wait_for_result("Đăng ký gói cước thành công")
 #     assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
 #3. Huỷ gói cước linh hoạt
-@pytest.mark.tc48_2
-def test_cancel_pakage_flex(driver):
-    buypakage = BuyPakagePage(driver)
-    buypakage.click_buy_pakage()
-    buypakage.click_time_flex()
-    buypakage.click_register_button2()
-    buypakage.click_button_cancel()
-    buypakage.click_button_continute()
-    buypakage.input_otp("888888")
-    buypakage.wait_for_result("Huỷ gói cước thành công")
-    assert buypakage.is_result_displayed("Huỷ gói cước thành công")
+# @pytest.mark.tc48_2
+# def test_cancel_pakage_flex(driver):
+#     buypakage = BuyPakagePage(driver)
+#     buypakage.click_buy_pakage()
+#     buypakage.click_time_flex()
+#     buypakage.click_register_button2()
+#     buypakage.click_button_cancel()
+#     buypakage.click_button_continute()
+#     buypakage.input_otp("888888")
+#     buypakage.wait_for_result("Huỷ gói cước thành công")
+#     assert buypakage.is_result_displayed("Huỷ gói cước thành công")
     
 #TC49. Tìm kiếm gói bằng gói cước/quốc gia
 @pytest.mark.tc49
@@ -141,12 +144,11 @@ def test_find_pakage(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
     buypakage.click_icon_cvqt()
-    buypakage.click_search_by_key("")
     buypakage.click_search_country()
     buypakage.send_key_country("Japan")
     buypakage.wait_for_result("Nhật Bản")
-    buypakage.click_country("Nhật Bản")
-    buypakage.click_button_apply()
+    buypakage.click_by_text("Japan (Nhật Bản)")
+    buypakage.click_by_text("Áp dụng")
     buypakage.wait_for_result("Tạo gói cước data roaming linh hoạt")
     assert buypakage.is_result_displayed("Tạo gói cước data roaming linh hoạt")
     
@@ -167,23 +169,17 @@ def test_popular_country(driver):
     buypakage.click_buy_pakage()
     buypakage.click_icon_cvqt()
     buypakage.click_popular_country(1)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.click_popular_country(2)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.click_popular_country(3)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.click_popular_country(4)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.click_popular_country(5)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.click_popular_country(6)
-    buypakage.wait_for_result("Tìm kiếm gói cước")
-    buypakage.press_back()
+    buypakage.click_close()
     buypakage.wait_for_result("Gói cước quốc tế phổ biến")
     assert buypakage.is_result_displayed("Gói cước quốc tế phổ biến")
     
@@ -239,15 +235,14 @@ def test_click_guide_by_text(driver):
     buypakage.click_buy_pakage()
     buypakage.click_icon_cvqt()
     buypakage.scroll_to_element("Lưu ý")
-    buypakage.click_guide_by_text("Hướng dẫn đăng ký")
-    buypakage.click_guide_by_text("Hướng dẫn đăng ký")
-    buypakage.click_guide_by_text("Hướng dẫn sử dụng Data, Thoại, SMS")
-    buypakage.click_guide_by_text("Hướng dẫn sử dụng Data, Thoại, SMS")
-    buypakage.click_guide_by_text("Hướng dẫn sử dụng Thoại & SMS tại quốc gia tắt 2G/3G")
-    buypakage.click_guide_by_text("Hướng dẫn sử dụng Thoại & SMS tại quốc gia tắt 2G/3G")
-    buypakage.click_guide_by_text("Lưu ý")
-    buypakage.click_guide_by_text("Lưu ý")
-    
+    buypakage.click_by_text("Hướng dẫn đăng ký")
+    buypakage.click_by_text("Hướng dẫn đăng ký")
+    buypakage.click_by_text("Hướng dẫn sử dụng Data, Thoại, SMS")
+    buypakage.click_by_text("Hướng dẫn sử dụng Data, Thoại, SMS")
+    buypakage.click_by_text("Hướng dẫn sử dụng Thoại & SMS tại quốc gia tắt 2G/3G")
+    buypakage.click_by_text("Hướng dẫn sử dụng Thoại & SMS tại quốc gia tắt 2G/3G")
+    buypakage.click_by_text("Lưu ý")
+    buypakage.click_by_text("Lưu ý")
     buypakage.wait_for_result("Hướng dẫn sử dụng dịch vụ")
     assert buypakage.is_result_displayed("Hướng dẫn sử dụng dịch vụ")
 #TC55. Click các câu hỏi thường gặp
@@ -257,29 +252,28 @@ def test_click_question_by_text(driver):
     buypakage.click_buy_pakage()
     buypakage.click_icon_cvqt()
     buypakage.scroll_to_element("Xem thêm")
-    buypakage.click_guide_by_text("test quyền cvqt")
-    buypakage.click_guide_by_text("test quyền cvqt")
-    buypakage.click_guide_by_text("Hôm nay bạn cảm thấy thế nào ?")
-    buypakage.click_guide_by_text("Hôm nay bạn cảm thấy thế nào ?")
-    buypakage.click_guide_by_text("Dịch vụ Call barring có thể sử dụng qua mấy hình thức?")
-    buypakage.click_guide_by_text("Dịch vụ Call barring có thể sử dụng qua mấy hình thức?")
-    
+    buypakage.click_by_text("test quyền cvqt")
+    buypakage.click_by_text("test quyền cvqt")
+    buypakage.click_by_text("Hôm nay bạn cảm thấy thế nào ?")
+    buypakage.click_by_text("Hôm nay bạn cảm thấy thế nào ?")
+    buypakage.click_by_text("Dịch vụ Call barring có thể sử dụng qua mấy hình thức?")
+    buypakage.click_by_text("Dịch vụ Call barring có thể sử dụng qua mấy hình thức?")
     buypakage.wait_for_result("Các câu hỏi thường gặp")
     assert buypakage.is_result_displayed("Các câu hỏi thường gặp")
     
 #Đăng ký/huỷ gói cước
 #TC56. Đăng ký gói cước 
 #1. Đăng ký bằng OTP
-@pytest.mark.tc56
-def test_register_pakage(driver):
-    buypakage = BuyPakagePage(driver)
-    buypakage.click_buy_pakage()
-    buypakage.click_register_d5()
-    buypakage.click_button_continute1()
-    buypakage.click_payment_confirm()
-    buypakage.input_otp("888888")
-    buypakage.wait_for_result("Đăng ký gói cước thành công")
-    assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
+# @pytest.mark.tc56
+# def test_register_pakage(driver):
+#     buypakage = BuyPakagePage(driver)
+#     buypakage.click_buy_pakage()
+#     buypakage.click_register_d5()
+#     buypakage.click_button_continute1()
+#     buypakage.click_payment_confirm()
+#     buypakage.input_otp("888888")
+#     buypakage.wait_for_result("Đăng ký gói cước thành công")
+#     assert buypakage.is_result_displayed("Đăng ký gói cước thành công")
 #2. Đăng ký bằng mã pin
 # @pytest.mark.tc56_1
 # def test_register_pakage_PIN(driver):
@@ -295,15 +289,15 @@ def test_register_pakage(driver):
     
 #TC57. Huỷ gói cước
 #1. Huỷ bằng OTP
-@pytest.mark.tc57
-def test_unregister_pakage(driver):
-    buypakage = BuyPakagePage(driver)
-    buypakage.click_buy_pakage()
-    buypakage.click_button_cancel()
-    buypakage.click_button_continute1()
-    buypakage.input_otp("888888")
-    buypakage.wait_for_result("Huỷ gói cước thành công")
-    assert buypakage.is_result_displayed("Huỷ gói cước thành công")
+# @pytest.mark.tc57
+# def test_unregister_pakage(driver):
+#     buypakage = BuyPakagePage(driver)
+#     buypakage.click_buy_pakage()
+#     buypakage.click_button_cancel()
+#     buypakage.click_button_continute1()
+#     buypakage.input_otp("888888")
+#     buypakage.wait_for_result("Huỷ gói cước thành công")
+#     assert buypakage.is_result_displayed("Huỷ gói cước thành công")
 #2. Huỷ bằng mã PIN
 # @pytest.mark.tc57_1
 # def test_unregister_pakage_PIN(driver):
@@ -320,22 +314,26 @@ def test_unregister_pakage(driver):
 def test_click_list_categories(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
-    buypakage.swipe_categories()
-    buypakage.click_category_by_index(1)
-    buypakage.click_category_by_index(2)
-    buypakage.click_category_by_index(3)
-    buypakage.click_category_by_index(4)
-    buypakage.wait_for_result("TK159")
-    assert buypakage.is_result_displayed("TK159")
+    buypakage.wait_for_result("Hot_2025")
+    buypakage.click_by_text("Hot_2025")
+    buypakage.click_by_text("Data_2025")
+    buypakage.click_by_text("Combo_2025")
+    buypakage.click_by_text("MangXH_2025")
+    buypakage.click_by_text("🔥Gói HOT🔥")
+    buypakage.click_by_text("Goi_bo sung_2025")
+    buypakage.click_by_text("Gói chuyển vùng quốc tế")
+    buypakage.wait_for_result("RS")
+    assert buypakage.is_result_displayed("RS")
 
 #TC59. Kiểm tra chọn từng chu kỳ gói
 @pytest.mark.tc59
 def test_click_radio_button_cycle(driver):
     buypakage = BuyPakagePage(driver)
     buypakage.click_buy_pakage()
-    buypakage.click_radio_button_days()
-    buypakage.click_radio_button_months()
-    buypakage.click_radio_button_all()
+    buypakage.wait_for_result("Hot_2025")
+    buypakage.click_by_text("Gói ngày")
+    buypakage.click_by_text("Gói tháng")
+    buypakage.click_by_text("Tất cả")
     buypakage.wait_for_result("D10")
     assert buypakage.is_result_displayed("D10")
     

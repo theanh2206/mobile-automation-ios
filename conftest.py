@@ -4,14 +4,15 @@ import os
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from selenium.webdriver.support.ui import WebDriverWait
-
+from appium.options.ios import XCUITestOptions
 from utils.csv_reporter import CSVReporter
 
 # ========= CONFIG ANDROID =========
-DEVICE_UDID = "R83X20ACPQV"
-APP_PACKAGE = "vms.com.vn.mymobifone"
-APP_ACTIVITY = "vms.com.vn.mymobi.activities.SplashScreenActivity"
-APPIUM_URL = "http://127.0.0.1:4723/wd/hub"
+DEVICE_UDID = "auto"
+BUNDLE_ID = "vms.com.MyMobifone"
+APPIUM_URL = "http://127.0.0.1:4723"
+TEAM_ID = "2LSM987Q67"
+WDA_BUNDLE_ID = "com.truong.wda"
 
 CSV_OUTPUT = "reports/test_result.csv"
 LOG_FILE = "logs/test_execution.log"
@@ -47,20 +48,42 @@ def setup_global_logger():
 # ================= DRIVER FIXTURE =================
 @pytest.fixture(scope="function")
 def driver():
-    options = UiAutomator2Options()
-    options.platform_name = "Android"
-    options.device_name = DEVICE_UDID
+    options = XCUITestOptions()
+    # ===== BASIC =====
+    options.platform_name = "iOS"
+    options.device_name = "iPhone 13"
     options.udid = DEVICE_UDID
-    options.app_package = APP_PACKAGE
-    options.app_activity = APP_ACTIVITY
+    options.automation_name = "XCUITest"
+    # ===== APP =====
+    options.bundle_id = BUNDLE_ID
+    # ===== SIGNING =====
+    options.xcode_org_id = TEAM_ID
+    options.xcode_signing_id = "Apple Development"
+    options.updated_wda_bundle_id = WDA_BUNDLE_ID
+    # ===== WDA =====
+    options.use_prebuilt_wda = True
+    options.use_new_wda = False
+    # ===== PERFORMANCE =====
     options.no_reset = True
-    options.auto_launch = True
-
+    options.new_command_timeout = 300
+    # 👉 QUAN TRỌNG: đảm bảo mỗi test launch lại app
+    options.force_app_launch = True
+    options.should_terminate_app = True
+    # 👉 timeout WDA
+    options.wda_launch_timeout = 60000
+    options.wda_connection_timeout = 60000
+    options.should_use_singleton_test_manager = False
     driver = webdriver.Remote(APPIUM_URL, options=options)
-    print("✅ CONNECTED SUCCESSFULLY")
-
+    print("✅ iOS CONNECTED SUCCESSFULLY")
+    wait = WebDriverWait(driver, 20)
+    driver.wait = wait
     yield driver
-
+    print("🧹 CLEAN APP")
+    try:
+        # 👉 kill app sau mỗi test
+        driver.terminate_app(BUNDLE_ID)
+    except:
+        pass
     print("🧹 QUIT DRIVER")
     driver.quit()
 

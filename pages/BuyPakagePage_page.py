@@ -13,6 +13,19 @@ class BuyPakagePage(BasePage):
     #Click tab Mua gói
     def click_buy_pakage(self):
         self.click(self.locators.BUY_PAKAGE)
+    def click_by_text(self, text):
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
+    def click_button_by_text(self, text, index=1):
+        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
+    
+        element = self.wait.until(
+            EC.element_to_be_clickable(
+                (AppiumBy.XPATH, xpath)
+            )
+        )
+        element.click()
     
     #Search gói cước trên thanh tìm kiếm
     def search_package(self, keyword):
@@ -85,7 +98,7 @@ class BuyPakagePage(BasePage):
 
         raise Exception(f"Không tìm thấy country: {keyword}")
     #5. Click các quốc gia phổ biến
-    def click_popular_country(self, index):
+    def click_popular_country1(self, index):
         elements = WebDriverWait(self.driver, 10).until(
             lambda d: d.find_elements(
                 AppiumBy.XPATH,
@@ -97,6 +110,9 @@ class BuyPakagePage(BasePage):
             raise Exception(f"Chỉ có {len(elements)} item, không có item {index}")
 
         elements[index - 1].click()
+    def click_popular_country(self, index):
+        locator = (By.XPATH, f'//XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton')
+        self.click(locator)
     #6. Click gói cước tạo data roaming linh hoạt
     def click_pakage_roaming(self):
         self.click(self.locators.PAKAGE_ROAMING)
@@ -138,6 +154,8 @@ class BuyPakagePage(BasePage):
     def click_icon(self, index):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
         self.click(locator)
+
+
     #CLick button chi tiết gói cước
     def click_detail_pakage(self):
         self.click(self.locators.DETAIL_D5)
@@ -167,56 +185,33 @@ class BuyPakagePage(BasePage):
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
             EC.presence_of_all_elements_located(
-                (AppiumBy.XPATH, '//android.widget.EditText[@text="_"]')
+                (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
         )
     )
-
-        otp_inputs[0].click()
-        time.sleep(0.5)
-
-        for digit in otp_code:
-            self.driver.press_keycode(7 + int(digit))
-
-        self.wait.until(
-            EC.presence_of_element_located(
-                (AppiumBy.XPATH, "/hierarchy/android.widget.FrameLayout")
-        )
-    )
+        for i, digit in enumerate(otp_code):
+            otp_inputs[i].send_keys(digit)
+    
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()
+    #Click button back
+    def click_button_back(self):
+        self.click(self.locators.BUTTON_BACK)
+    #Click close
+    def click_close(self):
+        self.click(self.locators.CLOSE)
     # Hàm scroll tới phần tử cụ thể
     def scroll_to_element(self, text, max_scroll=6):
-        size = self.driver.get_window_size()
-
-        for i in range(max_scroll):
-            print(f"🔍 Lần {i+1}: tìm '{text}'")
-
+        for _ in range(max_scroll):
             elements = self.driver.find_elements(
-                AppiumBy.ANDROID_UIAUTOMATOR,
-                f'new UiSelector().textContains("{text}")'
-                )
-
+                AppiumBy.ACCESSIBILITY_ID, text
+        )
             if elements:
                 return elements[0]
 
-           # scroll mỗi vòng
-            self.driver.execute_script(
-                "mobile: scrollGesture",
-                {
-                "left": int(size["width"] * 0.1),
-                "top": int(size["height"] * 0.3),
-                "width": int(size["width"] * 0.8),
-                "height": int(size["height"] * 0.6),
-                "direction": "down",
-                "percent": 0.7,
-                "speed": 500
-                }
-            )
+            self.driver.execute_script("mobile: swipe", {"direction": "up"})
 
-            time.sleep(1)  # cho UI load
-
-        raise Exception(f"❌ Không tìm thấy: {text}")
+        raise Exception(f"Không tìm thấy {text}")
     #--Hàm scroll dọc
     def scroll_to_element1(self, text, max_scroll=6):
         size = self.driver.get_window_size()

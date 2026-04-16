@@ -3,11 +3,11 @@ from appium.webdriver.common.appiumby import AppiumBy
 
 
 class LocatorPage:
-    BUY_PAKAGE = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[2]')
-    SEARCH_BOX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch4x")
+    BUY_PAKAGE = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="Mua gói"]')
+    SEARCH_BOX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton')
     SEARCH_BOX1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
     SEARCH_DEALS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSearchDeal")
-    SEARCH_INPUT = (AppiumBy.CLASS_NAME, "android.widget.EditText")
+    SEARCH_INPUT = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm"]')
     AVATA = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivAvatar")
     MENU = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivMenu")
     NOTIFICATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivNotification")
@@ -45,7 +45,7 @@ class LocatorPage:
     INFORMATION = (AppiumBy.ID, "vms.com.vn.mymobifone:id/llUsageInfos")
     INFOR_SUBCRIBER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivArrowInfo")
     INFOR_LOOKUP = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineCheckCharges"]/android.widget.ImageView')
-    BUTTON_BACK = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivBack")
+    BUTTON_BACK = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="arrow left roaming"]')
     BUTTON_UP = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivUp")
     DEPOSITE_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryTopup"]/android.widget.ImageView')
     SUBCRIBER_HISTORY = (AppiumBy.XPATH, '//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineHistoryPackage"]/android.widget.ImageView')
@@ -75,19 +75,19 @@ class LocatorPage:
     BANNER = (AppiumBy.XPATH, '//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivBannerService"]')
     
     #Tạo gói cước cá nhân
-    PERSONAL_FLEX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlPersonalFlex")
-    TIME_FLEX = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlTimeFlex")
-    ICON_CVQT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlCvqt")
+    PERSONAL_FLEX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton')
+    TIME_FLEX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton')
+    ICON_CVQT = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeButton')
     BUTTON_CREATE_PAKAGE =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btCreatePackage")
     PAYMENT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvPaymentConfirm")
     REGISTER_BUTTON2 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btRegister")
     
     #Chuyển vùng quốc tế
-    SEARCH_COUNTRY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSearchCountry")
+    SEARCH_COUNTRY = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]')
     SEARCH_BY_KEY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearchByKey")
-    SEARCH_COUNTRY1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
+    SEARCH_COUNTRY1 = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm quốc gia"]')
     BUTTON_APPLY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvApply")
-    CHECK_TRIP = (AppiumBy.XPATH, '//android.widget.TextView[@text="Kiểm tra trước chuyến đi"]')
+    CHECK_TRIP = (AppiumBy.XPATH, '//XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeButton')
     PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvMsgPackageRoamFlexCreate")
     CREATE_PAKAGE_ROAMING = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCreatePackageRoamFlex")
     
@@ -117,7 +117,7 @@ class LocatorPage:
     #Lịch sử điểm
     POINT_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryPoint")
     CART_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryCart")
-    CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivClose")
+    CLOSE = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="add roam"]')
     BUTTON_CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btClose")
     #Đổi ưu đãi
     BUTTON_EXCHANGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvExchange")

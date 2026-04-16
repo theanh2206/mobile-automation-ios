@@ -1,98 +1,101 @@
 import time
-import pytest
 from appium import webdriver
-from appium.options.android import UiAutomator2Options
+from appium.options.ios import XCUITestOptions
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # ========= CONFIG =========
-DEVICE_UDID = "R83X20ACPQV"
-APP_PACKAGE = "vms.com.vn.mymobifone"
-PHONE_NUMBER = "0762196780"
-OTP_CODE = "0000"
-APPIUM_URL = "http://127.0.0.1:4723/wd/hub"
-TEXT = "D5"
+DEVICE_UDID = "auto"
+BUNDLE_ID = "vms.com.MyMobifone"   # ⚠️ sửa theo inspector
+PHONE_NUMBER = "0931791607"
+OTP_CODE = "888888"
+APPIUM_URL = "http://127.0.0.1:4723"
+
+TEAM_ID = "2LSM987Q67"  # ✅ đã set theo bạn
 
 # ========= DRIVER SETUP =========
-options = UiAutomator2Options()
-options.platform_name = "Android"
-options.device_name = DEVICE_UDID
+options = XCUITestOptions()
+
+options.platform_name = "iOS"
+options.device_name = "iPhone 13"
 options.udid = DEVICE_UDID
+options.automation_name = "XCUITest"
 
-options.app_package = "vms.com.vn.mymobifone"
-options.app_activity = "vms.com.vn.mymobi.activities.SplashScreenActivity"
+# 👉 app
+options.bundle_id = BUNDLE_ID
 
-# ⭐ CỰC KỲ QUAN TRỌNG
+# 👉 signing (đúng config của bạn)
+options.xcode_org_id = TEAM_ID
+options.xcode_signing_id = "Apple Development"
+options.updated_wda_bundle_id = "com.truong.wda"
+
+# 👉 WDA reuse
+options.use_prebuilt_wda = True
+options.use_new_wda = False
+
+# 👉 giữ trạng thái
 options.no_reset = True
-options.force_app_launch = False
-options.dont_stop_app_on_reset = True
-
 options.new_command_timeout = 300
 
-driver = webdriver.Remote(
-    command_executor="http://127.0.0.1:4723/wd/hub",
-    options=options
-)
+driver = webdriver.Remote(APPIUM_URL, options=options)
 
 print("✅ CONNECTED SUCCESSFULLY")
 
 wait = WebDriverWait(driver, 20)
 
 # ========= TEST STEPS =========
-
 try:
-    # 1️⃣ Click button Đăng nhập (màn 1)
-        wait.until(
+    # 1️⃣ Click Đăng nhập
+    wait.until(
         EC.element_to_be_clickable(
-            (AppiumBy.ID, "vms.com.vn.mymobifone:id/btLogin")
+            (AppiumBy.XPATH, '(//XCUIElementTypeStaticText[@name="Đăng nhập"])[2]')
         )
     ).click()
 
     # 2️⃣ Nhập số điện thoại
-        phone_input = wait.until(
-        EC.presence_of_element_located(
-            (AppiumBy.ID, "vms.com.vn.mymobifone:id/etPhoneNumber")
+    phone_input = wait.until(
+    EC.presence_of_element_located(
+        (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
+    )
+)
+
+    phone_input.click()
+
+    # Lấy text hiện tại
+    current_value = phone_input.get_attribute("value")
+
+    # Xóa từng ký tự
+    for _ in range(len(current_value)):
+        phone_input.send_keys("\b")
+
+    # Nhập số mới
+    phone_input.send_keys("0931791607")
+
+    # 1️⃣ Click Đăng nhập
+    wait.until(
+        EC.element_to_be_clickable(
+            (AppiumBy.XPATH, '(//XCUIElementTypeStaticText[@name="Đăng nhập"])[2]')
+        )
+    ).click()
+
+    # 4️⃣ Nhập OTP
+    otp_inputs = wait.until(
+        EC.presence_of_all_elements_located(
+            (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
         )
     )
-        phone_input.clear()
-        phone_input.send_keys(PHONE_NUMBER)
 
-    # 3️⃣ Click button Đăng nhập (màn 2)
-        wait.until(
-        EC.element_to_be_clickable(
-            (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvLogin")
-        )
-        ).click()
+    for i, digit in enumerate(OTP_CODE):
+        otp_inputs[i].send_keys(digit)
 
-    # Chờ OTP screen load
-        time.sleep(5)
-
-    # Nhập OTP fix cứng
-
-        otp_inputs = wait.until(
-        EC.presence_of_all_elements_located(
-        (AppiumBy.XPATH, '//android.widget.EditText[@text="_"]')
-        )
-        )
-        otp_inputs[0].click()
-        time.sleep(0.5)
-
-        for digit in OTP_CODE:
-            driver.press_keycode(7 + int(digit))
-     
-     
-        wait.until(
-            EC.presence_of_element_located(
-            (AppiumBy.XPATH, "/hierarchy/android.widget.FrameLayout")
-                )
-            )
-        print("✅ LOGIN OTP TEST PASSED")
+    print("✅ LOGIN OTP TEST PASSED")
 
 except Exception as e:
-        print("❌ LOGIN OTP TEST FAILED")
-        print(e)
-        raise
+    print("❌ LOGIN OTP TEST FAILED")
+    print(e)
+    raise
 
 finally:
-        time.sleep(2)
+    time.sleep(2)
+    driver.quit()

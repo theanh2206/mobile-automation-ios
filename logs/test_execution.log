@@ -1,2 +1,401 @@
-2026-04-13 11:18:26,188 | INFO | [test_limit_cuoc] ✅ PASSED (12.03s)
-2026-04-13 15:32:36,041 | INFO | [test_limit_cuoc] ✅ PASSED (10.36s)
+2026-04-15 21:57:25,344 | ERROR | [test_unregister_pakage_search] ❌ FAILED (26.47s)
+2026-04-15 21:57:25,344 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-15 21:57:25,344 | ERROR | 📍 Line: 138
+2026-04-15 21:57:25,344 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:10:36,236 | ERROR | [test_unregister_pakage_search] ❌ FAILED (11.86s)
+2026-04-15 22:10:36,236 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:10:36,236 | ERROR | 📍 Line: 125
+2026-04-15 22:10:36,236 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:11:49,280 | ERROR | [test_unregister_pakage_search] ❌ FAILED (36.23s)
+2026-04-15 22:11:49,280 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-15 22:11:49,280 | ERROR | 📍 Line: 138
+2026-04-15 22:11:49,281 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:13:04,514 | ERROR | [test_register_pakage_search] ❌ FAILED (9.31s)
+2026-04-15 22:13:04,514 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:13:04,514 | ERROR | 📍 Line: 125
+2026-04-15 22:13:04,514 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:13:32,870 | ERROR | [test_register_pakage_search] ❌ FAILED (9.69s)
+2026-04-15 22:13:32,870 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:13:32,870 | ERROR | 📍 Line: 125
+2026-04-15 22:13:32,871 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:14:02,771 | ERROR | [test_register_pakage_search] ❌ FAILED (10.71s)
+2026-04-15 22:14:02,771 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:14:02,771 | ERROR | 📍 Line: 125
+2026-04-15 22:14:02,771 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:14:52,232 | ERROR | [test_register_pakage_search] ❌ FAILED (32.38s)
+2026-04-15 22:14:52,232 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-15 22:14:52,232 | ERROR | 📍 Line: 138
+2026-04-15 22:14:52,232 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-04-15 22:15:12,427 | ERROR | [test_register_pakage_search] ❌ FAILED (11.06s)
+2026-04-15 22:15:12,427 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:15:12,427 | ERROR | 📍 Line: 125
+2026-04-15 22:15:12,427 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:16:04,006 | INFO | [test_register_pakage_search] ✅ PASSED (29.78s)
+2026-04-15 22:20:38,172 | ERROR | [test_create_pakage_OTP] ❌ FAILED (5.97s)
+2026-04-15 22:20:38,172 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:20:38,172 | ERROR | 📍 Line: 125
+2026-04-15 22:20:38,172 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:21:03,071 | ERROR | [test_create_pakage_OTP] ❌ FAILED (5.9s)
+2026-04-15 22:21:03,071 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:21:03,071 | ERROR | 📍 Line: 125
+2026-04-15 22:21:03,071 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:24:24,596 | ERROR | [test_create_pakage_OTP] ❌ FAILED (21.66s)
+2026-04-15 22:24:24,596 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-15 22:24:24,596 | ERROR | 📍 Line: 138
+2026-04-15 22:24:24,596 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-04-15 22:24:54,347 | ERROR | [test_create_pakage_OTP] ❌ FAILED (21.68s)
+2026-04-15 22:24:54,347 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-15 22:24:54,347 | ERROR | 📍 Line: 138
+2026-04-15 22:24:54,347 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message:
+2026-04-15 22:26:26,509 | ERROR | [test_create_pakage_OTP] ❌ FAILED (3.65s)
+2026-04-15 22:26:26,510 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:26:26,510 | ERROR | 📍 Line: 125
+2026-04-15 22:26:26,510 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:26:47,048 | ERROR | [test_create_pakage_OTP] ❌ FAILED (3.78s)
+2026-04-15 22:26:47,048 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:26:47,048 | ERROR | 📍 Line: 125
+2026-04-15 22:26:47,048 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:27:24,240 | ERROR | [test_create_pakage_OTP] ❌ FAILED (4.0s)
+2026-04-15 22:27:24,240 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-15 22:27:24,240 | ERROR | 📍 Line: 125
+2026-04-15 22:27:24,240 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-15 22:29:21,179 | INFO | [test_create_pakage_OTP] ✅ PASSED (6.84s)
+2026-04-16 00:20:01,760 | INFO | [test_create_pakage_OTP] ✅ PASSED (6.92s)
+2026-04-16 00:24:23,157 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (7.89s)
+2026-04-16 00:24:23,158 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:24:23,158 | ERROR | 📍 Line: 125
+2026-04-16 00:24:23,158 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:24:44,813 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (7.85s)
+2026-04-16 00:24:44,813 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:24:44,813 | ERROR | 📍 Line: 125
+2026-04-16 00:24:44,813 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:25:38,982 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (7.89s)
+2026-04-16 00:25:38,982 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:25:38,982 | ERROR | 📍 Line: 125
+2026-04-16 00:25:38,982 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:28:30,509 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (7.92s)
+2026-04-16 00:28:30,509 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:28:30,509 | ERROR | 📍 Line: 125
+2026-04-16 00:28:30,509 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:29:17,671 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (7.95s)
+2026-04-16 00:29:17,671 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:29:17,671 | ERROR | 📍 Line: 125
+2026-04-16 00:29:17,671 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:29:31,500 | INFO | [test_create_pakage_OTP] ✅ PASSED (6.76s)
+2026-04-16 00:36:35,294 | INFO | [test_create_pakage_OTP] ✅ PASSED (6.81s)
+2026-04-16 00:37:56,364 | ERROR | [test_create_pakage_flex_OTP] ❌ FAILED (25.36s)
+2026-04-16 00:37:56,364 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 00:37:56,364 | ERROR | 📍 Line: 138
+2026-04-16 00:37:56,364 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:38:31,961 | INFO | [test_create_pakage_flex_OTP] ✅ PASSED (6.63s)
+2026-04-16 00:38:55,359 | INFO | [test_create_pakage_flex_OTP] ✅ PASSED (6.88s)
+2026-04-16 00:46:56,843 | ERROR | [test_find_pakage] ❌ FAILED (25.31s)
+2026-04-16 00:46:56,844 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 00:46:56,844 | ERROR | 📍 Line: 138
+2026-04-16 00:46:56,844 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:49:51,069 | ERROR | [test_find_pakage] ❌ FAILED (10.79s)
+2026-04-16 00:49:51,069 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:49:51,069 | ERROR | 📍 Line: 125
+2026-04-16 00:49:51,069 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:53:57,664 | INFO | [test_find_pakage] ✅ PASSED (16.12s)
+2026-04-16 00:56:18,516 | ERROR | [test_click_check] ❌ FAILED (3.98s)
+2026-04-16 00:56:18,516 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 00:56:18,516 | ERROR | 📍 Line: 125
+2026-04-16 00:56:18,516 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:57:12,813 | ERROR | [test_click_check] ❌ FAILED (27.22s)
+2026-04-16 00:57:12,813 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 00:57:12,813 | ERROR | 📍 Line: 138
+2026-04-16 00:57:12,813 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:58:17,506 | ERROR | [test_click_check] ❌ FAILED (27.76s)
+2026-04-16 00:58:17,506 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 00:58:17,506 | ERROR | 📍 Line: 138
+2026-04-16 00:58:17,506 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 00:59:15,076 | ERROR | [test_click_check] ❌ FAILED (27.86s)
+2026-04-16 00:59:15,076 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 00:59:15,076 | ERROR | 📍 Line: 138
+2026-04-16 00:59:15,076 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:00:49,633 | INFO | [test_click_check] ✅ PASSED (4.95s)
+2026-04-16 01:12:02,279 | ERROR | [test_popular_country] ❌ FAILED (25.16s)
+2026-04-16 01:12:02,280 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 01:12:02,280 | ERROR | 📍 Line: 138
+2026-04-16 01:12:02,280 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:13:37,108 | ERROR | [test_popular_country] ❌ FAILED (24.97s)
+2026-04-16 01:13:37,108 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 01:13:37,108 | ERROR | 📍 Line: 138
+2026-04-16 01:13:37,108 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:16:35,026 | ERROR | [test_popular_country] ❌ FAILED (26.91s)
+2026-04-16 01:16:35,026 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 01:16:35,026 | ERROR | 📍 Line: 138
+2026-04-16 01:16:35,026 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:20:35,507 | ERROR | [test_popular_country] ❌ FAILED (28.01s)
+2026-04-16 01:20:35,507 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 01:20:35,507 | ERROR | 📍 Line: 138
+2026-04-16 01:20:35,508 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:23:39,629 | ERROR | [test_popular_country] ❌ FAILED (27.89s)
+2026-04-16 01:23:39,629 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/selenium/webdriver/support/wait.py
+2026-04-16 01:23:39,629 | ERROR | 📍 Line: 138
+2026-04-16 01:23:39,630 | ERROR | 📍 Error: selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:24:22,748 | INFO | [test_popular_country] ✅ PASSED (16.85s)
+2026-04-16 01:30:54,943 | INFO | [test_click_guide_by_text] ✅ PASSED (15.32s)
+2026-04-16 01:31:20,059 | INFO | [test_click_guide_by_text] ✅ PASSED (14.62s)
+2026-04-16 01:32:36,080 | INFO | [test_click_question_by_text] ✅ PASSED (12.29s)
+2026-04-16 01:50:51,884 | ERROR | [test_click_list_categories] ❌ FAILED (1.84s)
+2026-04-16 01:50:51,884 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 01:50:51,884 | ERROR | 📍 Line: 125
+2026-04-16 01:50:51,884 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:51:16,630 | ERROR | [test_click_list_categories] ❌ FAILED (1.76s)
+2026-04-16 01:51:16,630 | ERROR | 📍 File: /Users/mymobifone/Library/Python/3.9/lib/python/site-packages/appium/webdriver/errorhandler.py
+2026-04-16 01:51:16,630 | ERROR | 📍 Line: 125
+2026-04-16 01:51:16,630 | ERROR | 📍 Error: selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at XCUITestDriver.doNativeFind (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:100:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async XCUITestDriver.findNativeElementOrElements (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:65:11)
+    at async XCUITestDriver.findElOrEls (/Users/mymobifone/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/find.js:22:11)
+    at async XCUITestDriver.findElOrElsWithProcessing (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:12:16)
+    at async XCUITestDriver.findElement (/Users/mymobifone/.npm-global/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/commands/find.js:27:16)
+2026-04-16 01:52:06,927 | INFO | [test_click_list_categories] ✅ PASSED (13.04s)
+2026-04-16 01:54:13,571 | INFO | [test_click_list_categories] ✅ PASSED (11.86s)
+2026-04-16 01:54:37,496 | INFO | [test_click_radio_button_cycle] ✅ PASSED (16.36s)
+2026-04-16 01:54:59,711 | INFO | [test_click_radio_button_cycle] ✅ PASSED (15.63s)

@@ -167,6 +167,12 @@ class PersonalProfile(BasePage):
     def select_month(self, index):
         locator = (By.XPATH, f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvMonths"]/android.widget.LinearLayout[{index}]')
         self.click(locator)
+       
+    def add_phone(self):
+        self.click(self.locators.ADD_PHONE)
+    #Click button Confirm
+    def click_buttom_confirm(self):
+        self.click(self.locators.GIFT_CONFIRM)
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()

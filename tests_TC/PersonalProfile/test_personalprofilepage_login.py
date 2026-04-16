@@ -130,3 +130,41 @@ def test_limit_cuoc(driver):
     personalprofile.click_my_services(4)
     personalprofile.wait_for_result("Các hạn mức cước")
     assert personalprofile.is_result_displayed("Các hạn mức cước")
+
+#TC116. Kiểm tra Multi-sim
+@pytest.mark.tc116
+def test_ckeck_multi_sim(driver):
+    personalprofile = PersonalProfile(driver)
+    personalprofile.click_avata()
+    personalprofile.click_my_services(5)
+    personalprofile.wait_for_result("Số thuê bao")
+    assert personalprofile.is_result_displayed("Số thuê bao")
+#TC117. Kiểm tra đổi e-sim
+@pytest.mark.tc117
+def test_change_esim(driver):
+    personalprofile = PersonalProfile(driver)
+    personalprofile.click_avata()
+    personalprofile.click_my_services(6)
+    personalprofile.wait_for_result("Thiết bị của bạn không hỗ trợ eSIM")
+    assert personalprofile.is_result_displayed("Thiết bị của bạn không hỗ trợ eSIM")
+#TC118. Kiểm tra auto-pay
+@pytest.mark.tc118
+def test_check_autopay(driver):
+    personalprofile = PersonalProfile(driver)
+    personalprofile.click_avata()
+    personalprofile.click_my_services(7)
+    personalprofile.add_phone()
+    personalprofile.click_buttom_confirm()
+    personalprofile.click_buttom_confirm()
+    personalprofile.wait_for_result("Thêm thẻ thanh toán")
+    assert personalprofile.is_result_displayed("Thêm thẻ thanh toán")
+
+#TC119. Kiểm tra cài đặt
+@pytest.mark.tc119
+def test_check_setting(driver):
+    personalprofile = PersonalProfile(driver)
+    personalprofile.click_avata()
+    personalprofile.click_my_services(8)
+    
+    personalprofile.wait_for_result("AutoPay")
+    assert personalprofile.is_result_displayed("AutoPay")
