@@ -105,24 +105,32 @@ class HomePage(BasePage):
             (int(size['width'] * 0.9), int(size['height'] * 0.5))
         ])
     #Swipe banner ngang
-    def swipe_banner(self, times=1, duration=1200, delay=0.5):
+    def swipe_banner(self, times=1, delay=0.5):
         try:
             banner = self.driver.find_element(
-            By.ID, "vms.com.vn.mymobifone:id/rlSliderBannerHome"
-        )
-        except NoSuchElementException:
-            raise Exception("❌ Không tìm thấy banner để swipe")
-        location = banner.location
-        size = banner.size
-    # 👉 Tối ưu khoảng cách swipe (gần full width)
-        start_x = int(location['x'] + size['width'] * 0.95)
-        end_x = int(location['x'] + size['width'] * 0.05)
-        y = int(location['y'] + size['height'] / 2)
+                AppiumBy.IOS_CLASS_CHAIN,
+                '**/XCUIElementTypeCollectionView'
+            )
+            indicator = self.driver.find_element(
+                AppiumBy.IOS_CLASS_CHAIN,
+                '**/XCUIElementTypePageIndicator'
+            )
+        except:
+            raise Exception("❌ Không tìm thấy banner hoặc indicator")
+        prev_value = indicator.get_attribute("value")
         for i in range(times):
             print(f"👉 Swipe lần {i+1}")
-            self.driver.swipe(start_x, y, end_x, y, duration)
+            self.driver.execute_script("mobile: swipe", {
+                "element": banner.id,
+                "direction": "left"
+            })
             time.sleep(delay)
-
+            current_value = indicator.get_attribute("value")
+            # 👉 Nếu swipe mà không đổi → stop sớm
+            if current_value == prev_value:
+                print("⛔ Banner không đổi → dừng sớm")
+                break
+            prev_value = current_value
     #----------Hàm nhập OTP-----------
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
@@ -151,6 +159,9 @@ class HomePage(BasePage):
     #Click tiện ích nổi bật
     def click_icon_utilities(self, index):
         locator = (By.XPATH, f'//XCUIElementTypeScrollView/XCUIElementTypeOther[7]/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
+        self.click(locator)
+    def click_icon_utilities1(self, index):
+        locator = (By.XPATH, f'//XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
         self.click(locator)
 
     def click_button_close1(self):

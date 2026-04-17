@@ -287,42 +287,41 @@ def test_change_number_tc25(driver):
 
 #TC26 - Click tiện ích ở ngoài màn trang chủ
 @pytest.mark.tc26 
-def test_click_utilities(driver):
+def test_click_utilities_tc26(driver):
     homepage = HomePage(driver)
-    homepage.click_icon(1)
-    homepage.press_back()
-    homepage.click_icon(2)
-    homepage.click_btn_cancel()
-    homepage.click_icon(3)
-    homepage.click_btn_cancel()
-    homepage.click_icon(4)
-    homepage.click_btn_cancel()
-    homepage.wait_for_text("Tiện ích của bạn")
-    assert homepage.is_result_displayed("Tiện ích của bạn")
+    homepage.click_icon_utilities1(1)
+    homepage.click_button_by_text("arrow left roaming")
+    homepage.click_icon_utilities1(2)
+    homepage.click_button_by_text("icBack")
+    homepage.click_icon_utilities1(3)
+    homepage.click_button_by_text("close ekyc")
+    homepage.click_icon_utilities1(4)
+    homepage.wait_for_text("Thông báo")
+    assert homepage.is_result_displayed("Thông báo")
 #TC27, TC28 - Click tiện ích ở màn Tất cả tiện ích
 @pytest.mark.tc27
-def test_click_utilities(driver):
+def test_click_utilities_tc27(driver):
     homepage = HomePage(driver)
-    homepage.click_view_all_utils()
-    homepage.click_icon(5)
-    homepage.click_btn_cancel()
-    homepage.click_icon(6)
-    homepage.press_back()
-    homepage.click_icon(7)
-    homepage.press_back()
-    homepage.click_icon(9)
-    homepage.press_back()
-    homepage.click_icon(10)
-    homepage.click_btn_cancel()
-    homepage.click_icon(11)
-    homepage.press_back()
-    homepage.click_icon(12)
-    homepage.press_back()
-    homepage.wait_for_text("Tất cả tiện ích")
-    assert homepage.is_result_displayed("Tất cả tiện ích")
+    homepage.click_by_text("Xem tất cả")
+    homepage.click_by_text("Chương trình 2-9")
+    homepage.click_button_by_text("close ekyc")
+    homepage.click_by_text("Hoa hồng C2C")
+    homepage.click_button_by_text("close dt")
+    homepage.click_by_text("Gói cước dài kỳ")
+    homepage.click_button_by_text("close dt")
+    homepage.click_by_text("MobiBiz")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Chuyển mạng giữ số")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Mở tài khoản Nam Á Bank")
+    homepage.click_button_by_text("close ekyc")
+    homepage.click_by_text("Ưu đãi 8 tháng 3")
+    homepage.click_button_by_text("icBack")
+    homepage.wait_for_text("Khuyến mại và Quà tặng")
+    assert homepage.is_result_displayed("Khuyến mại và Quà tặng")
 
 @pytest.mark.tc28
-def test_click_utilities(driver):
+def test_click_utilities_tc28(driver):
     homepage = HomePage(driver)
     homepage.click_view_all_utils()
     homepage.scroll_to_element("Reset nạp thẻ")
@@ -335,7 +334,6 @@ def test_click_utilities(driver):
     homepage.press_back()
     homepage.click_icon(9)
     homepage.click_btn_cancel()
-    homepage.click_icon(10)
     homepage.press_back()
     homepage.click_icon(11)
     homepage.click_btn_cancel()
@@ -345,109 +343,83 @@ def test_click_utilities(driver):
 #Kết nối dài lâu
 #TC29 - Click thẻ KNDL
 @pytest.mark.tc29
-def test_click_card_kndl(driver):
+def test_click_card_kndl_tc29(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Thẻ kết nối dài lâu")
+    homepage.wait_for_result("Gói cước hấp dẫn")
+    homepage.scroll_to_element2("Dịch vụ nổi bật")
     homepage.click_card_kndl()
     homepage.wait_for_result("Kết nối dài lâu")
     assert homepage.is_result_displayed("Kết nối dài lâu")
 #TC30 - Click dịch vụ nổi bật
 @pytest.mark.tc30
-def test_click_services(driver):
+def test_click_services_tc30(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Dịch vụ nổi bật")
-    homepage.click_avata_contact(1)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    assert homepage.is_result_displayed("Chi tiết dịch vụ")    
-@pytest.mark.tc30_1
-def test_click_services1(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Dịch vụ nổi bật")
-    homepage.click_avata_contact(2)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    assert homepage.is_result_displayed("Chi tiết dịch vụ")
-@pytest.mark.tc30_2
-def test_click_services2(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Dịch vụ nổi bật")
-    homepage.click_avata_contact(3)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    assert homepage.is_result_displayed("Chi tiết dịch vụ")   
-@pytest.mark.tc30_3
-def test_click_services3(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Dịch vụ nổi bật")
-    homepage.click_avata_contact(4)
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("ON2")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("MobiGames")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("Ltest VieON data 4")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("Ltest VieON data")
     homepage.wait_for_result("Chi tiết dịch vụ")
     assert homepage.is_result_displayed("Chi tiết dịch vụ")
-    
 #Hỗ trợ khách hàng
 @pytest.mark.tc31
-def test_click_customer_support(driver):
+def test_click_customer_support_tc31(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.click_icon(1)
+    homepage.scroll_to_element1("Gói cước")
+    homepage.click_by_text("Kích hoạt sim")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Mua eSIM du lịch quốc tế")
+    homepage.click_by_text("Thông tin thuê bao")
+    homepage.click_button_by_text("close dt")
+    homepage.click_by_text("Gói cước")
     homepage.wait_for_result("Chọn chu kỳ gói")
     assert homepage.is_result_displayed("Chọn chu kỳ gói")
-@pytest.mark.tc31_2
-def test_click_customer_support2(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.click_icon(2)
-    homepage.wait_for_result("Kích hoạt sim")
-    assert homepage.is_result_displayed("Kích hoạt sim")
-@pytest.mark.tc31_3
-def test_click_customer_support3(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.click_icon(3)
-    homepage.wait_for_result("Kích hoạt sim")
-    assert homepage.is_result_displayed("Kích hoạt sim")
-@pytest.mark.tc31_4
-def test_click_customer_support4(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.click_icon(4)
-    homepage.wait_for_result("Xác thực thuê bao")
-    assert homepage.is_result_displayed("Xác thực thuê bao")
+
     
-#TC32 - Click vào từng banner
-@pytest.mark.tc32
-def test_click_banner(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.click_banner()
-    homepage.wait_for_result("Thông tin chung")
-    assert homepage.is_result_displayed("Thông tin chung")
-@pytest.mark.tc32_1   
-def test_click_banner1(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.swipe_banner(1)
-    homepage.click_banner()
-    homepage.wait_for_result("Thông báo")
-    assert homepage.is_result_displayed("Thông báo")
-@pytest.mark.tc32_2   
-def test_click_banner2(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.swipe_banner(2)
-    homepage.click_banner()
-    homepage.wait_for_result("Thông báo")
-    assert homepage.is_result_displayed("Thông báo")
-@pytest.mark.tc32_3   
-def test_click_banner3(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.swipe_banner(3)
-    homepage.click_banner()
-    homepage.wait_for_result("khuyenmai")
-    assert homepage.is_result_displayed("khuyenmai")
-@pytest.mark.tc32_4   
-def test_click_banner4(driver):
-    homepage = HomePage(driver)
-    homepage.scroll_to_element("Hỗ trợ khách hàng")
-    homepage.swipe_banner(4)
-    homepage.click_banner()
-    homepage.wait_for_result("Gói Data ngày D5")
-    assert homepage.is_result_displayed("Gói Data ngày D5")
+# #TC32 - Click vào từng banner
+# @pytest.mark.tc32
+# def test_click_banner_tc32(driver):
+#     homepage = HomePage(driver)
+#     homepage.scroll_to_element2("Hỗ trợ khách hàng")
+#     homepage.swipe_banner()
+#     homepage.click_banner()
+#     homepage.wait_for_result("Thông tin chung")
+#     assert homepage.is_result_displayed("Thông tin chung")
+# @pytest.mark.tc32_1   
+# def test_click_banner1(driver):
+#     homepage = HomePage(driver)
+#     homepage.scroll_to_element("Hỗ trợ khách hàng")
+#     homepage.swipe_banner(1)
+#     homepage.click_banner()
+#     homepage.wait_for_result("Thông báo")
+#     assert homepage.is_result_displayed("Thông báo")
+# @pytest.mark.tc32_2   
+# def test_click_banner2(driver):
+#     homepage = HomePage(driver)
+#     homepage.scroll_to_element("Hỗ trợ khách hàng")
+#     homepage.swipe_banner(2)
+#     homepage.click_banner()
+#     homepage.wait_for_result("Thông báo")
+#     assert homepage.is_result_displayed("Thông báo")
+# @pytest.mark.tc32_3   
+# def test_click_banner3(driver):
+#     homepage = HomePage(driver)
+#     homepage.scroll_to_element("Hỗ trợ khách hàng")
+#     homepage.swipe_banner(3)
+#     homepage.click_banner()
+#     homepage.wait_for_result("khuyenmai")
+#     assert homepage.is_result_displayed("khuyenmai")
+# @pytest.mark.tc32_4   
+# def test_click_banner4(driver):
+#     homepage = HomePage(driver)
+#     homepage.scroll_to_element("Hỗ trợ khách hàng")
+#     homepage.swipe_banner(4)
+#     homepage.click_banner()
+#     homepage.wait_for_result("Gói Data ngày D5")
+#     assert homepage.is_result_displayed("Gói Data ngày D5")

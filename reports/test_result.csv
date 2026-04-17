@@ -1,8 +1,0 @@
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,6.59,auto,2026-04-17 15:37:26
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,5.88,auto,2026-04-17 15:37:56
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,26.8,auto,2026-04-17 15:38:45
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,5.77,auto,2026-04-17 15:43:21
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,5.85,auto,2026-04-17 15:47:39
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,19.99,auto,2026-04-17 15:48:07
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,FAILED,5.62,auto,2026-04-17 15:59:37
-test_change_number_tc25,tests_TC/Login/test_homepage_login.py::test_change_number_tc25,call,PASSED,17.09,auto,2026-04-17 16:00:00
