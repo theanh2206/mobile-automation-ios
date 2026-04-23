@@ -20,70 +20,67 @@ class PersonalProfile(BasePage):
     #Click button refesh
     def click_button_refesh(self):
         self.click(self.locators.BUTTON_REFESH)
+    #Click guide by text
+    def click_by_text(self, text, index=1):
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
+    def click_by_text1(self, text):
+        el = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_element(
+            "-ios predicate string",
+                f"name == '{text}'"
+            )
+        )
+        el.click()
+    def click_button_by_text(self, text, index=1, times = 1):
+        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
+        element = self.wait.until(
+            EC.element_to_be_clickable(
+                (AppiumBy.XPATH, xpath)
+            )
+        )
+        for i in range(times):
+            print(f"👉 Click lần {i+1}")
+            element.click()
+    def click_by_image(self, text, index=1):
+        xpath = f'(//XCUIElementTypeImage[@name="{text}"])[{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
     #----------Hàm nhập OTP-----------
-    def input_otp(self, otp_code):
-        otp_inputs = self.wait.until(
-            EC.presence_of_all_elements_located(
-                (AppiumBy.XPATH, '//android.widget.EditText[@text="_"]')
-        )
-    )
-
-        otp_inputs[0].click()
-        time.sleep(0.5)
-
-        for digit in otp_code:
-            self.driver.press_keycode(7 + int(digit))
-
-        self.wait.until(
-            EC.presence_of_element_located(
-                (AppiumBy.XPATH, "/hierarchy/android.widget.FrameLayout")
-        )
-    )
-    
+    def input_otp(self, otp):
+        for i, digit in enumerate(otp):
+            for _ in range(3):
+                try:
+                    self.driver.find_elements(
+                        "-ios class chain",
+                        "**/XCUIElementTypeTextField"
+                    )[i].send_keys(digit)
+                    break
+                except:
+                    time.sleep(0.5)
     #Click button detail
     def click_button_detail(self):
         self.click(self.locators.BUTTON_DETAIL1)
-    def click_by_text(self, text):
-        try:
-            xpath = f'//android.widget.TextView[contains(@text,"{text}")]'
-        
-            element = WebDriverWait(self.driver, 10).until(
-                lambda d: d.find_element(AppiumBy.XPATH, xpath)
-            )
-            element.click()
-        except Exception as e:
-            raise Exception(f"Không tìm thấy element chứa text: {text}") from e
-    # Hàm scroll tới phần tử cụ thể
-    def scroll_to_element(self, text, max_scroll=6):
-        size = self.driver.get_window_size()
-
+    
+    #--Hàm scroll dọc
+    def scroll_to_element2(self, text, max_scroll=6):
         for i in range(max_scroll):
             print(f"🔍 Lần {i+1}: tìm '{text}'")
-
             elements = self.driver.find_elements(
-                AppiumBy.ANDROID_UIAUTOMATOR,
-                f'new UiSelector().textContains("{text}")'
-                )
-
-            if elements:
-                return elements[0]
-
-           # scroll mỗi vòng
-            self.driver.execute_script(
-                "mobile: scrollGesture",
-                {
-                "left": int(size["width"] * 0.1),
-                "top": int(size["height"] * 0.3),
-                "width": int(size["width"] * 0.8),
-                "height": int(size["height"] * 0.6),
-                "direction": "down",
-                "percent": 0.7,
-                "speed": 500
-                }
+                AppiumBy.IOS_PREDICATE,
+                f'name CONTAINS[c] "{text}" OR label CONTAINS[c] "{text}"'
             )
-
-            time.sleep(1)  # cho UI load
-
+            if elements:
+                element = elements[0]
+                if element.is_displayed():
+                    print("✅ Đã hiển thị trên màn hình")
+                    return element
+                else:
+                    print("⚠️ Tìm thấy nhưng chưa visible → scroll tiếp")
+            print("👉 Swipe...")
+            self.driver.execute_script("mobile: swipe", {"direction": "up"})
+            time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
     #Hàm swipe
     def swipe_on_element(self, element, direction="up"):
@@ -99,49 +96,20 @@ class PersonalProfile(BasePage):
         else:
             self.driver.swipe(center_x, end_y, center_x, start_y, 300)
     #Hàm chọn tháng/năm
-    def select_date(self, month, year):
-        month_el = self.driver.find_element(
-            AppiumBy.XPATH,
-        '(//android.widget.EditText[@resource-id="android:id/numberpicker_input"])[1]'
+    def select_date(self, day, month, year):
+        wheels = self.driver.find_elements(
+            AppiumBy.IOS_CLASS_CHAIN,
+            "**/XCUIElementTypePickerWheel"
         )
-
-        year_el = self.driver.find_element(
-            AppiumBy.XPATH,
-        '(//android.widget.EditText[@resource-id="android:id/numberpicker_input"])[2]'
-        )
-
-        # ===== SCROLL MONTH =====
-        for _ in range(20):
-            current_text = month_el.text.lower()  # ví dụ: "tháng 3"
-        
-            if f"tháng {month}" in current_text:
-                break
-
-            # extract số tháng hiện tại
-            current_month = int(current_text.replace("tháng", "").strip())
-
-            # chọn hướng swipe
-            if current_month > month:
-                direction = "down"
-            else:
-                direction = "up"
-
-            self.swipe_on_element(month_el, direction)
-
-        # ===== SCROLL YEAR =====
-        for _ in range(20):
-            current_year = int(year_el.text)
-
-            if current_year == year:
-                break
-
-            # chọn hướng swipe
-            if current_year > year:
-                direction = "down"
-            else:
-                direction = "up"
-
-            self.swipe_on_element(year_el, direction)
+        day_wheel = wheels[0]
+        month_wheel = wheels[1]
+        year_wheel = wheels[2]
+        # Day
+        self.scroll_picker_wheel(day_wheel, str(day))
+        # Month (format chuẩn iOS của bạn)
+        self.scroll_picker_wheel(month_wheel, f"tháng {month}")
+        # Year
+        self.scroll_picker_wheel(year_wheel, str(year))
     #Click button OK        
     def click_button_ok(self):
         self.click(self.locators.BUTTON_OK)
@@ -176,7 +144,26 @@ class PersonalProfile(BasePage):
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()
-    
+    #Click bật tắt thông báo
+    def click_on_switch_notification(self):
+        self.click(self.locators.ON_SWITCH_NOTIFICATION)
+    def click_off_switch_notification(self):
+        self.click(self.locators.OFF_SWITCH_NOTIFICATION)
+    def click_switch_smart_otp(self):
+        self.click(self.locators.SWITCH_SMART_OTP)
+    def click_on_switch_spam(self):
+        self.click(self.locators.ON_SWITCH_SPAM)
+    def click_on_switch_block(self):
+        self.click(self.locators.ON_SWITCH_BLOCK)
+    def click_off_switch_spam(self):
+        self.click(self.locators.OFF_SWITCH_SPAM)
+    def click_off_switch_block(self):
+        self.click(self.locators.OFF_SWITCH_BLOCK)
+    def input_smart_otp(self, keyword):
+        self.click(self.locators.INPUT_SMART_OTP)
+        self.send_keys(self.locators.INPUT_SMART_OTP, keyword)
+        self.click(self.locators.CONFIRM_SMART_OTP)
+        self.send_keys(self.locators.CONFIRM_SMART_OTP, keyword)
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)

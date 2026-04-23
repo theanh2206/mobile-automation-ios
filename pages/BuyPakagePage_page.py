@@ -13,8 +13,8 @@ class BuyPakagePage(BasePage):
     #Click tab Mua gói
     def click_buy_pakage(self):
         self.click(self.locators.BUY_PAKAGE)
-    def click_by_text(self, text):
-        xpath = f'//XCUIElementTypeStaticText[@name="{text}"]'
+    def click_by_text(self, text, index=1):
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
         element = self.driver.find_element(AppiumBy.XPATH, xpath)
         element.click()
     def click_button_by_text(self, text, index=1):
@@ -26,14 +26,23 @@ class BuyPakagePage(BasePage):
             )
         )
         element.click()
-    
+    def click_by_image(self, text, index=1):
+        xpath = f'(//XCUIElementTypeImage[@name="{text}"])[{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
+    #Ẩn bàn phím
+    def hide_keyboard1(self):
+        size = self.driver.get_window_size()
+        self.driver.tap([
+            (int(size['width'] * 0.9), int(size['height'] * 0.5))
+        ])
     #Search gói cước trên thanh tìm kiếm
     def search_package(self, keyword):
         self.click(self.locators.SEARCH_BOX)
         self.send_keys(self.locators.SEARCH_INPUT, keyword)
     def search_package1(self, keyword):
         self.click(self.locators.SEARCH_BOX1)
-        self.send_keys(self.locators.SEARCH_INPUT, keyword)
+        self.send_keys(self.locators.SEARCH_BOX1, keyword)
     #Click thẻ gói cước D5
     def click_card_D5(self):
         self.click(self.locators.DETAIL_D5)
@@ -41,7 +50,7 @@ class BuyPakagePage(BasePage):
     def click_menu(self):
         self.click(self.locators.MENU)   
     #Click button đăng ký D5
-    def click_register_d5(self):
+    def click_register_button(self):
         self.click(self.locators.REGISTER_BUTTON)
     #Click button Huỷ đăng ký
     def click_button_cancel(self):
@@ -143,10 +152,8 @@ class BuyPakagePage(BasePage):
         self.click(self.locators.BOOK)
     # Tặng/chia sẻ gói cước
     def gift_pakage(self, keyword):
-        self.click(self.locators.GIFT)
+        self.click(self.locators.PHONE_RECIEVE)
         self.send_keys(self.locators.PHONE_RECIEVE, keyword)
-        self.hide_keyboard()
-        self.click(self.locators.GIFT_CONFIRM)
     def share_pakage(self):
         self.click(self.locators.ICON_SHARE)
         self.click(self.locators.BUTTON_SHARE)
@@ -154,7 +161,6 @@ class BuyPakagePage(BasePage):
     def click_icon(self, index):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
         self.click(locator)
-
 
     #CLick button chi tiết gói cước
     def click_detail_pakage(self):
@@ -182,14 +188,14 @@ class BuyPakagePage(BasePage):
     def click_btn_cancel(self):
         self.click(self.locators.BTN_CANCEL) 
     #----------Hàm nhập OTP-----------
-    def input_otp(self, otp_code):
-        otp_inputs = self.wait.until(
-            EC.presence_of_all_elements_located(
-                (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
-        )
+    def input_otp(self, otp):
+        first_input = self.driver.find_element(
+        "-ios class chain",
+        "**/XCUIElementTypeTextField"
     )
-        for i, digit in enumerate(otp_code):
-            otp_inputs[i].send_keys(digit)
+
+        first_input.click()
+        first_input.send_keys(otp)
     
     #Back lại bước vừa xong 
     def press_back(self):
@@ -248,6 +254,25 @@ class BuyPakagePage(BasePage):
                     )       
             time.sleep(1)
 
+        raise Exception(f"❌ Không tìm thấy: {text}")
+    #--Hàm scroll dọc
+    def scroll_to_element2(self, text, max_scroll=6):
+        for i in range(max_scroll):
+            print(f"🔍 Lần {i+1}: tìm '{text}'")
+            elements = self.driver.find_elements(
+                AppiumBy.IOS_PREDICATE,
+                f'name CONTAINS[c] "{text}" OR label CONTAINS[c] "{text}"'
+            )
+            if elements:
+                element = elements[0]
+                if element.is_displayed():
+                    print("✅ Đã hiển thị trên màn hình")
+                    return element
+                else:
+                    print("⚠️ Tìm thấy nhưng chưa visible → scroll tiếp")
+            print("👉 Swipe...")
+            self.driver.execute_script("mobile: swipe", {"direction": "up"})
+            time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
     #--------------Hàm scroll ngang
     def scroll_horizontal_utils(self, direction="left", times=1):

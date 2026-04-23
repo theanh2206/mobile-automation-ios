@@ -116,7 +116,7 @@ class HomePage(BasePage):
                 '**/XCUIElementTypePageIndicator'
             )
         except:
-            raise Exception("❌ Không tìm thấy banner hoặc indicator")
+            raise Exception
         prev_value = indicator.get_attribute("value")
         for i in range(times):
             print(f"👉 Swipe lần {i+1}")
@@ -128,7 +128,6 @@ class HomePage(BasePage):
             current_value = indicator.get_attribute("value")
             # 👉 Nếu swipe mà không đổi → stop sớm
             if current_value == prev_value:
-                print("⛔ Banner không đổi → dừng sớm")
                 break
             prev_value = current_value
     #----------Hàm nhập OTP-----------
@@ -203,6 +202,10 @@ class HomePage(BasePage):
     #Click banner
     def click_banner(self):
         self.click(self.locators.BANNER)
+    def click_banner2(self):
+        self.click(self.locators.BANNER2)
+    def click_banner3(self):
+        self.click(self.locators.BANNER3)
     #Click vào menu
     def click_menu(self):
         self.click(self.locators.MENU)    

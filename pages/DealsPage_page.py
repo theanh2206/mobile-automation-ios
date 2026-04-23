@@ -13,10 +13,34 @@ class DealsPage(BasePage):
     def click_icon_deals(self, index):
         locator = (By.XPATH, f'//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[{index}]')
         self.click(locator)
+    def click_by_text(self, text, index=1):
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
+    def click_by_text1(self, text):
+        el = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_element(
+            "-ios predicate string",
+                f"name == '{text}'"
+            )
+        )
+        el.click()
+    def click_button_by_text(self, text, index=1):
+        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
+    
+        element = self.wait.until(
+            EC.element_to_be_clickable(
+                (AppiumBy.XPATH, xpath)
+            )
+        )
+        element.click()
+    def click_by_image(self, text, index=1):
+        xpath = f'(//XCUIElementTypeImage[@name="{text}"])[{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
     #Search gói cước trên thanh tìm kiếm
     def search_package(self, keyword):
         self.click(self.locators.SEARCH_DEALS)
-        self.click(self.locators.SEARCH_BOX1)
         self.send_keys(self.locators.SEARCH_INPUT, keyword)
     #Click thẻ gói cước D5
     def click_card_D5(self):
@@ -73,7 +97,7 @@ class DealsPage(BasePage):
     def click_save_point(self):
         self.click(self.locators.SAVE_POINT)
     def click_list_save_point(self, index):
-        locator = (By.XPATH, f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rcvTipsMyPoint"]/android.widget.RelativeLayout[{index}]/android.widget.FrameLayout/android.widget.LinearLayout')
+        locator = (By.XPATH, f'//XCUIElementTypeTable/XCUIElementTypeCell[{index}]')
         self.click(locator)
     #Lịch sử điểm 
     def click_point_history(self):
@@ -96,9 +120,7 @@ class DealsPage(BasePage):
         self.click(self.locators.CLOSE)
     def click_button_close(self):
         self.click(self.locators.BUTTON_CLOSE)    
-    def click_save_point(self, index):
-        locator = (By.ID, f'vms.com.vn.mymobifone:id/lnSavePoint_{index}')
-        self.click(locator)
+    
     def click_sell_point(self, index):
         locator = (By.ID, f'vms.com.vn.mymobifone:id/lnSellPoint_{index}')
         self.click(locator)
@@ -137,9 +159,26 @@ class DealsPage(BasePage):
                 "speed": 500
                 }
             )
-
             time.sleep(1)  # cho UI load
-
+        raise Exception(f"❌ Không tìm thấy: {text}")
+    #--Hàm scroll dọc
+    def scroll_to_element2(self, text, max_scroll=6):
+        for i in range(max_scroll):
+            print(f"🔍 Lần {i+1}: tìm '{text}'")
+            elements = self.driver.find_elements(
+                AppiumBy.IOS_PREDICATE,
+                f'name CONTAINS[c] "{text}" OR label CONTAINS[c] "{text}"'
+            )
+            if elements:
+                element = elements[0]
+                if element.is_displayed():
+                    print("✅ Đã hiển thị trên màn hình")
+                    return element
+                else:
+                    print("⚠️ Tìm thấy nhưng chưa visible → scroll tiếp")
+            print("👉 Swipe...")
+            self.driver.execute_script("mobile: swipe", {"direction": "up"})
+            time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
     #CLick Icon trong Ưu đãi MyPoint
     def click_icon_mypoint_deals(self, index):
@@ -149,7 +188,7 @@ class DealsPage(BasePage):
         self.click(self.locators.BUTTON_EXCHANGE)
     #Ưu đãi tích điểm
     def click_reward_point(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
+        locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
         self.click(locator)
     #CLick button Tất cả - Ưu đãi tích điểm
     def click_deals_list_all(self):

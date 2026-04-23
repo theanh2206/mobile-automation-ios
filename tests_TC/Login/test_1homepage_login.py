@@ -114,7 +114,7 @@ def test_click_card_kndl_tc13_1(driver):
     homepage.click_card_kndl()
     homepage.wait_for_result("Kết nối dài lâu")
     assert homepage.is_result_displayed("Kết nối dài lâu")
-#TC13_1 Click các icon tiện ích
+#TC13_2. Click các icon tiện ích
 @pytest.mark.tc13_2
 def test_click_utilities_tc13_2(driver):
     homepage = HomePage(driver)
@@ -133,7 +133,6 @@ def test_click_utilities_tc13_2(driver):
     homepage.click_icon_utilities(8)
     homepage.click_button_back1()
     homepage.click_icon_utilities(3)
-
     homepage.wait_for_result("Chọn chu kỳ gói")
     assert homepage.is_result_displayed("Chọn chu kỳ gói")
 
@@ -173,7 +172,7 @@ def test_mobigames_register_tc16(driver):
     homepage.click_by_text("MobiGames", 3)
     homepage.click_button_by_text("btn signed", 1)
     homepage.click_button_by_text("Đăng ký")
-    homepage.input_otp("888888")
+    homepage.input_otp("000000")
     homepage.wait_for_result("Đăng ký dịch vụ")
     assert homepage.is_result_displayed("Yêu cầu thành công")
     
@@ -186,9 +185,9 @@ def test_mobigames_unregister_tc17(driver):
     homepage.click_by_text("MobiGames", 3)
     homepage.click_button_by_text("btn huy", 1)
     homepage.click_button_by_text("Đồng ý")
-    homepage.input_otp("888888")
-    homepage.wait_for_result("Huỷ gói dịch vụ")
-    assert homepage.is_result_displayed("Huỷ gói dịch vụ thành công")
+    homepage.input_otp("000000")
+    homepage.wait_for_result("Huỷ dịch vụ")
+    assert homepage.is_result_displayed("Gửi yêu cầu huỷ thành công")
 #=====GÓI CƯỚC CỦA BẠN=========()
 #TC18 - Huỷ gói cước
 @pytest.mark.tc18
@@ -246,7 +245,7 @@ def test_reschedule(driver):
 def test_cancel_shedule(driver):
     homepage = HomePage(driver)
     homepage.click_infomation()
-    homepage.scroll_to_element1("Đổi lịch hẹn")
+    homepage.scroll_to_element2("Đổi lịch hẹn")
     homepage.click_button_cancel_schedule()
     homepage.click_button_submit()
     homepage.input_otp("888888")
@@ -310,33 +309,38 @@ def test_click_utilities_tc27(driver):
     homepage.click_by_text("Gói cước dài kỳ")
     homepage.click_button_by_text("close dt")
     homepage.click_by_text("MobiBiz")
-    homepage.click_button_by_text("icBack")
+    # homepage.click_button_by_text("icBack")
     homepage.click_by_text("Chuyển mạng giữ số")
     homepage.click_button_by_text("icBack")
     homepage.click_by_text("Mở tài khoản Nam Á Bank")
     homepage.click_button_by_text("close ekyc")
     homepage.click_by_text("Ưu đãi 8 tháng 3")
-    homepage.click_button_by_text("icBack")
+    homepage.click_button_by_text("close dt")
     homepage.wait_for_text("Khuyến mại và Quà tặng")
     assert homepage.is_result_displayed("Khuyến mại và Quà tặng")
-
+#Mục viễn thông
 @pytest.mark.tc28
 def test_click_utilities_tc28(driver):
     homepage = HomePage(driver)
-    homepage.click_view_all_utils()
-    homepage.scroll_to_element("Reset nạp thẻ")
-    homepage.wait_for_text("Reset nạp thẻ")
-    homepage.click_icon(5)
-    homepage.press_back()
-    homepage.click_icon(6)
-    homepage.press_back()
-    homepage.click_icon(7)
-    homepage.press_back()
-    homepage.click_icon(9)
-    homepage.click_btn_cancel()
-    homepage.press_back()
-    homepage.click_icon(11)
-    homepage.click_btn_cancel()
+    homepage.click_by_text("Xem tất cả")
+    homepage.scroll_to_element2("Chặn cuộc gọi rác")
+    # homepage.click_by_text("Chuyển vùng quốc")
+    # homepage.click_button_by_text("arrow left roaming")
+    # homepage.click_by_text("Chuẩn hoá thông tin")
+    # homepage.click_button_by_text("icBack")
+    # homepage.click_by_text("8 tháng 3")
+    # homepage.click_button_by_text("icBack")
+    # homepage.click_by_text("CHTT")
+    homepage.click_by_text("Đổi Esim")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Cập nhật địa chỉ")
+    homepage.click_by_text("Đóng")
+    homepage.click_by_text("Hướng dẫn CVQT")
+    homepage.click_button_by_text("close ekyc")
+    homepage.click_by_text("Lịch sử esim")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Chặn cuộc gọi rác")
+    homepage.click_button_by_text("close ekyc")
     homepage.wait_for_text("Hỗ trợ khách hàng")
     assert homepage.is_result_displayed("Tất cả tiện ích")
     
@@ -382,23 +386,21 @@ def test_click_customer_support_tc31(driver):
     assert homepage.is_result_displayed("Chọn chu kỳ gói")
 
     
-# #TC32 - Click vào từng banner
-# @pytest.mark.tc32
-# def test_click_banner_tc32(driver):
-#     homepage = HomePage(driver)
-#     homepage.scroll_to_element2("Hỗ trợ khách hàng")
-#     homepage.swipe_banner()
-#     homepage.click_banner()
-#     homepage.wait_for_result("Thông tin chung")
-#     assert homepage.is_result_displayed("Thông tin chung")
-# @pytest.mark.tc32_1   
-# def test_click_banner1(driver):
-#     homepage = HomePage(driver)
-#     homepage.scroll_to_element("Hỗ trợ khách hàng")
-#     homepage.swipe_banner(1)
-#     homepage.click_banner()
-#     homepage.wait_for_result("Thông báo")
-#     assert homepage.is_result_displayed("Thông báo")
+#TC32 - Click vào từng banner
+@pytest.mark.tc32
+def test_click_banner_tc32(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element2("ON2")
+    homepage.click_banner()
+    homepage.wait_for_result("NHẬP SỐ ĐIỆN THOẠI")
+    assert homepage.is_result_displayed("NHẬP SỐ ĐIỆN THOẠI")
+@pytest.mark.tc32_1   
+def test_click_banner_tc32_1(driver):
+    homepage = HomePage(driver)
+    homepage.scroll_to_element2("Hỗ trợ khách hàng")
+    homepage.click_banner2()
+    homepage.wait_for_result("Thông báo")
+    assert homepage.is_result_displayed("Thông báo")
 # @pytest.mark.tc32_2   
 # def test_click_banner2(driver):
 #     homepage = HomePage(driver)

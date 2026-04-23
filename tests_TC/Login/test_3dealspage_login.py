@@ -4,134 +4,134 @@ from pages.DealsPage_page import DealsPage
 
 #TC71. Tìm kiếm gói cước có trong DB
 @pytest.mark.tc71
-def test_search_package_D5(driver):
+def test_search_package_tc71(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
+    dealspage.click_button_by_text("Ưu đãi")
     dealspage.search_package("D5")
-    dealspage.wait_for_result("D5")
-    assert dealspage.is_result_displayed("D5")  
+    dealspage.wait_for_result("Gói Data ngày D5")
+    assert dealspage.is_result_displayed("Gói Data ngày D5")  
 #TC72. Tìm kiếm gói cước không có trong DB
 @pytest.mark.tc72
-def test_search_package_D5(driver):
+def test_search_package_tc72(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
+    dealspage.click_button_by_text("Ưu đãi")
     dealspage.search_package("Thế Anh")
-    dealspage.wait_for_result("Lịch sử")
-    assert dealspage.is_result_displayed("Lịch sử")  
+    dealspage.wait_for_result("Không có dữ liệu")
+    assert dealspage.is_result_displayed("Không có dữ liệu")  
 #TC73. Kiểm tra mẹo tích điểm/chi tiết mẹo tích điểm
 @pytest.mark.tc73
-def test_save_point(driver):
+def test_save_point_tc73(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.wait_for_result("Mẹo tích điểm")
     dealspage.click_save_point()
-    dealspage.click_list_save_point(1)
-    dealspage.wait_for_result("Nạp tiền điện thoại tích điểm")
-    dealspage.press_back()
     dealspage.click_list_save_point(2)
     dealspage.wait_for_result("Đăng ký gói cước tích điểm")
-    dealspage.press_back()
+    dealspage.click_button_by_text("icBack")
     dealspage.click_list_save_point(3)
     dealspage.wait_for_result("Tích điểm khi mua sắm online")
-    dealspage.press_back()
+    dealspage.click_button_by_text("icBack")
     dealspage.click_list_save_point(4)
     dealspage.wait_for_result("Chương trình khuyến mãi")
-    dealspage.press_back()
+    dealspage.click_button_by_text("icBack")
+    dealspage.click_list_save_point(1)
+    dealspage.wait_for_result("Nạp tiền điện thoại tích điểm")
+    dealspage.click_button_by_text("icBack")
     assert dealspage.is_result_displayed("Tích điểm cực dễ cùng MyPoint")  
 #TC74. Kiểm tra lịch sử điểm
 @pytest.mark.tc74
-def test_point_history(driver):
+def test_point_history_tc74(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.click_point_history()
-    dealspage.click_list_point_history(1)
-    dealspage.click_close()
-    dealspage.click_by_text("Tiêu điểm")
-    dealspage.click_list_point_history(1)
-    dealspage.click_close()
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.click_by_image("money-time")
+    dealspage.click_by_text1("Rút lại điểm đã bị hết hạn")
+    dealspage.click_by_text1("Đóng")
+    dealspage.click_by_text1("Tiêu điểm")
+    dealspage.click_by_text1("Đổi ưu đãi")
+    dealspage.click_by_text1("Đóng")
     assert dealspage.is_result_displayed("Lịch sử điểm")  
     
 #TC75. Kiểm tra lịch sử đơn hàng
 @pytest.mark.tc75
-def test_point_history(driver):
+def test_point_history_tc75(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.click_cart_history()
-    dealspage.click_by_text("Chờ xử lý")
-    dealspage.click_by_text("Tạm duyệt")
-    dealspage.click_by_text("Đã hoàn")
-    dealspage.click_by_text("Đã hủy")
-    assert dealspage.is_result_displayed("Không tìm thấy dữ liệu")  
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.click_by_image("1000004138")
+    dealspage.click_by_text1("Chờ xử lý")
+    dealspage.click_by_text1("Tạm duyệt")
+    dealspage.click_by_text1("Đã hoàn")
+    dealspage.click_by_text1("Đã huỷ")
+    assert dealspage.is_result_displayed("Không có dữ liệu")  
 
 #TC76. Click vào các icon trong tab tích điểm(Nạp thẻ, gói cước, mua sắm, khác)
 @pytest.mark.tc76
-def test_save_point(driver):
+def test_save_point_tc76(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.click_by_text("Tích điểm")
-    dealspage.click_save_point(1)
-    dealspage.press_back()
-    dealspage.click_save_point(3)
-    dealspage.press_back()
-    dealspage.click_save_point(2)
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.click_by_text1("Tích điểm")
+    dealspage.click_by_text1("Nạp thẻ")
+    dealspage.click_button_by_text("icBack")
+    dealspage.click_by_image("shopping-bag 1")
+    dealspage.click_button_by_text("icBack")
+    dealspage.click_by_image("Frame 1000004158")
     assert dealspage.is_result_displayed("Cước tạm tính")
 #TC77. Click vào các icon trong tab tiêu điểm(Data, thẻ nạp, voucher)
 @pytest.mark.tc77
-def test_sell_point(driver):
+def test_sell_point_tc77(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.click_by_text("Tiêu điểm")
-    dealspage.click_sell_point(1)
-    dealspage.press_back()
-    dealspage.click_sell_point(2)
-    dealspage.press_back()
-    dealspage.click_sell_point(3)
-    dealspage.wait_for_result("Ưu đãi MyPoint")
-    assert dealspage.is_result_displayed("Ưu đãi MyPoint")
-
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.click_by_text1("Đổi điểm")
+    dealspage.click_by_image("ticket-discount 1")
+    dealspage.click_button_by_text("icBack")
+    dealspage.click_by_image("empty-wallet 1")
+    dealspage.wait_for_result("Tích điểm muôn nơi")
+    assert dealspage.is_result_displayed("Tích điểm muôn nơi")
+#Không ổn định code lại sau
 #TC78. Đổi điểm lấy quà
 @pytest.mark.tc78
-def test_(driver):
+def test_tc78(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.scroll_to_element("Xem thêm")
-    dealspage.click_by_text("Xem thêm")
-    dealspage.click_icon_mypoint_deals(1)
-    dealspage.click_button_exchange()
-    dealspage.input_otp("888888")#(Đổi bằng mã PIN thì chỉ cần truyền mã PIN vào là được)
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.scroll_to_element2("Đổi điểm lấy quà")
+    # dealspage.click_by_text1("Tất cả")
+    dealspage.click_by_text1("VC FLASALE 2")
+    dealspage.click_by_text1("Đổi ngay")
+    dealspage.input_otp("888888")
     dealspage.wait_for_result("Đổi voucher thành công")
     assert dealspage.is_result_displayed("Đổi voucher thành công")
 #TC79. Kiểm tra chi tiết voucher
 @pytest.mark.tc79
 def test_detail_voucher(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.scroll_to_element("Xem thêm")
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.scroll_to_element2("Đổi điểm lấy quà")
     dealspage.click_by_text("Xem thêm")
-    dealspage.click_icon_mypoint_deals(1)
-    dealspage.wait_for_result("Điều kiện sử dụng")
-    assert dealspage.is_result_displayed("Điều kiện sử dụng")
+    dealspage.click_by_text1("  VC FLASALE 2")
+    dealspage.wait_for_result("Đổi ngay")
+    assert dealspage.is_result_displayed("Đổi ngay")
 #TC80. Kiểm tra click ưu đãi tích điểm ở màn hình ngoài
 @pytest.mark.tc80
 def test_click_deals_point_out(driver):
     dealspage = DealsPage(driver)
-    dealspage.click_icon_deals(3)
-    dealspage.scroll_to_element("Ưu đãi tích điểm")
+    dealspage.click_button_by_text("Ưu đãi")
+    dealspage.scroll_to_element2("Ưu đãi tích điểm")
+    dealspage.click_by_text1("Thời trang")
     dealspage.click_reward_point(1)
-    dealspage.click_button_close()
-    dealspage.click_by_text("Thương mại điện tử")
-    dealspage.click_reward_point(1)
-    dealspage.click_button_close()
-    dealspage.click_reward_point(2)
-    dealspage.click_button_close()
-    dealspage.click_by_text("Giáo dục")
-    dealspage.click_reward_point(1)
-    dealspage.click_button_close()
-    dealspage.click_by_text("Làm đẹp")
+    dealspage.click_button_by_text("icClose")
+    dealspage.click_by_text1("Thương mại điện tử")
     dealspage.click_reward_point(1)
     dealspage.click_button_close()
     dealspage.click_reward_point(2)
     dealspage.click_button_close()
-    dealspage.click_by_text("Mẹ và bé")
+    dealspage.click_by_text1("Giáo dục")
+    dealspage.click_reward_point(1)
+    dealspage.click_button_close()
+    dealspage.click_by_text1("Làm đẹp")
+    dealspage.click_reward_point(1)
+    dealspage.click_button_close()
+    dealspage.click_reward_point(2)
+    dealspage.click_button_close()
+    dealspage.click_by_text1("Mẹ và bé")
     dealspage.click_reward_point(1)
     dealspage.click_button_close()
     dealspage.click_reward_point(2)

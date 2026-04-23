@@ -13,9 +13,30 @@ class ServicesPage(BasePage):
     def click_icon_services(self, index):
         locator = (By.XPATH, f'//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[{index}]')
         self.click(locator)
+    def click_by_text(self, text, index=1):
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
+        element = self.driver.find_element(AppiumBy.XPATH, xpath)
+        element.click()
+    def click_by_text1(self, text):
+        el = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_element(
+            "-ios predicate string",
+                f"name == '{text}'"
+            )
+        )
+        el.click()
+    def click_button_by_text(self, text, index=1):
+        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
+    
+        element = self.wait.until(
+            EC.element_to_be_clickable(
+                (AppiumBy.XPATH, xpath)
+            )
+        )
+        element.click()
     #Search gói cước trên thanh tìm kiếm
     def search_package(self, keyword):
-        self.click(self.locators.SEARCH_BOX)
+        self.click(self.locators.SEARCH_BOX2)
         self.send_keys(self.locators.SEARCH_INPUT, keyword)
     def search_package1(self, keyword):
         self.click(self.locators.SEARCH_BOX1)
@@ -41,19 +62,25 @@ class ServicesPage(BasePage):
     def swipe_banner(self, times=1, duration=1200, delay=0.5):
         try:
             banner = self.driver.find_element(
-            By.ID, "vms.com.vn.mymobifone:id/rlSliderBannerService"
+            "-ios class chain",
+            "**/XCUIElementTypeImage"
         )
         except NoSuchElementException:
-            raise Exception("❌ Không tìm thấy banner để swipe")
+            raise Exception("❌ Không tìm thấy banner")
         location = banner.location
         size = banner.size
-    # 👉 Tối ưu khoảng cách swipe (gần full width)
-        start_x = int(location['x'] + size['width'] * 0.95)
-        end_x = int(location['x'] + size['width'] * 0.05)
+        start_x = int(location['x'] + size['width'] * 0.9)
+        end_x = int(location['x'] + size['width'] * 0.1)
         y = int(location['y'] + size['height'] / 2)
         for i in range(times):
             print(f"👉 Swipe lần {i+1}")
-            self.driver.swipe(start_x, y, end_x, y, duration)
+            self.driver.execute_script("mobile: dragFromToForDuration", {
+                "duration": 0.2,
+                "fromX": start_x,
+                "fromY": y,
+                "toX": end_x,
+                "toY": y
+            })
             time.sleep(delay)
     #Click banner
     def click_banner(self):
@@ -65,21 +92,11 @@ class ServicesPage(BasePage):
     def input_otp(self, otp_code):
         otp_inputs = self.wait.until(
             EC.presence_of_all_elements_located(
-                (AppiumBy.XPATH, '//android.widget.EditText[@text="_"]')
+                (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
         )
     )
-
-        otp_inputs[0].click()
-        time.sleep(0.5)
-
-        for digit in otp_code:
-            self.driver.press_keycode(7 + int(digit))
-
-        self.wait.until(
-            EC.presence_of_element_located(
-                (AppiumBy.XPATH, "/hierarchy/android.widget.FrameLayout")
-        )
-    )
+        for i, digit in enumerate(otp_code):
+            otp_inputs[i].send_keys(digit)
     #Swipe dịch vụ nổi bật
     def swipe_services(self, times=1, duration=1200, delay=0.5):
         try:

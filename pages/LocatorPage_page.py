@@ -5,14 +5,15 @@ from appium.webdriver.common.appiumby import AppiumBy
 class LocatorPage:
     BUY_PAKAGE = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="Mua gói"]')
     SEARCH_BOX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton')
-    SEARCH_BOX1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etSearch")
-    SEARCH_DEALS = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvSearchDeal")
+    SEARCH_BOX1 = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm"]')
+    SEARCH_BOX2 = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm dịch vụ"]')
+    SEARCH_DEALS = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm ưu đãi"]')
     SEARCH_INPUT = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Tìm kiếm"]')
-    AVATA = (AppiumBy.XPATH, '//XCUIElementTypeImage[@name="Avatar"]')
+    AVATA = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeImage')
     MENU = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="ic leftBar blur"]')
     NOTIFICATION = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton')
     DETAIL_D5 = (AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvPackName" and @text="D5"]')
-    REGISTER_BUTTON = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvRegister")
+    REGISTER_BUTTON = (AppiumBy.XPATH, '//XCUIElementTypeApplication[@name="MyMobiFone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeOther/XCUIElementTypeButton')
     BUTTON_CANCEL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvCancelPackage")
     BUTTON_CONTINUTE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btContinue")
     BUTTON_CONTINUTE1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvContinue")
@@ -52,7 +53,7 @@ class LocatorPage:
     SUBCRIBER_HISTORY = (AppiumBy.XPATH, '//XCUIElementTypeScrollView/XCUIElementTypeOther[4]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeButton')
     BUTTON_BUY_PAKAGE = (AppiumBy.XPATH, '//XCUIElementTypeScrollView/XCUIElementTypeOther[5]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]')
     BUTTON_REGISTER_KNDL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvRegKNDL")
-    KNDL = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther')
+    KNDL = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton')
     # Hẹn roaming
     BUTTON_RESHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnDoiLichHen")
     BUTTON_CANCEL_SCHEDULE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnHuyRoaming")
@@ -71,10 +72,12 @@ class LocatorPage:
     NEW_NUMBER = (AppiumBy.XPATH, '(//android.widget.RelativeLayout[@resource-id="vms.com.vn.mymobifone:id/rlView"])[2]')
     ADD_PHONE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlAddPhone")
     INPUT_PHONE = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Số thuê bao"]')
-    BUTTON_ACCEPT =(AppiumBy.ID, "vms.com.vn.mymobifone:id/btAccept")
+    BUTTON_ACCEPT =(AppiumBy.XPATH, '(//XCUIElementTypeStaticText[@name="Xác nhận"])[2]')
     # Banner
-    BANNER = (AppiumBy.XPATH, '//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivBannerService"]')
-    
+    BANNER = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
+    BANNER2 =(AppiumBy.XPATH, '//XCUIElementTypeApplication[@name="MyMobiFone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
+    BANNER3 =(AppiumBy.XPATH, '//XCUIElementTypeApplication[@name="MyMobiFone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
+    BANNER_KNDL = (AppiumBy.XPATH, '//XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
     #Tạo gói cước cá nhân
     PERSONAL_FLEX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton')
     TIME_FLEX = (AppiumBy.XPATH, '//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton')
@@ -107,16 +110,16 @@ class LocatorPage:
     
     #Chia sẻ/tặng gói cước
     GIFT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivGift")
-    PHONE_RECIEVE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etPhone")
+    PHONE_RECIEVE = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Nhập số điện thoại"]')
     GIFT_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btConfirm")
     ICON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivShare")
     BUTTON_SHARE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvShare")
     
     #Mẹo tích điểm 
-    SAVE_POINT = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvTipsSavePoint")
+    SAVE_POINT = (AppiumBy.XPATH, '//XCUIElementTypeStaticText[@name="Mẹo tích điểm"]')
     
     #Lịch sử điểm
-    POINT_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryPoint")
+    POINT_HISTORY = (AppiumBy.XPATH, '//XCUIElementTypeStaticText[@name="Lịch sử đơn hàng"]')
     CART_HISTORY = (AppiumBy.ID, "vms.com.vn.mymobifone:id/tvHistoryCart")
     CLOSE = (AppiumBy.XPATH, '//XCUIElementTypeButton[@name="add roam"]')
     BUTTON_CLOSE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btClose")
@@ -133,7 +136,7 @@ class LocatorPage:
     KNDL_CONFIRM = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btnConfirm")
     BUTTON_SEE_MORE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlSeeMore")
     BUTTON_REFESH = (AppiumBy.ID, "vms.com.vn.mymobifone:id/ivUpdateRefresh")
-    INPUT_MAIL = (AppiumBy.ID, "vms.com.vn.mymobifone:id/etEmail")
+    INPUT_MAIL = (AppiumBy.XPATH, '//XCUIElementTypeTextField[@value="Nhập email nhận ưu đãi"]')
     
     #Hồ sơ cá nhân
     BUTTON_DETAIL1 = (AppiumBy.ID, "vms.com.vn.mymobifone:id/bvDetails")
@@ -143,3 +146,15 @@ class LocatorPage:
     BUTTON_FILLTER = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btFilter")
     ICON_BIN =(AppiumBy.ID, "vms.com.vn.mymobifone:id/ivBin")
     BUTTON_UPDATE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/btUpdate")
+    SWITCH_LANGUAGE = (AppiumBy.ID, "vms.com.vn.mymobifone:id/jtbSwitchLanguage")
+    ON_SWITCH_NOTIFICATION = (AppiumBy.XPATH, '//XCUIElementTypeSwitch[@value="1"]')
+    OFF_SWITCH_NOTIFICATION = (AppiumBy.XPATH, '(//XCUIElementTypeSwitch[@value="0"])[1]')
+    SMART_OTP = (AppiumBy.ID, "vms.com.vn.mymobifone:id/rlSmartOtp")
+    SWITCH_SMART_OTP = (AppiumBy.XPATH, '//XCUIElementTypeSwitch[@value="0"]')
+    INPUT_SMART_OTP = (AppiumBy.XPATH, '//XCUIElementTypeSecureTextField[@value="Nhập mã PIN 4 chữ số"]')
+    CONFIRM_SMART_OTP = (AppiumBy.XPATH, '//XCUIElementTypeSecureTextField[@value="Xác nhận mã PIN"]')
+    ON_SWITCH_SPAM = (AppiumBy.XPATH, '(//XCUIElementTypeSwitch[@value="0"])[1]')
+    ON_SWITCH_BLOCK = (AppiumBy.XPATH, '//XCUIElementTypeSwitch[@value="0"]')
+    OFF_SWITCH_SPAM = (AppiumBy.XPATH, '(//XCUIElementTypeSwitch[@value="1"])[1]')
+    OFF_SWITCH_BLOCK = (AppiumBy.XPATH, '//XCUIElementTypeSwitch[@value="1"]')
+    
