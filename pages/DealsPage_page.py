@@ -38,6 +38,12 @@ class DealsPage(BasePage):
         xpath = f'(//XCUIElementTypeImage[@name="{text}"])[{index}]'
         element = self.driver.find_element(AppiumBy.XPATH, xpath)
         element.click()
+    #CLick button Tất cả - Ưu đãi tích điểm
+    def click_deals_list_all(self):
+        self.click(self.locators.DEALS_LIST_ALL)
+    #Click button Tất cả - Ưu đãi khác
+    def click_deals_list_all_other(self):
+        self.click(self.locators.DEALS_LIST_ALL_OTHER)
     #Search gói cước trên thanh tìm kiếm
     def search_package(self, keyword):
         self.click(self.locators.SEARCH_DEALS)
@@ -189,6 +195,15 @@ class DealsPage(BasePage):
     #Ưu đãi tích điểm
     def click_reward_point(self, index):
         locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
+        self.click(locator)
+    def click_reward_point1(self, index):
+        locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
+        self.click(locator)
+    def click_reward_point3(self, index):
+        locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
+        self.click(locator)
+    def click_reward_point4(self, index):
+        locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
         self.click(locator)
     #CLick button Tất cả - Ưu đãi tích điểm
     def click_deals_list_all(self):

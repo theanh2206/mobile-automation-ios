@@ -6,7 +6,7 @@ from pages.HomePage_page import HomePage
 @pytest.mark.tc130
 def test_click_button_login_tc130(driver):
     homepage = HomePage(driver)
-    homepage.click_button_login()
+    homepage.click_button_by_text("Đăng nhập", 2)
     homepage.wait_for_result("Đăng nhập")
     assert homepage.is_result_displayed("Đăng nhập")
 #TC131. Click vào sidebar
@@ -20,9 +20,9 @@ def test_click_sidebar_tc131(driver):
 @pytest.mark.tc132
 def test_click_swipe_language_tc132(driver):
     homepage = HomePage(driver)
-    homepage.click_switch_language()
+    homepage.click_button_by_text("language vi")
     homepage.wait_for_result("Login")
-    homepage.click_switch_language()
+    homepage.click_button_by_text("language vi")
     texts = ["Login", "Đăng nhập"]
     found = False
     for text in texts:
@@ -32,84 +32,73 @@ def test_click_swipe_language_tc132(driver):
             break
         except:
             continue
-
     assert found, "❌ Không tìm thấy text hợp lệ"
 #TC133. Click vào tiện ích ở ngoài màn trang chủ
 @pytest.mark.tc133
 def test_click_icon_utilities_tc133(driver):
     homepage = HomePage(driver)
-    homepage.click_icon(1)
-    homepage.press_back()
-    homepage.click_icon(2)
-    homepage.press_back()
-    homepage.click_icon(3)
-    homepage.press_back()
-    homepage.click_icon(4)
-    homepage.press_back()
+    homepage.click_by_text("Chuyển vùng Quốc Tế")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Chuẩn hoá thông tin")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Thông tin sử dụng")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Hòa mạng/CHTT")
+    homepage.click_button_by_text("icBack")
     homepage.wait_for_result("Tiện ích")
     assert homepage.is_result_displayed("Tiện ích")
-#TC134. Click vào tiện ích ở màn tất cả tiện ích
+# TC134. Click các button xem tất cả
 @pytest.mark.tc134
 def test_click_icon_utilities_tc134(driver):
     homepage = HomePage(driver)
-    homepage.click_by_text("Tất cả")
-    homepage.click_icon(3)
-    homepage.press_back()
-    homepage.click_icon(4)
-    homepage.press_back()
-    homepage.click_icon(5)
-    homepage.click_icon(6)
-    homepage.press_back()
-    homepage.click_icon(7)
-    homepage.click_button_by_resource_id("vms.com.vn.mymobifone:id/btCancel")
-    homepage.wait_for_result("Tất cả tiện ích")
-    assert homepage.is_result_displayed("Tất cả tiện ích")
-#TC135. Click vào từng dịch vụ nổi bật
+    homepage.click_by_text("Xem tất cả")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("Dịch vụ nổi bật")
+    homepage.click_by_text1("Xem tất cả")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("Hỗ trợ khách hàng")
+    homepage.click_by_text1("Xem tất cả")
+    homepage.click_button_by_text("icBack")
+    homepage.wait_for_result("Hỗ trợ khách hàng")
+    assert homepage.is_result_displayed("Hỗ trợ khách hàng")
+# TC135. Click vào từng dịch vụ nổi bật
 @pytest.mark.tc135
 def test_click_avata_contact_tc135(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("ON2")
-    homepage.click_avata_contact(1)
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("ON2")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("MobiGames")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("Ltest VieON data 4")
+    homepage.click_button_by_text("icBack")
+    homepage.scroll_to_element2("ON2")
+    homepage.click_by_text("Ltest VieON data")
     homepage.wait_for_result("Chi tiết dịch vụ")
-    homepage.press_back()
-    homepage.click_avata_contact(2)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    homepage.press_back()
-    homepage.click_avata_contact(3)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    homepage.press_back()
-    homepage.click_avata_contact(4)
-    homepage.wait_for_result("Chi tiết dịch vụ")
-    homepage.press_back()
-    homepage.wait_for_result("Dịch vụ nổi bật")
-    assert homepage.is_result_displayed("Dịch vụ nổi bật")
+    assert homepage.is_result_displayed("Chi tiết dịch vụ")
 #TC136. Click gói cước hấp dẫn
 @pytest.mark.tc136
 def test_click_avata_contact_tc136(driver):
     homepage = HomePage(driver)
-    homepage.click_button_detail(1)
-    homepage.press_back()
+    homepage.click_button_by_text("Chi tiết")
+    homepage.click_button_by_text("icBack")
     homepage.click_by_text("Xem tất cả")
-    homepage.press_back()
+    homepage.click_button_by_text("icBack")
     homepage.wait_for_result("Gói cước hấp dẫn")
     assert homepage.is_result_displayed("Gói cước hấp dẫn")
 #TC137. Click tiện ích hỗ trợ trợ khách hàng
 @pytest.mark.tc137
 def test_click_customer_support_tc137(driver):
     homepage = HomePage(driver)
-    homepage.scroll_to_element("Kích hoạt sim")
-    homepage.click_icon(1)
-    homepage.press_back()
-    homepage.click_icon(2)
-    homepage.click_icon(3)
-    homepage.press_back()
-    homepage.click_icon(4)
-    homepage.click_icon(5)
-    homepage.press_back()
-    homepage.click_icon(6)
-    homepage.press_back()
-    homepage.click_icon(7)
-    homepage.press_back()
+    homepage.scroll_to_element2("Kích hoạt sim")
+    homepage.click_by_text("Kích hoạt sim")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Mua eSIM du lịch quốc tế")
+    homepage.click_by_text("Thông tin thuê bao")
+    homepage.click_button_by_text("icBack")
+    homepage.click_by_text("Đăng ký chính chủ")
     homepage.wait_for_result("Hỗ trợ khách hàng")
     assert homepage.is_result_displayed("Hỗ trợ khách hàng")
     

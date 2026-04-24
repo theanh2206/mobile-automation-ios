@@ -10,8 +10,8 @@ import time
 class KndlPage(BasePage):
     locators = LocatorPage()
     #Click tab KNDL
-    def click_icon_kndl(self, index):
-        locator = (By.XPATH, f'//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[{index}]')
+    def click_icon_kndl(self):
+        locator = (By.XPATH, f'//XCUIElementTypeButton[@name="KNDL"]')
         self.click(locator)
     #Click guide by text
     def click_by_text(self, text, index=1):

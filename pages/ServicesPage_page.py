@@ -10,8 +10,8 @@ import time
 class ServicesPage(BasePage):
     locators = LocatorPage()
     #Click tab dịch vụ
-    def click_icon_services(self, index):
-        locator = (By.XPATH, f'//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/bottomBar"]/android.widget.LinearLayout/android.widget.FrameLayout[{index}]')
+    def click_icon_services(self):
+        locator = (By.XPATH, f'//XCUIElementTypeButton[@name="Dịch vụ"]')
         self.click(locator)
     def click_by_text(self, text, index=1):
         xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
@@ -27,7 +27,6 @@ class ServicesPage(BasePage):
         el.click()
     def click_button_by_text(self, text, index=1):
         xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
-    
         element = self.wait.until(
             EC.element_to_be_clickable(
                 (AppiumBy.XPATH, xpath)
@@ -82,9 +81,28 @@ class ServicesPage(BasePage):
                 "toY": y
             })
             time.sleep(delay)
+    #--Hàm scroll dọc
+    def scroll_to_element2(self, text, max_scroll=6):
+        for i in range(max_scroll):
+            print(f"🔍 Lần {i+1}: tìm '{text}'")
+            elements = self.driver.find_elements(
+                AppiumBy.IOS_PREDICATE,
+                f'name CONTAINS[c] "{text}" OR label CONTAINS[c] "{text}"'
+            )
+            if elements:
+                element = elements[0]
+                if element.is_displayed():
+                    print("✅ Đã hiển thị trên màn hình")
+                    return element
+                else:
+                    print("⚠️ Tìm thấy nhưng chưa visible → scroll tiếp")
+            print("👉 Swipe...")
+            self.driver.execute_script("mobile: swipe", {"direction": "up"})
+            time.sleep(1)
+        raise Exception(f"❌ Không tìm thấy: {text}")
     #Click banner
     def click_banner(self):
-        self.click(self.locators.BANNER)
+        self.click(self.locators.BANNER_SERVICES)
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()

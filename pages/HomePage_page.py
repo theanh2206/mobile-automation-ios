@@ -13,15 +13,29 @@ import time
 
 class HomePage(BasePage):
     locators = LocatorPage()
-    def click_button_by_text(self, text, index=1):
-        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
-        element = self.wait.until(EC.element_to_be_clickable((AppiumBy.XPATH, xpath)))
-        element.click()
-
+    #Click guide by text
     def click_by_text(self, text, index=1):
-        xpath = f'(//XCUIElementTypeStaticText[@name="{text}"])[{index}]'
+        xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
         element = self.driver.find_element(AppiumBy.XPATH, xpath)
         element.click()
+    def click_by_text1(self, text):
+        el = WebDriverWait(self.driver, 10).until(
+            lambda d: d.find_element(
+            "-ios predicate string",
+                f"name == '{text}'"
+            )
+        )
+        el.click()
+    def click_button_by_text(self, text, index=1, times = 1):
+        xpath = f'(//XCUIElementTypeButton[@name="{text}"])[{index}]'
+        element = self.wait.until(
+            EC.element_to_be_clickable(
+                (AppiumBy.XPATH, xpath)
+            )
+        )
+        for i in range(times):
+            print(f"👉 Click lần {i+1}")
+            element.click()
     def click_by_image(self, text, index=1):
         xpath = f'(//XCUIElementTypeImage[@name="{text}"])[{index}]'
         element = self.driver.find_element(AppiumBy.XPATH, xpath)
