@@ -71,59 +71,8 @@ class KndlPage(BasePage):
             self.driver.execute_script("mobile: swipe", {"direction": "up"})
             time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
-    #Click thêm gói cước quy đổi
-    def click_add_pakage(self):
-        self.click(self.locators.ADD_PAKAGE)
-    def click_exchange_point(self):
-        self.click(self.locators.EXCHANGE_POINT)
-    #Click button Confirm
-    def click_buttom_confirm(self):
-        self.click(self.locators.GIFT_CONFIRM)
-    def click_button_exchange(self):
-        self.click(self.locators.BUTTON_EXCHANGE)
-    def click_buy_now(self):
-        self.click(self.locators.BUY_NOW)
     def click_button_accept(self):
         self.click(self.locators.BUTTON_ACCEPT)
-    def click_kndl_confirm(self):
-        self.click(self.locators.KNDL_CONFIRM)
-    def click_button_seemore(self):
-        self.click(self.locators.BUTTON_SEE_MORE)
-    def click_button_refesh(self):
-        self.click(self.locators.BUTTON_REFESH)
-    # Hàm scroll tới phần tử cụ thể
-    def scroll_to_element(self, text, max_scroll=6):
-        size = self.driver.get_window_size()
-
-        for i in range(max_scroll):
-            print(f"🔍 Lần {i+1}: tìm '{text}'")
-
-            elements = self.driver.find_elements(
-                AppiumBy.ANDROID_UIAUTOMATOR,
-                f'new UiSelector().textContains("{text}")'
-                )
-
-            if elements:
-                return elements[0]
-
-           # scroll mỗi vòng
-            self.driver.execute_script(
-                "mobile: scrollGesture",
-                {
-                "left": int(size["width"] * 0.1),
-                "top": int(size["height"] * 0.3),
-                "width": int(size["width"] * 0.8),
-                "height": int(size["height"] * 0.6),
-                "direction": "down",
-                "percent": 0.7,
-                "speed": 500
-                }
-            )
-
-            time.sleep(1)  # cho UI load
-
-        raise Exception(f"❌ Không tìm thấy: {text}")
-    
     #Swipe banner ngang
     def swipe_banner(self, times=1, duration=1200, delay=0.5):
         try:
@@ -165,6 +114,5 @@ class KndlPage(BasePage):
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)
-
     def is_result_displayed(self, keyword):
         return self.is_text_displayed(keyword)

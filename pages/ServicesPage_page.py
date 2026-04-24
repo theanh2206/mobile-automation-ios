@@ -49,14 +49,6 @@ class ServicesPage(BasePage):
     #Click button đăng ký D5
     def click_register_d5(self):
         self.click(self.locators.REGISTER_BUTTON)
-    #Click button Huỷ đăng ký
-    def click_button_cancel(self):
-        self.click(self.locators.BUTTON_CANCEL)
-    #Click button continute
-    def click_button_continute(self):
-        self.click(self.locators.BUTTON_CONTINUTE)
-    def click_button_continute1(self):
-        self.click(self.locators.BUTTON_CONTINUTE1)
     #Swipe banner ngang
     def swipe_banner(self, times=1, duration=1200, delay=0.5):
         try:
@@ -133,39 +125,9 @@ class ServicesPage(BasePage):
             print(f"👉 Swipe lần {i+1}")
             self.driver.swipe(start_x, y, end_x, y, duration)
             time.sleep(delay)
-    #Click dịch vụ nổi bật
-    def click_services_outstanding(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatarContact"])[{index}]')
-        self.click(locator)
-    #Click dịch vụ trong danh sách dịch vụ
-    def click_services(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
-        self.click(locator)
     
-    #CLick button đăng ký dịch vụ
-    def click_button_register_services(self):
-        self.click(self.locators.MOBIGAMES_REGISTER1)
-    def click_by_text(self, text):
-        try:
-            xpath = f'//android.widget.TextView[contains(@text,"{text}")]'
-        
-            element = WebDriverWait(self.driver, 10).until(
-                lambda d: d.find_element(AppiumBy.XPATH, xpath)
-            )
-            element.click()
-        except Exception as e:
-            raise Exception(f"Không tìm thấy element chứa text: {text}") from e
-
-
-
-
-
-
-
-
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)
-
     def is_result_displayed(self, keyword):
         return self.is_text_displayed(keyword)

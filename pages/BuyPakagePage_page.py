@@ -43,23 +43,12 @@ class BuyPakagePage(BasePage):
     def search_package1(self, keyword):
         self.click(self.locators.SEARCH_BOX1)
         self.send_keys(self.locators.SEARCH_BOX1, keyword)
-    #Click thẻ gói cước D5
-    def click_card_D5(self):
-        self.click(self.locators.DETAIL_D5)
     #Click vào menu
     def click_menu(self):
         self.click(self.locators.MENU)   
     #Click button đăng ký D5
     def click_register_button(self):
         self.click(self.locators.REGISTER_BUTTON)
-    #Click button Huỷ đăng ký
-    def click_button_cancel(self):
-        self.click(self.locators.BUTTON_CANCEL)
-    #Click button continute
-    def click_button_continute(self):
-        self.click(self.locators.BUTTON_CONTINUTE)
-    def click_button_continute1(self):
-        self.click(self.locators.BUTTON_CONTINUTE1)
     #Click icon tạo gói cước cá nhân
     def click_personal_flex(self):
         self.click(self.locators.PERSONAL_FLEX)
@@ -67,30 +56,16 @@ class BuyPakagePage(BasePage):
         self.click(self.locators.TIME_FLEX)
     def click_icon_cvqt(self):
         self.click(self.locators.ICON_CVQT)
-    def click_button_create_pakage(self):
-        self.click(self.locators.BUTTON_CREATE_PAKAGE)
-    def click_payment_confirm(self):
-        self.click(self.locators.PAYMENT_CONFIRM)
     def click_button_accept(self):
         self.click(self.locators.BUTTON_ACCEPT)
-    def click_register_button2(self):
-        self.click(self.locators.REGISTER_BUTTON2)
-        
     # Chuyển vùng quốc tế
     #1. Click kiểm tra trước chuyến đi
     def click_check_trip(self):
         self.click(self.locators.CHECK_TRIP)
-    #2. Search gói cước/ quốc gia
-    def click_search_by_key(self, keyword):
-        self.click(self.locators.SEARCH_BY_KEY)
-        self.send_keys(self.locators.SEARCH_BY_KEY, keyword)
     def click_search_country(self):
         self.click(self.locators.SEARCH_COUNTRY)
     def send_key_country(self, keyword):
         self.send_keys(self.locators.SEARCH_COUNTRY1, keyword)
-    #3. Click button áp dụng
-    def click_button_apply(self):
-        self.click(self.locators.BUTTON_APPLY)
     #4. Click tên quốc gia trong tìm kiếm quốc gia
     def click_country(self, keyword):
         for _ in range(5):
@@ -101,10 +76,8 @@ class BuyPakagePage(BasePage):
             if elements:
                 elements[0].click()
             return
-        
         # swipe lên
         self.driver.swipe(500, 1500, 500, 500, 800)
-
         raise Exception(f"Không tìm thấy country: {keyword}")
     #5. Click các quốc gia phổ biến
     def click_popular_country1(self, index):
@@ -114,92 +87,29 @@ class BuyPakagePage(BasePage):
             '//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvCountryPackages"]//android.widget.LinearLayout'
         )
     )
-
         if index > len(elements):
             raise Exception(f"Chỉ có {len(elements)} item, không có item {index}")
-
         elements[index - 1].click()
     def click_popular_country(self, index):
         locator = (By.XPATH, f'//XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton')
         self.click(locator)
-    #6. Click gói cước tạo data roaming linh hoạt
-    def click_pakage_roaming(self):
-        self.click(self.locators.PAKAGE_ROAMING)
-    #7. Click tạo gói cước data roaming 
-    def click_create_pakage_roaming(self):
-        self.click(self.locators.CREATE_PAKAGE_ROAMING)
-    #Liên hệ tư vấn
-    def click_contact_consulting(self):
-        self.click(self.locators.BUTTON_CONTACT_CONSULTING)
-    def send_phone_number(self, keyword):
-        self.click(self.locators.PHONE_NUMBER)
-        self.send_keys(self.locators.PHONE_NUMBER, keyword)
-    def select_day_contact(self, index):
-        self.click(self.locators.DAY_CONTACT)
-        self.wait_for_result("Xác nhận")
-        try:
-            xpath = f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvDays"]/android.widget.RelativeLayout[{index}]'
-        
-            element = self.driver.find_element(AppiumBy.XPATH, xpath)
-            element.click()
-        except Exception as e:
-            raise Exception(f"Không tìm thấy ngày tại vị trí: {index}") from e
-        self.click(self.locators.BUTTON_SUBMIT)
-    def select_time_contact(self):
-        self.click(self.locators.TIME_CONTACT)
-        self.click(self.locators.SELECT_TIME)
-    def click_button_book(self):
-        self.click(self.locators.BOOK)
     # Tặng/chia sẻ gói cước
     def gift_pakage(self, keyword):
         self.click(self.locators.PHONE_RECIEVE)
         self.send_keys(self.locators.PHONE_RECIEVE, keyword)
-    def share_pakage(self):
-        self.click(self.locators.ICON_SHARE)
-        self.click(self.locators.BUTTON_SHARE)
     # Tiện ích của bạn
     def click_icon(self, index):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
         self.click(locator)
-
-    #CLick button chi tiết gói cước
-    def click_detail_pakage(self):
-        self.click(self.locators.DETAIL_D5)
-    #CLick button hẹn roaming
-    def click_schedule_roaming(self):
-        self.click(self.locators.BUTTON_SCHEDULE_ROAMING)
-    def click_button_submit(self):
-        self.click(self.locators.BUTTON_SUBMIT)
-    def et_time(self, keword):
-        self.click(self.locators.ET_TIME)
-        self.send_keys(self.locators.ET_TIME, keword)
-    #Click button detail pakage
-    def click_button_detail(self):
-        self.click(self.locators.BUTTON_DETAIL)
-    # Click hướng dẫn sử dụng
-    def click_guide_by_text(self, text):
-        xpath = f'//android.widget.TextView[@resource-id="vms.com.vn.mymobifone:id/tvQuestion" and @text="{text}"]'
-    
-        element = WebDriverWait(self.driver, 10).until(
-            lambda d: d.find_element(AppiumBy.XPATH, xpath)
-            )
-        element.click()
-        
-    def click_btn_cancel(self):
-        self.click(self.locators.BTN_CANCEL) 
     #----------Hàm nhập OTP-----------
-    def input_otp(self, otp):
-        first_input = self.driver.find_element(
-        "-ios class chain",
-        "**/XCUIElementTypeTextField"
+    def input_otp(self, otp_code):
+        otp_inputs = self.wait.until(
+            EC.presence_of_all_elements_located(
+                (AppiumBy.IOS_CLASS_CHAIN, '**/XCUIElementTypeTextField')
+        )
     )
-
-        first_input.click()
-        first_input.send_keys(otp)
-    
-    #Back lại bước vừa xong 
-    def press_back(self):
-        return super().press_back()
+        for i, digit in enumerate(otp_code):
+            otp_inputs[i].send_keys(digit)
     #Click button back
     def click_button_back(self):
         self.click(self.locators.BUTTON_BACK)
@@ -214,47 +124,8 @@ class BuyPakagePage(BasePage):
         )
             if elements:
                 return elements[0]
-
             self.driver.execute_script("mobile: swipe", {"direction": "up"})
-
         raise Exception(f"Không tìm thấy {text}")
-    #--Hàm scroll dọc
-    def scroll_to_element1(self, text, max_scroll=6):
-        size = self.driver.get_window_size()
-
-        for i in range(max_scroll):
-            print(f"🔍 Lần {i+1}: tìm '{text}'")
-
-            try:
-                element = WebDriverWait(self.driver, 2).until(
-                    EC.presence_of_element_located(
-                    (AppiumBy.ANDROID_UIAUTOMATOR,
-                     f'new UiSelector().textContains("{text}")')
-                    )
-                )
-                print(f"✅ Tìm thấy '{text}'")
-                return element
-            except:
-                pass
-            WebDriverWait(self.driver, 5).until(
-                    EC.presence_of_element_located((AppiumBy.CLASS_NAME, "android.widget.ScrollView"))
-                                                )
-        # 👉 Scroll
-            self.driver.execute_script(
-                "mobile: scrollGesture",
-                    {
-                    "left": int(size["width"] * 0.2),
-                    "top": int(size["height"] * 0.5),
-                    "width": int(size["width"] * 0.6),
-                    "height": int(size["height"] * 0.3),
-                    "direction": "up",
-                    "percent": 0.6,
-                    "speed": 600
-                    }
-                    )       
-            time.sleep(1)
-
-        raise Exception(f"❌ Không tìm thấy: {text}")
     #--Hàm scroll dọc
     def scroll_to_element2(self, text, max_scroll=6):
         for i in range(max_scroll):
@@ -274,27 +145,6 @@ class BuyPakagePage(BasePage):
             self.driver.execute_script("mobile: swipe", {"direction": "up"})
             time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
-    #--------------Hàm scroll ngang
-    def scroll_horizontal_utils(self, direction="left", times=1):
-        carousel = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((
-            By.XPATH,
-            '//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvUtils"]'
-            ))
-        )
-
-        for _ in range(times):
-            loc = carousel.location
-            size = carousel.size
-
-            self.driver.execute_script("mobile: swipeGesture", {
-                "left": loc["x"],
-                "top": loc["y"],
-                "width": size["width"],
-                "height": size["height"],
-                "direction": direction,
-                "percent": 0.8
-            })
     #Swipe banner ngang
     def swipe_banner(self, times=1, duration=1200, delay=0.5):
         try:
@@ -312,58 +162,7 @@ class BuyPakagePage(BasePage):
         for i in range(times):
             print(f"👉 Swipe lần {i+1}")
             self.driver.swipe(start_x, y, end_x, y, duration)
-            time.sleep(delay)
-    #Swipe danh mục các nhóm gói
-    def swipe_categories(self):
-        element = self.driver.find_element(
-            AppiumBy.ID,"vms.com.vn.mymobifone:id/rvListCategories")
-
-        location = element.location
-        size = element.size
-        start_x = int(location['x'] + size['width'] * 0.9)
-        end_x = int(location['x'] + size['width'] * 0.1)
-        y = int(location['y'] + size['height'] / 2)
-
-        self.driver.swipe(start_x, y, end_x, y, 500)
-        
-    #Click categories
-    def click_category_by_index(self, index):
-        try:
-            xpath = f'(//android.widget.LinearLayout[@resource-id="vms.com.vn.mymobifone:id/lineRoot"])[{index}]'
-        
-            element = self.driver.find_element(AppiumBy.XPATH, xpath)
-            element.click()
-        except Exception as e:
-            raise Exception(f"Không tìm thấy category tại vị trí: {index}") from e
-        
-    #Kiểm tra click chọn từng chu kỳ 
-    def click_radio_button_all(self):
-        self.click(self.locators.RADIO_BUTTON_ALL)
-    def click_radio_button_days(self):
-        self.click(self.locators.RADIO_BUTTON_DAYS)
-    def click_radio_button_months(self):
-        self.click(self.locators.RADIO_BUTTON_MONTHS)
-    def click_sort_price(self):
-        self.click(self.locators.SORT_PRICE)
-    def click_sort_data(self):
-        self.click(self.locators.SORT_DATA)
-    #Màn tất cả gói cước
-    #Click tất cả gói cước
-    def click_view_all_pakage(self):
-        self.click(self.locators.VIEW_ALL_PAKAGE)
-    #Ẩn bàn phím
-    def hide_keyboard(self):
-        try:
-            self.driver.hide_keyboard()
-        except:
-            try:
-                self.driver.back()
-            except:
-                try:
-                    self.driver.tap([(100, 100)])
-                except:
-                    pass
-   
+            time.sleep(delay)     
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)

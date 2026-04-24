@@ -48,23 +48,12 @@ class DealsPage(BasePage):
     def search_package(self, keyword):
         self.click(self.locators.SEARCH_DEALS)
         self.send_keys(self.locators.SEARCH_INPUT, keyword)
-    #Click thẻ gói cước D5
-    def click_card_D5(self):
-        self.click(self.locators.DETAIL_D5)
     #Click vào menu
     def click_menu(self):
         self.click(self.locators.MENU)   
     #Click button đăng ký D5
     def click_register_d5(self):
         self.click(self.locators.REGISTER_BUTTON)
-    #Click button Huỷ đăng ký
-    def click_button_cancel(self):
-        self.click(self.locators.BUTTON_CANCEL)
-    #Click button continute
-    def click_button_continute(self):
-        self.click(self.locators.BUTTON_CONTINUTE)
-    def click_button_continute1(self):
-        self.click(self.locators.BUTTON_CONTINUTE1)
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()
@@ -123,50 +112,11 @@ class DealsPage(BasePage):
             raise Exception(f"Không tìm thấy element chứa text: {text}") from e
     
     def click_close(self):
-        self.click(self.locators.CLOSE)
-    def click_button_close(self):
-        self.click(self.locators.BUTTON_CLOSE)    
-    
+        self.click(self.locators.CLOSE)  
+          
     def click_sell_point(self, index):
         locator = (By.ID, f'vms.com.vn.mymobifone:id/lnSellPoint_{index}')
         self.click(locator)
-    #Lịch sử đơn hàng
-    def click_cart_history(self):
-        self.click(self.locators.CART_HISTORY)
-    
-    #Click button Xem tất cả
-    def click_button_see_all(self):
-        self.click(self.locators.BUTTON_SEE_ALL)
-    # Hàm scroll tới phần tử cụ thể
-    def scroll_to_element(self, text, max_scroll=6):
-        size = self.driver.get_window_size()
-
-        for i in range(max_scroll):
-            print(f"🔍 Lần {i+1}: tìm '{text}'")
-
-            elements = self.driver.find_elements(
-                AppiumBy.ANDROID_UIAUTOMATOR,
-                f'new UiSelector().textContains("{text}")'
-                )
-
-            if elements:
-                return elements[0]
-
-           # scroll mỗi vòng
-            self.driver.execute_script(
-                "mobile: scrollGesture",
-                {
-                "left": int(size["width"] * 0.1),
-                "top": int(size["height"] * 0.3),
-                "width": int(size["width"] * 0.8),
-                "height": int(size["height"] * 0.6),
-                "direction": "down",
-                "percent": 0.7,
-                "speed": 500
-                }
-            )
-            time.sleep(1)  # cho UI load
-        raise Exception(f"❌ Không tìm thấy: {text}")
     #--Hàm scroll dọc
     def scroll_to_element2(self, text, max_scroll=6):
         for i in range(max_scroll):
@@ -190,8 +140,6 @@ class DealsPage(BasePage):
     def click_icon_mypoint_deals(self, index):
         locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatar"])[{index}]')
         self.click(locator)
-    def click_button_exchange(self):
-        self.click(self.locators.BUTTON_EXCHANGE)
     #Ưu đãi tích điểm
     def click_reward_point(self, index):
         locator = (By.XPATH, f'//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeImage')
@@ -210,11 +158,7 @@ class DealsPage(BasePage):
         self.click(self.locators.DEALS_LIST_ALL)
     #Click button Tất cả - Ưu đãi khác
     def click_deals_list_all_other(self):
-        self.click(self.locators.DEALS_LIST_ALL_OTHER)
-        
-        
-        
-        
+        self.click(self.locators.DEALS_LIST_ALL_OTHER)    
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)

@@ -58,7 +58,6 @@ class HomePage(BasePage):
                     AppiumBy.IOS_CLASS_CHAIN,
                     '**/XCUIElementTypeScrollView'
                 )
-
                 self.driver.execute_script(
                     "mobile: scroll",
                     {
@@ -68,9 +67,7 @@ class HomePage(BasePage):
                 )
             except Exception as e:
                 print("⚠️ Không tìm thấy scroll view:", e)
-
             time.sleep(1)
-
         raise Exception(f"❌ Không tìm thấy: {text}")
     #--Hàm scroll dọc
     def scroll_to_element2(self, text, max_scroll=6):
@@ -91,27 +88,6 @@ class HomePage(BasePage):
             self.driver.execute_script("mobile: swipe", {"direction": "up"})
             time.sleep(1)
         raise Exception(f"❌ Không tìm thấy: {text}")
-    #--------------Hàm scroll ngang
-    def scroll_horizontal_utils(self, direction="left", times=1):
-        carousel = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((
-            By.XPATH,
-            '//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvUtils"]'
-            ))
-        )
-
-        for _ in range(times):
-            loc = carousel.location
-            size = carousel.size
-
-            self.driver.execute_script("mobile: swipeGesture", {
-                "left": loc["x"],
-                "top": loc["y"],
-                "width": size["width"],
-                "height": size["height"],
-                "direction": direction,
-                "percent": 0.8
-            })
     
     def close_side_menu_ios(self):
         size = self.driver.get_window_size()
@@ -176,37 +152,13 @@ class HomePage(BasePage):
     def click_icon_utilities1(self, index):
         locator = (By.XPATH, f'//XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeCollectionView/XCUIElementTypeCell[{index}]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage')
         self.click(locator)
-
     def click_button_close1(self):
         self.click(self.locators.BUTTON_CLOSE1) 
     def click_button_back1(self):
         self.click(self.locators.BUTTON_BACK1)
-
-
-    # Hàm click mua gói
-    def click_recharge(self):
-        self.click(self.locators.RECHARGE)
-    #Click butto tất cả tiện ích
-    def click_view_all_utils(self):
-        self.click(self.locators.VIEW_ALL_UTILS)
-    #Click Mobigame
-    #----Register
-    def click_mobigames_detail(self):
-        self.click(self.locators.MOBIGAMES_DETAIL)
-    def click_mobigames_register1(self):
-        self.click(self.locators.MOBIGAMES_REGISTER1)
-    def click_mobigames_register2(self):
-        self.click(self.locators.MOBIGAMES_REGISTER2)
-    #----Unregister
-    def click_mobigames_unregister(self):
-        self.click(self.locators.MOBIGAME_UNREGISTER)
-    
     #Click button Back
     def click_button_back(self):
         self.click(self.locators.BUTTON_BACK)
-    #Click button Xem tất cả
-    def click_button_see_all(self):
-        self.click(self.locators.BUTTON_SEE_ALL)
     #Click icon avata
     def click_avata(self):
         self.click(self.locators.AVATA)    
@@ -241,73 +193,12 @@ class HomePage(BasePage):
     #Click button Mua thêm trong thông tin sử dụng
     def click_button_buy_pakage(self):
         self.click(self.locators.BUTTON_BUY_PAKAGE)
-    #Click button Đăng ký thẻ KNDL
-    def click_button_register_KNDL(self):
-        self.click(self.locators.BUTTON_REGISTER_KNDL)
     #Click card KNDL (SĐT đã đăng ký KNDL)
     def click_card_kndl(self):
         self.click(self.locators.KNDL)
-    #Click thẻ gói cước D5
-    def click_card_D5(self):
-        self.click(self.locators.DETAIL_D5)
     #Click button đăng ký D5
     def click_register_d5(self):
         self.click(self.locators.REGISTER_BUTTON)
-    #Click button Huỷ đăng ký
-    def click_button_cancel(self):
-        self.click(self.locators.BUTTON_CANCEL)
-    #Click button continute
-    def click_button_continute(self):
-        self.click(self.locators.BUTTON_CONTINUTE)
-    #-----Gói cước của bạn-------
-    def click_button_extend(self):
-        self.click(self.locators.BUTTON_EXTEND)
-    def click_button_cancel_extend(self):
-        self.click(self.locators.BUTTON_CANCEL_EXTEND)
-    def click_detail_my_pakage(self):
-        self.click(self.locators.DETAIL_MY_PAKAGE)    
-    def click_button_confirm_cancel_extend(self):
-        self.click(self.locators.BUTTON_CONFIRM_CANCEL_EXTEND)
-    def click_button_confirm_extend(self):
-        self.click(self.locators.BUTTON_CONFIRM_EXTEND)
-    #---Hẹn roaming ------
-    def click_button_reschedule(self):
-        self.click(self.locators.BUTTON_RESHEDULE)
-    def click_button_cancel_schedule(self):
-        self.click(self.locators.BUTTON_CANCEL_SCHEDULE)
-    def click_button_submit(self):
-        self.click(self.locators.BUTTON_SUBMIT)
-    def et_time(self, keword):
-        self.click(self.locators.ET_TIME)
-        self.send_keys(self.locators.ET_TIME, keword)
-    #Thông tin sử dụng/Tiện ích nổi bật
-    def click_kndl1(self):
-        self.click(self.locators.KNDL1)
-    def click_cvqt(self):
-        self.click(self.locators.CVQT)    
-    def click_vtc83(self):
-        self.click(self.locators.VTC83)
-    def click_khs(self):
-        self.click(self.locators.KHS)
-    def click_button_back_left(self):
-        self.click(self.locators.BUTTON_BACK_LEFT)
-        
-    # Tiện ích của bạn
-    def click_icon(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
-        self.click(locator)
-    def click_btn_cancel(self):
-        self.click(self.locators.BTN_CANCEL)
-    #Click dịch vụ nổi bật
-    def click_avata_contact(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivAvatarContact"])[{index}]')
-        self.click(locator)
-        
-    # Đổi số điện thoại con
-    def click_change_number(self):
-        self.click(self.locators.CHANGE_NUMBER)
-    def click_new_number(self):
-        self.click(self.locators.NEW_NUMBER)
     def add_phone(self, keyword):
         self.send_keys(self.locators.INPUT_PHONE, keyword)
     def click_button_accept(self):
@@ -328,7 +219,6 @@ class HomePage(BasePage):
             return True
         except:
             return False
-
 #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)

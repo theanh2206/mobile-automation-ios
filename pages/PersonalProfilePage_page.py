@@ -9,17 +9,10 @@ import time
 
 class PersonalProfile(BasePage):
     locators = LocatorPage()
-    
     #Click avata
     def click_avata(self):
         self.click(self.locators.AVATA)  
-    #Click các icon trong trang hồ sơ cá nhân
-    def click_my_services(self, index):
-        locator = (By.XPATH, f'(//android.widget.ImageView[@resource-id="vms.com.vn.mymobifone:id/ivIcon"])[{index}]')
-        self.click(locator)
-    #Click button refesh
-    def click_button_refesh(self):
-        self.click(self.locators.BUTTON_REFESH)
+    
     #Click guide by text
     def click_by_text(self, text, index=1):
         xpath = f'//XCUIElementTypeStaticText[@name="{text}"][{index}]'
@@ -59,9 +52,6 @@ class PersonalProfile(BasePage):
                     break
                 except:
                     time.sleep(0.5)
-    #Click button detail
-    def click_button_detail(self):
-        self.click(self.locators.BUTTON_DETAIL1)
     
     #--Hàm scroll dọc
     def scroll_to_element2(self, text, max_scroll=6):
@@ -86,11 +76,9 @@ class PersonalProfile(BasePage):
     def swipe_on_element(self, element, direction="up"):
         location = element.location
         size = element.size
-
         center_x = location['x'] + size['width'] // 2
         start_y = location['y'] + int(size['height'] * 0.9)
         end_y = location['y'] + int(size['height'] * 0.1)
-
         if direction == "up":
             self.driver.swipe(center_x, start_y, center_x, end_y, 300)
         else:
@@ -110,37 +98,13 @@ class PersonalProfile(BasePage):
         self.scroll_picker_wheel(month_wheel, f"tháng {month}")
         # Year
         self.scroll_picker_wheel(year_wheel, str(year))
-    #Click button OK        
-    def click_button_ok(self):
-        self.click(self.locators.BUTTON_OK)
-    #Chọn tháng/năm
-    def click_select_date(self):
-        self.click(self.locators.SELECT_DATE)
-    #Click button Delete
-    def click_button_delete(self):
-        self.click(self.locators.BUTTON_DELETE)
     #CLick button back/up/ fillter
     def click_button_back(self):
         self.click(self.locators.BUTTON_BACK)
-    def click_button_up(self):
-        self.click(self.locators.BUTTON_UP)
-    def click_button_fillter(self):
-        self.click(self.locators.BUTTON_FILLTER)
-    def click_icon_bin(self):
-        self.click(self.locators.ICON_BIN)
-    #Click button cập nhật thông tin
-    def click_button_update(self):
-        self.click(self.locators.BUTTON_UPDATE)
     #Click chọn tháng mong muốn
     def select_month(self, index):
         locator = (By.XPATH, f'//androidx.recyclerview.widget.RecyclerView[@resource-id="vms.com.vn.mymobifone:id/rvMonths"]/android.widget.LinearLayout[{index}]')
         self.click(locator)
-       
-    def add_phone(self):
-        self.click(self.locators.ADD_PHONE)
-    #Click button Confirm
-    def click_buttom_confirm(self):
-        self.click(self.locators.GIFT_CONFIRM)
     #Back lại bước vừa xong 
     def press_back(self):
         return super().press_back()
@@ -167,6 +131,5 @@ class PersonalProfile(BasePage):
     #         ===== VERIFY =====
     def wait_for_result(self, keyword):
         self.wait_for_text(keyword)
-
     def is_result_displayed(self, keyword):
         return self.is_text_displayed(keyword)
